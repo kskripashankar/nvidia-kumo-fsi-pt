@@ -3369,25 +3369,39 @@
       </div>
 
       <!-- Embedded Resume Viewer Container -->
-      <div class="card" style="padding: 12px; background: var(--bg-card-alt); border-radius: var(--radius-md); overflow: hidden;">
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 12px 12px; border-bottom: 1px solid var(--border-color); margin-bottom: 12px; font-size: 12px; color: var(--text-muted); font-family: var(--font-mono);">
-          <div style="display: flex; align-items: center; gap: 8px;">
+      <div class="card" style="padding: 14px; background: var(--bg-card-alt); border-radius: var(--radius-md); overflow: hidden;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid var(--border-color); margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-secondary); font-family: var(--font-mono);">
             <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--nv-green); display: inline-block;"></span>
-            <span>GOOGLE DRIVE PREVIEW // 1MSiB-ZhMVu3wK2VpWy4ho5l9bBOStzg4</span>
+            <span>EXECUTIVE DOSSIER // RESUME</span>
           </div>
-          <a href="https://drive.google.com/file/d/1MSiB-ZhMVu3wK2VpWy4ho5l9bBOStzg4/preview" target="_blank" rel="noopener" style="color: var(--nv-green); text-decoration: none; font-weight: 700;">
-            Download / External View ↗
-          </a>
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <a href="https://drive.google.com/file/d/1MSiB-ZhMVu3wK2VpWy4ho5l9bBOStzg4/view?usp=sharing" target="_blank" rel="noopener" class="blueprint-link" style="padding: 5px 12px; font-size: 11px;">
+              <span>Open in Google Drive ↗</span>
+            </a>
+            <a href="resume.pdf" target="_blank" rel="noopener" class="blueprint-link" style="padding: 5px 12px; font-size: 11px; color: var(--accent-cyan); border-color: rgba(6,182,212,0.4); background: rgba(6,182,212,0.1);">
+              <span>Direct PDF Link ↗</span>
+            </a>
+          </div>
         </div>
         <div style="position: relative; width: 100%; height: 950px; background: #fff; border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-md);">
-          <iframe 
-            src="https://drive.google.com/file/d/1MSiB-ZhMVu3wK2VpWy4ho5l9bBOStzg4/preview" 
-            width="100%" 
-            height="100%" 
-            style="border: none; display: block;" 
-            allow="autoplay"
-            title="Kripa Shankar - Executive Resume">
-          </iframe>
+          <object data="resume.pdf" type="application/pdf" width="100%" height="100%">
+            <iframe 
+              src="https://drive.google.com/file/d/1MSiB-ZhMVu3wK2VpWy4ho5l9bBOStzg4/preview" 
+              width="100%" 
+              height="100%" 
+              style="border: none; display: block;" 
+              allow="autoplay"
+              title="Kripa Shankar - Executive Resume">
+              <div style="padding: 40px; text-align: center; color: #1e293b; font-family: var(--font-sans);">
+                <h3 style="margin-bottom: 10px;">Executive Resume — Kripa Shankar</h3>
+                <p style="margin-bottom: 16px; color: #64748b;">Third-party browser cookies may be blocking the embedded Google Drive frame.</p>
+                <a href="https://drive.google.com/file/d/1MSiB-ZhMVu3wK2VpWy4ho5l9bBOStzg4/view?usp=sharing" target="_blank" rel="noopener" style="display: inline-block; padding: 10px 20px; background: #76b900; color: #000; font-weight: 700; border-radius: 6px; text-decoration: none;">
+                  Open Resume Directly in Google Drive ↗
+                </a>
+              </div>
+            </iframe>
+          </object>
         </div>
       </div>
     </section>
