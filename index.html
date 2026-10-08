@@ -43,9 +43,13 @@
     }
 
     [data-theme="light"] {
-      --nv-green: #528200;
-      --nv-green-glow: rgba(82, 130, 0, 0.12);
-      --nv-green-dark: #3d6100;
+      --nv-green: #4d7c0f;
+      --nv-green-glow: rgba(77, 124, 15, 0.12);
+      --nv-green-dark: #365314;
+      --accent-cyan: #0284c7;
+      --accent-amber: #b45309;
+      --accent-rose: #e11d48;
+      --accent-purple: #6d28d9;
       --bg-primary: #f8fafc;
       --bg-secondary: #ffffff;
       --bg-header: #ffffff;
@@ -55,18 +59,58 @@
       --border-color: #e2e8f0;
       --border-light: #cbd5e1;
       --text-primary: #0f172a;
-      --text-secondary: #475569;
+      --text-secondary: #334155;
       --text-muted: #64748b;
       --pill-bg: #f1f5f9;
       --pill-text: #334155;
       --badge-bg: rgba(0, 0, 0, 0.06);
       --table-border: #e2e8f0;
-      --table-header-bg: #f1f5f9;
+      --table-header-bg: #f8fafc;
       --code-bg: #0f172a;
       --code-header-bg: #1e293b;
       --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
       --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
       --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+    }
+
+    [data-theme="light"] .terminal-body .cmd {
+      color: #76b900 !important;
+    }
+    [data-theme="light"] .terminal-body .comment {
+      color: #94a3b8 !important;
+    }
+    [data-theme="light"] .blueprint-link:hover,
+    [data-theme="light"] .blueprint-card.cyan .blueprint-link:hover,
+    [data-theme="light"] .blueprint-card.purple .blueprint-link:hover,
+    [data-theme="light"] .blueprint-card.amber .blueprint-link:hover {
+      color: #ffffff !important;
+    }
+    [data-theme="light"] .tech-pill {
+      background: rgba(77, 124, 15, 0.08);
+      border-color: rgba(77, 124, 15, 0.35);
+    }
+    [data-theme="light"] .tech-pill.cyan {
+      background: rgba(2, 132, 199, 0.08);
+      border-color: rgba(2, 132, 199, 0.35);
+    }
+    [data-theme="light"] .tech-pill.purple {
+      background: rgba(109, 40, 217, 0.08);
+      border-color: rgba(109, 40, 217, 0.35);
+    }
+    [data-theme="light"] .tech-pill.amber {
+      background: rgba(180, 83, 9, 0.08);
+      border-color: rgba(180, 83, 9, 0.35);
+    }
+    [data-theme="light"] .badge-status.current {
+      background: rgba(77, 124, 15, 0.08);
+      border-color: rgba(77, 124, 15, 0.35);
+    }
+    [data-theme="light"] .frontier-num-badge {
+      background: rgba(77, 124, 15, 0.08);
+      border-color: rgba(77, 124, 15, 0.35);
+    }
+    [data-theme="light"] .card {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
     * {
@@ -713,7 +757,329 @@
     .frontier-metric strong { color: var(--nv-green); }
 
     footer.app-footer { width: 100%; max-width: 100%; margin: auto 0 0 0; padding: 20px 32px; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--text-muted); flex-wrap: wrap; gap: 12px; background: var(--bg-secondary); }
-  </style>
+
+    /* ==========================================================================
+       EXECUTIVE 1-SLIDE PRESENTATION SYSTEM (5 Core Primitives)
+       ========================================================================== */
+    
+    .slide-fullscreen-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      background: var(--nv-green-glow);
+      color: var(--nv-green);
+      border: 1px solid var(--nv-green);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .slide-fullscreen-btn:hover {
+      background: var(--nv-green);
+      color: #000;
+      box-shadow: 0 0 10px var(--nv-green-glow);
+    }
+    [data-theme="light"] .slide-fullscreen-btn:hover {
+      color: #fff;
+    }
+
+    #jure-single-slide-card {
+      margin: 0 0 28px 0;
+      padding: 16px 20px;
+      min-height: calc(100vh - var(--header-height, 68px) - 100px);
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow: visible;
+      border-top: 4px solid var(--nv-green);
+      background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-alt) 100%);
+      box-sizing: border-box;
+      transition: all 0.2s ease;
+    }
+
+    .slide-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-color);
+      flex-shrink: 0;
+      gap: 12px;
+    }
+
+    .slide-header-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--nv-green);
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .slide-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 0;
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .slide-kpi-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .slide-kpi-item {
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide-kpi-label {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .slide-kpi-val {
+      font-size: 17px;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      line-height: 1.15;
+      margin: 2px 0;
+    }
+
+    .slide-kpi-desc {
+      font-size: 11px;
+      color: var(--text-secondary);
+      line-height: 1.2;
+    }
+
+    .slide-body-grid {
+      display: flex;
+      gap: 12px;
+      flex: 1;
+      min-height: 0;
+    }
+    @media (max-width: 1050px) {
+      .slide-body-grid {
+        flex-direction: column;
+      }
+    }
+
+    .slide-col-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 0;
+      overflow: visible;
+    }
+
+    .slide-col-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-color);
+      flex-shrink: 0;
+    }
+
+    .slide-col-header strong {
+      font-size: 12.5px;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      letter-spacing: 0.5px;
+    }
+
+    .slide-primitives-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .slide-tile {
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 9px 12px;
+      font-size: 11.5px;
+      line-height: 1.4;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: all 0.15s ease;
+    }
+    .slide-tile:hover {
+      border-color: var(--border-light);
+      background: var(--bg-card-hover);
+    }
+
+    .slide-tile-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+
+    .slide-tile-desc {
+      color: var(--text-secondary);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .slide-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 8px;
+      border-top: 1px solid var(--border-color);
+      flex-shrink: 0;
+      font-size: 10.5px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    /* ==========================================================================
+       FULLSCREEN MODE OVERRIDES (:fullscreen & :-webkit-full-screen)
+       ========================================================================== */
+    #jure-single-slide-card:fullscreen,
+    #jure-single-slide-card:-webkit-full-screen {
+      width: 100vw !important;
+      height: 100vh !important;
+      max-width: 100vw !important;
+      max-height: 100vh !important;
+      margin: 0 !important;
+      padding: clamp(16px, 2.2vh, 26px) clamp(22px, 2.5vw, 36px) !important;
+      background: var(--bg-primary) !important;
+      border-radius: 0 !important;
+      border: none !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      gap: clamp(10px, 1.4vh, 16px) !important;
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+      z-index: 999999 !important;
+    }
+
+    #jure-single-slide-card:fullscreen .slide-header-tag,
+    #jure-single-slide-card:-webkit-full-screen .slide-header-tag {
+      font-size: clamp(11.5px, 0.9vw, 13px);
+    }
+    #jure-single-slide-card:fullscreen .slide-title,
+    #jure-single-slide-card:-webkit-full-screen .slide-title {
+      font-size: clamp(21px, 1.8vw, 27px);
+    }
+    #jure-single-slide-card:fullscreen .slide-fullscreen-btn,
+    #jure-single-slide-card:-webkit-full-screen .slide-fullscreen-btn {
+      font-size: clamp(12px, 0.95vw, 13.5px);
+      padding: 6px 14px;
+    }
+
+    #jure-single-slide-card:fullscreen .slide-kpi-bar,
+    #jure-single-slide-card:-webkit-full-screen .slide-kpi-bar {
+      gap: clamp(10px, 1.2vw, 16px);
+    }
+    #jure-single-slide-card:fullscreen .slide-kpi-item,
+    #jure-single-slide-card:-webkit-full-screen .slide-kpi-item {
+      padding: clamp(8px, 1.1vh, 12px) clamp(10px, 1vw, 14px);
+    }
+    #jure-single-slide-card:fullscreen .slide-kpi-label,
+    #jure-single-slide-card:-webkit-full-screen .slide-kpi-label {
+      font-size: clamp(10.5px, 0.85vw, 12px);
+    }
+    #jure-single-slide-card:fullscreen .slide-kpi-val,
+    #jure-single-slide-card:-webkit-full-screen .slide-kpi-val {
+      font-size: clamp(18px, 1.6vw, 24px);
+    }
+    #jure-single-slide-card:fullscreen .slide-kpi-desc,
+    #jure-single-slide-card:-webkit-full-screen .slide-kpi-desc {
+      font-size: clamp(11.5px, 0.9vw, 13px);
+    }
+
+    #jure-single-slide-card:fullscreen .slide-body-grid,
+    #jure-single-slide-card:-webkit-full-screen .slide-body-grid {
+      gap: clamp(12px, 1.4vw, 20px);
+      flex: 1;
+      min-height: 0;
+    }
+
+    #jure-single-slide-card:fullscreen .slide-col-card,
+    #jure-single-slide-card:-webkit-full-screen .slide-col-card {
+      padding: clamp(12px, 1.4vh, 18px);
+      gap: clamp(8px, 1.1vh, 12px);
+    }
+    #jure-single-slide-card:fullscreen .slide-col-header strong,
+    #jure-single-slide-card:-webkit-full-screen .slide-col-header strong {
+      font-size: clamp(13px, 1.1vw, 15px);
+    }
+
+    #jure-single-slide-card:fullscreen .slide-primitives-list,
+    #jure-single-slide-card:-webkit-full-screen .slide-primitives-list {
+      gap: clamp(6px, 1vh, 10px);
+      flex: 1;
+    }
+
+    #jure-single-slide-card:fullscreen .slide-tile,
+    #jure-single-slide-card:-webkit-full-screen .slide-tile {
+      padding: clamp(8px, 1.1vh, 13px) clamp(10px, 1vw, 14px);
+      flex: 1;
+    }
+    #jure-single-slide-card:fullscreen .slide-tile-title,
+    #jure-single-slide-card:-webkit-full-screen .slide-tile-title {
+      font-size: clamp(12.5px, 1.05vw, 14.5px);
+    }
+    #jure-single-slide-card:fullscreen .slide-tile-desc,
+    #jure-single-slide-card:-webkit-full-screen .slide-tile-desc {
+      font-size: clamp(11.5px, 0.95vw, 13px);
+      line-height: 1.4;
+    }
+
+    #jure-single-slide-card:fullscreen .slide-body-box,
+    #jure-single-slide-card:-webkit-full-screen .slide-body-box {
+      font-size: clamp(11.5px, 0.95vw, 13px) !important;
+      padding: clamp(8px, 1.1vh, 12px) !important;
+    }
+    #jure-single-slide-card:fullscreen .slide-body-box strong,
+    #jure-single-slide-card:-webkit-full-screen .slide-body-box strong {
+      font-size: clamp(12px, 1vw, 13.5px) !important;
+    }
+
+    #jure-single-slide-card:fullscreen .slide-footer,
+    #jure-single-slide-card:-webkit-full-screen .slide-footer {
+      font-size: clamp(11px, 0.9vw, 12.5px);
+      padding-top: clamp(8px, 1vh, 12px);
+    }
+</style>
 </head>
 <body data-theme="dark">
 
@@ -751,6 +1117,11 @@
             <span class="tab-icon">🎯</span>
             <span class="tab-label">FSI Frontiers &amp; Blueprints</span>
             <span class="tab-badge" style="color: var(--accent-cyan); border-color: rgba(6,182,212,0.4); background: rgba(6,182,212,0.1);">2026-2027</span>
+          </button>
+          <button class="tab-button" onclick="switchTab('core-primitives')">
+            <span class="tab-icon">⚡</span>
+            <span class="tab-label">Core Primitives Strategy</span>
+            <span class="tab-badge" style="color: var(--nv-green); border-color: rgba(118, 185, 0, 0.4); background: rgba(118, 185, 0, 0.1);">5 Primitives</span>
           </button>
         </div>
 
@@ -1182,7 +1553,10 @@
           <a href="https://build.nvidia.com/nvidia/kumo-relational" target="_blank" rel="noopener" class="blueprint-link" style="color: var(--accent-purple); border-color: rgba(139,92,246,0.4); background: rgba(139,92,246,0.1);">Kumo Relational Model NIM ↗</a>
           <a href="https://build.nvidia.com/blueprints?q=fraud" target="_blank" rel="noopener" class="blueprint-link" style="color: var(--accent-amber); border-color: rgba(245,158,11,0.4); background: rgba(245,158,11,0.1);">Fraud &amp; Financial Crime Catalog ↗</a>
           <button onclick="switchTab('frontiers')" style="margin-left: auto; padding: 7px 16px; background: var(--nv-green); color: #000; border: none; border-radius: var(--radius-sm); font-size: 12px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-            <span>Explore 9 FSI Frontiers &amp; Macro-Strategy</span> <span>&rarr;</span>
+            <span>Explore 9 FSI Frontiers</span> <span>&rarr;</span>
+          </button>
+          <button onclick="switchTab('core-primitives')" style="padding: 7px 16px; background: rgba(118,185,0,0.15); color: var(--nv-green); border: 1px solid var(--nv-green); border-radius: var(--radius-sm); font-size: 12px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+            <span>⚡ Core Primitives Strategy</span> <span>&rarr;</span>
           </button>
         </div>
       </div>
@@ -1657,7 +2031,7 @@
                 <div class="frontier-title">9. The Execution-Value Gap: Parallel Core Strategy</div>
                 <div class="frontier-subtitle">Bypassing Legacy Monoliths via Architectural Agility</div>
               </div>
-              <span class="frontier-num-badge" style="background: rgba(255,255,255,0.1); color: var(--text-primary); border-color: var(--text-primary);">FRONTIER 09</span>
+              <span class="frontier-num-badge" style="background: var(--badge-bg); color: var(--text-primary); border-color: var(--border-light);">FRONTIER 09</span>
             </div>
 
             <div class="frontier-section">
@@ -1773,6 +2147,668 @@
     </section>
 
 
+        <!-- ================== TAB: CORE PRIMITIVES STRATEGY ================== -->
+    <section id="tab-core-primitives" class="tab-pane">
+      <div class="section-title">
+        <span>⚡ Core Primitives Strategy</span>
+        <span class="tech-pill" style="color: var(--nv-green); border-color: rgba(77,124,15,0.4); background: rgba(77,124,15,0.1); margin-left: auto;">Open-Source TFM Architecture</span>
+      </div>
+      <p class="section-desc">
+        Architectural roadmap to transform NVIDIA and Kumo into the open-source foundational machine learning infrastructure for financial intelligence. Moving from brittle, hand-crafted feature pipelines to open-source foundation model blueprints—replicating Revolut's landmark Transaction Foundation Model (PRAGMA) win across Intesa Sanpaolo, Santander, NPCI (India UPI), and US Tier-1 institutions.
+      </p>
+
+      <!-- 1-SLIDE EXECUTIVE PRESENTATION CARD -->
+      <div id="jure-single-slide-card" class="card">
+        
+        <!-- SLIDE TOP BAR: 1-Line Title, Badges & Fullscreen Action -->
+        <div class="slide-topbar">
+          <div style="flex: 1; min-width: 0; padding-right: 12px;">
+            <div class="slide-header-tag">
+              <span>NVIDIA FSI PREDICTIVE TECHNOLOGY // KUMO.AI FOUNDATION MODEL STRATEGY</span>
+              <span style="color: var(--text-muted);">&bull;</span>
+              <span style="color: var(--accent-cyan);">EXECUTIVE 1-SLIDE BRIEF</span>
+            </div>
+            <h2 class="slide-title" title="Frontier FSI AI Portfolio: Replicating the Revolut Win Across Global Banking">
+              Frontier FSI AI Portfolio: Replicating the Revolut Win Across Global Banking
+            </h2>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0; flex-wrap: wrap;">
+            <span class="tech-pill" style="padding: 2px 8px;">Open-Source TFM</span>
+            <span class="tech-pill cyan" style="padding: 2px 8px;">NeMo + Kumo 3</span>
+            <span class="tech-pill purple" style="padding: 2px 8px;">Zero Egress</span>
+            <button onclick="toggleSlideFullscreen()" class="slide-fullscreen-btn" type="button">
+              <span>⛶ Fullscreen Slide</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- SLIDE KPI TICKER BAR: 4 High-Impact Dense Cards -->
+        <div class="slide-kpi-bar">
+          <div class="slide-kpi-item" style="border-left: 3px solid var(--nv-green);">
+            <div class="slide-kpi-label">Revolut PRAGMA Baseline ⚡</div>
+            <div class="slide-kpi-val" style="color: var(--nv-green);">+130% / +65% Lift</div>
+            <div class="slide-kpi-desc">+130% Credit PR-AUC &bull; +65% Fraud Recall over 24B Events</div>
+          </div>
+          <div class="slide-kpi-item" style="border-left: 3px solid var(--accent-cyan);">
+            <div class="slide-kpi-label">Identity-Transaction Loop 🛡️</div>
+            <div class="slide-kpi-val" style="color: var(--accent-cyan);">FPFI &lt;1.8:1 &bull; 98% Auto</div>
+            <div class="slide-kpi-desc">-90% False Decline Friction &bull; TCR &gt;94% on Step-Ups</div>
+          </div>
+          <div class="slide-kpi-item" style="border-left: 3px solid var(--accent-purple);">
+            <div class="slide-kpi-label">Foundation Model Triad 🧠</div>
+            <div class="slide-kpi-val" style="color: var(--accent-purple);">TabFM + TFM + RFM</div>
+            <div class="slide-kpi-desc">Intra-Table + Event Sequence + Multi-Table Graph Core</div>
+          </div>
+          <div class="slide-kpi-item" style="border-left: 3px solid var(--accent-amber);">
+            <div class="slide-kpi-label">Lighthouse Wins 🏛️</div>
+            <div class="slide-kpi-val" style="color: var(--accent-amber);">4 Sovereign Targets</div>
+            <div class="slide-kpi-desc">Intesa Sanpaolo &bull; Santander &bull; NPCI (15B+ UPI) &bull; US G-SIBs</div>
+          </div>
+        </div>
+
+        <!-- SLIDE MAIN BODY: 2 Dominant Focus Areas (5 Core Primitives + Triad & Paradigm) -->
+        <div class="slide-body-grid">
+          
+          <!-- LEFT DOMAIN: THE 5 CORE PRIMITIVES TO BUILD NEXT -->
+          <div class="slide-col-card" style="border-top: 3px solid var(--nv-green); flex: 1.35;">
+            <div class="slide-col-header">
+              <strong>The 5 Core Primitives to Build Next</strong>
+              <span class="tech-pill" style="font-size: 9.5px; padding: 1px 7px;">Engineering Roadmap</span>
+            </div>
+
+            <div class="slide-primitives-list">
+              <!-- Primitive 1 -->
+              <div class="slide-tile" style="border-left: 3px solid var(--nv-green);">
+                <div class="slide-tile-title">
+                  <span>1. Sub-15ms Dynamic Subgraph Framer</span>
+                  <span class="tech-pill" style="font-size: 9px; padding: 1px 5px; color: var(--nv-green);">Triton C++ Inductive</span>
+                </div>
+                <div class="slide-tile-desc">
+                  Extracts local temporal neighborhoods in GPU VRAM and scores streaming payment transactions inline before ledger write.
+                </div>
+              </div>
+
+              <!-- Primitive 2 -->
+              <div class="slide-tile" style="border-left: 3px solid var(--accent-cyan);">
+                <div class="slide-tile-title">
+                  <span>2. Universal Risk Tokenizer</span>
+                  <span class="tech-pill cyan" style="font-size: 9px; padding: 1px 5px;">Composable Tensor</span>
+                </div>
+                <div class="slide-tile-desc">
+                  Unifies tabular customer profiles, sequential transaction logs, and relational graph topology into a single composable tensor.
+                </div>
+              </div>
+
+              <!-- Primitive 3 -->
+              <div class="slide-tile" style="border-left: 3px solid var(--accent-purple);">
+                <div class="slide-tile-title">
+                  <span>3. Streaming-to-Tensor Zero-Copy Ingestor</span>
+                  <span class="tech-pill purple" style="font-size: 9px; padding: 1px 5px;">Kafka / Flink &rarr; GPU</span>
+                </div>
+                <div class="slide-tile-desc">
+                  Mutates GPU-resident dynamic adjacency graphs directly from Kafka and Apache Flink event streams without host PCIe bottlenecks.
+                </div>
+              </div>
+
+              <!-- Primitive 4 -->
+              <div class="slide-tile" style="border-left: 3px solid var(--accent-amber);">
+                <div class="slide-tile-title">
+                  <span>4. Asymmetric Delayed-Feedback Loss Engine</span>
+                  <span class="tech-pill amber" style="font-size: 9px; padding: 1px 5px;">Chargeback Delay</span>
+                </div>
+                <div class="slide-tile-desc">
+                  Corrects for 90-day chargeback reporting delays and unobservable counterfactual declines via propensity-weighted loss formulations.
+                </div>
+              </div>
+
+              <!-- Primitive 5 -->
+              <div class="slide-tile" style="border-left: 3px solid var(--accent-rose);">
+                <div class="slide-tile-title">
+                  <span>5. Differentiable Neuro-Symbolic Policy Compiler</span>
+                  <span class="tech-pill" style="font-size: 9px; padding: 1px 5px; color: var(--accent-rose); border-color: rgba(225,29,72,0.4); background: rgba(225,29,72,0.08);">SR 11-7 Compliance</span>
+                </div>
+                <div class="slide-tile-desc">
+                  Embeds mandatory banking compliance rules and regulatory constraints directly into foundation model attention masks.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT DOMAIN: FOUNDATION MODEL TRIAD & UPSTREAM PARADIGM -->
+          <div class="slide-col-card" style="border-top: 3px solid var(--accent-cyan); flex: 1;">
+            <div class="slide-col-header">
+              <strong>Foundation Model Triad &amp; Paradigm</strong>
+              <span class="tech-pill cyan" style="font-size: 9.5px; padding: 1px 7px;">Architecture Backbone</span>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 8px; flex: 1; justify-content: space-between;">
+              <!-- The Triad Strip -->
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;">
+                <div class="slide-body-box" style="background: rgba(180,83,9,0.08); border: 1px solid rgba(180,83,9,0.25); border-radius: 4px; padding: 6px; text-align: center;">
+                  <div style="font-size: 10.5px; font-weight: 800; color: var(--accent-amber);">Kumo TabFM</div>
+                  <div style="font-size: 9.5px; color: var(--text-secondary); line-height: 1.25;">Intra-table features<br>Frozen LLM caching</div>
+                </div>
+                <div class="slide-body-box" style="background: var(--nv-green-glow); border: 1px solid var(--nv-green); border-radius: 4px; padding: 6px; text-align: center;">
+                  <div style="font-size: 10.5px; font-weight: 800; color: var(--nv-green);">Revolut PRAGMA</div>
+                  <div style="font-size: 9.5px; color: var(--text-secondary); line-height: 1.25;">Event sequences<br>NeMo AutoModel</div>
+                </div>
+                <div class="slide-body-box" style="background: rgba(109,40,217,0.08); border: 1px solid rgba(109,40,217,0.25); border-radius: 4px; padding: 6px; text-align: center;">
+                  <div style="font-size: 10.5px; font-weight: 800; color: var(--accent-purple);">Kumo 3 RFM</div>
+                  <div style="font-size: 9.5px; color: var(--text-secondary); line-height: 1.25;">Multi-table PK/FK<br>Declarative PQL</div>
+                </div>
+              </div>
+
+              <!-- Upstream Paradigm Highlight -->
+              <div class="slide-body-box" style="background: var(--bg-card-alt); border-left: 3px solid var(--nv-green); border-radius: 4px; padding: 8px 10px; font-size: 11px; color: var(--text-secondary); line-height: 1.4;">
+                <strong style="color: var(--text-primary);">The Upstream Paradigm:</strong> <em>"Fraud is an Identity Problem Upstream, Not a Payment Problem Downstream."</em> Shifting from reactive blocking to continuous <strong>Identity-Transaction Loop</strong> trust.
+              </div>
+
+              <!-- Target Sovereign Deployments List -->
+              <div class="slide-body-box" style="background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 4px; padding: 9px 12px; font-size: 11px; line-height: 1.45;">
+                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--nv-green); font-weight: 700; margin-bottom: 4px; text-transform: uppercase;">// TARGET GLOBAL LIGHTHOUSE INSTITUTIONS</div>
+                <div>&bull; <strong style="color: var(--text-primary);">Intesa Sanpaolo:</strong> Replicate Revolut PRAGMA for 13M retail accounts.</div>
+                <div>&bull; <strong style="color: var(--text-primary);">Santander:</strong> Upgrade bespoke GNN research to unified Kumo 3 RFM.</div>
+                <div>&bull; <strong style="color: var(--text-primary);">NPCI (India UPI):</strong> WholeGraph streaming transformer at 15B+ monthly txs.</div>
+                <div>&bull; <strong style="color: var(--text-primary);">US Tier-1 Cohort:</strong> JPMC, Citizens, Fifth Third, TD Bank ($353M loss drop).</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE FOOTER: Metadata & Instructions -->
+        <div class="slide-footer">
+          <div>
+            <span>CONFIDENTIAL // EXECUTIVE STRATEGY BRIEF &bull; NVIDIA FSI PREDICTIVE TECHNOLOGY &bull; KUMO.AI</span>
+          </div>
+          <div style="display: flex; gap: 14px;">
+            <span>Presented by: <strong style="color: var(--text-primary);">Kripa Shankar</strong></span>
+            <span style="color: var(--nv-green);">Press <strong>F</strong> for Fullscreen</span>
+          </div>
+        </div>
+
+      </div>
+
+<!-- SECTION A: EXECUTIVE HEADER & THESIS -->
+      <div class="card" style="margin-bottom: 24px; border-top: 4px solid var(--nv-green); background: linear-gradient(135deg, var(--bg-card) 0%, rgba(118, 185, 0, 0.05) 100%);">
+        <div class="card-header" style="flex-wrap: wrap; gap: 10px;">
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--nv-green); text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;">Lighthouse Portfolio Mandate // Open-Source Blueprint Strategy</div>
+            <h3 style="font-size: 20px; color: var(--text-primary); margin: 0;">Frontier FSI AI Portfolio: Replicating the Revolut Win Across Global Banking</h3>
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="tech-pill" style="color: var(--nv-green); border-color: rgba(118,185,0,0.5); background: rgba(118,185,0,0.1);">Open Source TFM Blueprint</span>
+            <span class="tech-pill cyan">NVIDIA NeMo + Kumo 3</span>
+            <span class="tech-pill purple">Zero Feature Engineering</span>
+          </div>
+        </div>
+        <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+          <strong>Core Mandate:</strong> Moving global banking from brittle, hand-crafted feature pipelines to open-source foundation model blueprints. Revolut’s PRAGMA proved that a single behavioral foundation model backbone trained on <strong>24 billion banking events</strong> across 111 countries can replace dozens of siloed XGBoost pipelines. By unifying <strong>Tabular Foundation Models (Kumo TabFM)</strong>, <strong>Transaction Foundation Models (PRAGMA / NeMo AutoModel)</strong>, and <strong>Relational Graph Foundation Models (Kumo 3)</strong>, NVIDIA + Kumo establish the singular open stack to win Intesa Sanpaolo, Santander, NPCI, and Tier-1 G-SIBs.
+        </p>
+
+        <!-- Metric Badges Row -->
+        <div class="grid-4">
+          <div class="kpi-card" style="border-top-color: var(--nv-green); background: var(--bg-card-alt);">
+            <div class="kpi-label">Revolut PRAGMA Baseline <span>⚡</span></div>
+            <div class="kpi-value" style="font-size: 20px; color: var(--nv-green);">+130% / +65%</div>
+            <div class="kpi-meta"><span class="kpi-trend trend-up">↑ +130% PR-AUC</span> Credit · <span class="kpi-trend trend-up">↑ +65% Recall</span> Fraud on 24B events</div>
+          </div>
+          <div class="kpi-card cyan" style="background: var(--bg-card-alt);">
+            <div class="kpi-label">Coinbase Production Proof <span>🛡️</span></div>
+            <div class="kpi-value" style="font-size: 20px; color: var(--accent-cyan);">-87% YoY Losses</div>
+            <div class="kpi-meta"><span class="kpi-trend trend-up">98% Auto-Decision</span> · Sub-18ms SLA · &lt;1/wk scams landed</div>
+          </div>
+          <div class="kpi-card purple" style="background: var(--bg-card-alt);">
+            <div class="kpi-label">Global Lighthouse Targets <span>🏛️</span></div>
+            <div class="kpi-value" style="font-size: 20px; color: var(--accent-purple);">4 Sovereign Scale</div>
+            <div class="kpi-meta">Intesa Sanpaolo · Santander · NPCI (15B+ Mo. UPI) · US G-SIBs</div>
+          </div>
+          <div class="kpi-card amber" style="background: var(--bg-card-alt);">
+            <div class="kpi-label">In-VPC Warehouse Execution <span>⚡</span></div>
+            <div class="kpi-value" style="font-size: 20px; color: var(--accent-amber);">100x Speedup</div>
+            <div class="kpi-meta">Zero data egress via Snowflake SPCS &amp; Databricks Unity Catalog</div>
+          </div>
+        </div>
+
+        <!-- The Upstream Trust-First Paradigm & Invisible Friction Framework -->
+        <div style="margin-top: 20px; padding: 14px 16px; background: var(--bg-card-alt); border: 1px solid var(--border-color); border-left: 4px solid var(--accent-cyan); border-radius: var(--radius-sm);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+            <div style="font-size: 13px; font-weight: 700; color: var(--text-primary);">
+              The "Trust-First" Paradigm &amp; The Identity-Transaction Loop
+            </div>
+            <span class="tech-pill cyan" style="font-size: 10px;">Upstream Intelligence Paradigm</span>
+          </div>
+          <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">
+            <strong>Core Thesis:</strong> <em>"Fraud is an Identity Problem Upstream, Not a Payment Problem Downstream."</em> Traditional banking treats risk as a reactive "detect and block" filter at checkout, inflicting heavy false-positive friction on legitimate customers. In Jure's model, we introduce the <strong>Identity-Transaction Loop</strong>: verified identity trust scores inform real-time transaction underwriting, while streaming payment telemetry continuously refines the entity trust genome across the banking network.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; font-family: var(--font-mono); font-size: 11px;">
+            <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 8px 10px; border-radius: 4px;">
+              <span style="color: var(--text-muted); display: block; font-size: 10px;">FP Friction Index (FPFI)</span>
+              <strong style="color: var(--nv-green); font-size: 13px;">&lt;1.8:1 Good Users</strong>
+              <div style="color: var(--text-secondary); font-size: 9.5px;">-90% drop from 18:1 baseline</div>
+            </div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 8px 10px; border-radius: 4px;">
+              <span style="color: var(--text-muted); display: block; font-size: 10px;">Trust Conversion Rate (TCR)</span>
+              <strong style="color: var(--accent-cyan); font-size: 13px;">94.2% Completion</strong>
+              <div style="color: var(--text-secondary); font-size: 9.5px;">Friction applied to &lt;1% traffic</div>
+            </div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 8px 10px; border-radius: 4px;">
+              <span style="color: var(--text-muted); display: block; font-size: 10px;">Mean Time to Detection (MTTD)</span>
+              <strong style="color: var(--accent-purple); font-size: 13px;">&lt;48 Hours</strong>
+              <div style="color: var(--text-secondary); font-size: 9.5px;">Down from 14 weeks legacy</div>
+            </div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 8px 10px; border-radius: 4px;">
+              <span style="color: var(--text-muted); display: block; font-size: 10px;">Identity Lifetime Value (ILV)</span>
+              <strong style="color: var(--accent-amber); font-size: 13px;">+$84.6M ARR Lift</strong>
+              <div style="color: var(--text-secondary); font-size: 9.5px;">Prevented cart/wire dropoffs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION B: THE 4 FRAUD ARCHETYPES & MODEL TAXONOMY -->
+      <div class="card" style="margin-bottom: 24px; border-top: 3px solid var(--accent-cyan);">
+        <div class="card-header" style="flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h3>The Space of All Fraud: 4 Archetypal Vectors &amp; Model Taxonomy</h3>
+            <div style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">
+              Mapping every banking financial crime vector to its mathematical domain (Topology Complexity vs. Latency Constraint)
+            </div>
+          </div>
+          <span class="tech-pill cyan">Topology vs Latency Matrix</span>
+        </div>
+
+        <!-- Visual 2x2 Matrix Overview Banner -->
+        <div style="background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 14px 18px; margin-bottom: 20px; font-family: var(--font-mono); font-size: 11px; overflow-x: auto;">
+          <div style="color: var(--nv-green); font-weight: 700; margin-bottom: 8px;">// DOMAIN MATRIX: TOPOLOGY COMPLEXITY &times; LATENCY CONSTRAINTS</div>
+          <div style="display: grid; grid-template-columns: 140px 1fr 1fr; gap: 8px; align-items: stretch; min-width: 650px;">
+            <div style="background: transparent; color: var(--text-muted); font-weight: 700; display: flex; align-items: center; justify-content: center; text-transform: uppercase;"></div>
+            <div style="background: var(--bg-card); border: 1px dashed var(--border-color); padding: 6px 10px; text-align: center; color: var(--text-secondary); font-weight: 700; border-radius: 4px;">
+              LOW TOPOLOGY (Isolated Entity / Event Sequence)
+            </div>
+            <div style="background: var(--bg-card); border: 1px dashed var(--border-color); padding: 6px 10px; text-align: center; color: var(--accent-cyan); font-weight: 700; border-radius: 4px;">
+              HIGH TOPOLOGY (Multi-Hop Graph / Relational Links)
+            </div>
+
+            <div style="background: var(--nv-green-glow); border: 1px solid var(--nv-green); padding: 8px; color: var(--nv-green); font-weight: 700; border-radius: 4px; display: flex; align-items: center; justify-content: center; text-align: center;">
+              ULTRA-FAST<br>(&le;50ms Inline)
+            </div>
+            <div style="background: var(--nv-green-glow); border: 1px solid var(--nv-green); padding: 10px; border-radius: 4px;">
+              <strong style="color: var(--text-primary);">Vector 1: Card &amp; Payment Auth (CNP/POS)</strong><br>
+              <span style="color: var(--text-secondary); font-size: 10px;">&bull; Anomaly: Intra-sequence behavioral deviation</span><br>
+              <span style="color: var(--nv-green); font-size: 10px; font-weight: 600;">&bull; Model: Transaction FM (PRAGMA via NeMo)</span><br>
+              <span style="color: var(--text-muted); font-size: 10px;">&bull; Win: Intesa Sanpaolo &amp; US Regionals</span>
+            </div>
+            <div style="background: rgba(6,182,212,0.08); border: 1px solid var(--accent-cyan); padding: 10px; border-radius: 4px;">
+              <strong style="color: var(--text-primary);">Vector 2: High-Velocity Mules (UPI/FedNow)</strong><br>
+              <span style="color: var(--text-secondary); font-size: 10px;">&bull; Anomaly: Multi-hop smurfing &amp; burst dispersion</span><br>
+              <span style="color: var(--accent-cyan); font-size: 10px; font-weight: 600;">&bull; Model: Streaming Graph Transformer (cuGraph)</span><br>
+              <span style="color: var(--text-muted); font-size: 10px;">&bull; Win: NPCI (India UPI: 15B+ mo. txs)</span>
+            </div>
+
+            <div style="background: rgba(139,92,246,0.1); border: 1px solid var(--accent-purple); padding: 8px; color: var(--accent-purple); font-weight: 700; border-radius: 4px; display: flex; align-items: center; justify-content: center; text-align: center;">
+              NEARLINE / BATCH<br>(Seconds to Hours)
+            </div>
+            <div style="background: rgba(245,158,11,0.08); border: 1px solid var(--accent-amber); padding: 10px; border-radius: 4px;">
+              <strong style="color: var(--text-primary);">Vector 3: ATO &amp; Credential Stuffing</strong><br>
+              <span style="color: var(--text-secondary); font-size: 10px;">&bull; Anomaly: Behavioral drift &amp; device hopping</span><br>
+              <span style="color: var(--accent-amber); font-size: 10px; font-weight: 600;">&bull; Model: Hybrid TFM + Kumo TabFM</span><br>
+              <span style="color: var(--text-muted); font-size: 10px;">&bull; Win: Santander &amp; Commercial Banks</span>
+            </div>
+            <div style="background: rgba(139,92,246,0.08); border: 1px solid var(--accent-purple); padding: 10px; border-radius: 4px;">
+              <strong style="color: var(--text-primary);">Vector 4: APP Scams &amp; Synthetic ID</strong><br>
+              <span style="color: var(--text-secondary); font-size: 10px;">&bull; Anomaly: Relational collusion (user authenticates)</span><br>
+              <span style="color: var(--accent-purple); font-size: 10px; font-weight: 600;">&bull; Model: Relational FM (Kumo 3 Warehouse)</span><br>
+              <span style="color: var(--text-muted); font-size: 10px;">&bull; Win: JPMC, Citizens, Fifth Third, TD Bank</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Detailed Interactive Cards Grid -->
+        <div class="grid-2">
+          <!-- Vector 1 Card -->
+          <div class="card" style="border-left: 3px solid var(--nv-green); background: var(--bg-card-alt); padding: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <h4 style="margin: 0; font-size: 15px; color: var(--text-primary);">Vector 1: Card &amp; Payment Auth (CNP / POS)</h4>
+              <span class="tech-pill" style="color: var(--nv-green); border-color: rgba(118,185,0,0.5); font-size: 10px;">SLA: &lt;30ms Inline</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">
+              <strong>Characteristics:</strong> Extreme transaction volume, strict sub-30ms P99 SLA, isolated account event stream. Requires scoring transactions inline before card network authorization timeouts.
+            </p>
+            <div style="font-size: 12px; margin-bottom: 8px;">
+              <span style="color: var(--text-muted); font-family: var(--font-mono); font-size: 10px; text-transform: uppercase;">Optimal Architecture:</span><br>
+              <strong style="color: var(--text-primary);">Transaction Foundation Model (TFM / Revolut PRAGMA via NeMo AutoModel)</strong>
+            </div>
+            <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.4; margin-bottom: 12px;">
+              Tokenizes continuous transaction amounts via soft bins, inter-event log-time deltas, Merchant Category Codes (MCC), and text embeddings (Llama-Nemotron-Embed) to predict next-event likelihood distributions.
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 8px; font-size: 11px; font-family: var(--font-mono);">
+              <span style="color: var(--text-muted);">Hardware: NVIDIA L40S / L4 (Triton)</span>
+              <span style="color: var(--nv-green); font-weight: 700;">Target: Intesa Sanpaolo</span>
+            </div>
+          </div>
+
+          <!-- Vector 2 Card -->
+          <div class="card" style="border-left: 3px solid var(--accent-cyan); background: var(--bg-card-alt); padding: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <h4 style="margin: 0; font-size: 15px; color: var(--text-primary);">Vector 2: High-Velocity Mules &amp; Instant Settlement</h4>
+              <span class="tech-pill cyan" style="font-size: 10px;">SLA: &lt;100ms Streaming</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">
+              <strong>Characteristics:</strong> Instantaneous multi-hop fund dispersion via automated botnets over real-time rails (UPI, FedNow, RTP). Fraudulent funds routed through 4+ hops in seconds.
+            </p>
+            <div style="font-size: 12px; margin-bottom: 8px;">
+              <span style="color: var(--text-muted); font-family: var(--font-mono); font-size: 10px; text-transform: uppercase;">Optimal Architecture:</span><br>
+              <strong style="color: var(--text-primary);">Streaming Graph Transformer (NVIDIA cuGraph + WholeGraph)</strong>
+            </div>
+            <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.4; margin-bottom: 12px;">
+              Dynamic In-Memory Subgraph Framing extracts the 2-hop beneficiary ego-graph directly inside GPU VRAM, detecting coordinated fan-out/fan-in topology anomalies before irrevocable settlement locks.
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 8px; font-size: 11px; font-family: var(--font-mono);">
+              <span style="color: var(--text-muted);">Hardware: NVIDIA GH200 Grace Hopper</span>
+              <span style="color: var(--accent-cyan); font-weight: 700;">Target: NPCI (UPI 15B+ mo. txs)</span>
+            </div>
+          </div>
+
+          <!-- Vector 3 Card -->
+          <div class="card" style="border-left: 3px solid var(--accent-amber); background: var(--bg-card-alt); padding: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <h4 style="margin: 0; font-size: 15px; color: var(--text-primary);">Vector 3: Account Takeover (ATO) &amp; Credential Stuffing</h4>
+              <span class="tech-pill amber" style="font-size: 10px;">SLA: Sub-Second / Session</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">
+              <strong>Characteristics:</strong> Session-level behavioral anomalies, IP/device proxy hopping, credential resets, and stealth bot logins that bypass traditional single-point MFA checks.
+            </p>
+            <div style="font-size: 12px; margin-bottom: 8px;">
+              <span style="color: var(--text-muted); font-family: var(--font-mono); font-size: 10px; text-transform: uppercase;">Optimal Architecture:</span><br>
+              <strong style="color: var(--text-primary);">Multi-Modal Identity Transformer (MIT) + Kumo TabFM (Cached Tokenization)</strong>
+            </div>
+            <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.4; margin-bottom: 12px;">
+              Pairs sequential session telemetry with multimodal tokens (behavioral biometrics, touch dynamics, mouse jitter, device sensor telemetry). Pairs with Kumo TabFM schema-independent user behavioral baselines and frozen LLM metadata caching (&lt;$0.01 per 10M rows) to detect behavioral entropy collapse without manual feature stores.
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 8px; font-size: 11px; font-family: var(--font-mono);">
+              <span style="color: var(--text-muted);">Hardware: NVIDIA H100 / L40S Cluster</span>
+              <span style="color: var(--accent-amber); font-weight: 700;">Target: Santander &amp; Commercial Banks</span>
+            </div>
+          </div>
+
+          <!-- Vector 4 Card -->
+          <div class="card" style="border-left: 3px solid var(--accent-purple); background: var(--bg-card-alt); padding: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <h4 style="margin: 0; font-size: 15px; color: var(--text-primary);">Vector 4: APP Scams, Pig-Butchering &amp; Synthetic ID</h4>
+              <span class="tech-pill purple" style="font-size: 10px;">SLA: Nearline / Warehouse Batch</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">
+              <strong>Characteristics:</strong> Genuine user authenticates transaction under social duress (passes biometric liveness &amp; device checks). The fraud anomaly resides strictly in the destination graph and shared synthetic PII.
+            </p>
+            <div style="font-size: 12px; margin-bottom: 8px;">
+              <span style="color: var(--text-muted); font-family: var(--font-mono); font-size: 10px; text-transform: uppercase;">Optimal Architecture:</span><br>
+              <strong style="color: var(--text-primary);">Relational Foundation Model (Kumo 3 in Snowflake/Databricks)</strong>
+            </div>
+            <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.4; margin-bottom: 12px;">
+              Operates zero-shot over multi-table foreign-key relational schemas directly inside the warehouse. Hierarchical cell+graph attention computes structural link anomalies without flat denormalized tables.
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 8px; font-size: 11px; font-family: var(--font-mono);">
+              <span style="color: var(--text-muted);">Hardware: NVIDIA B200 / H100 Cluster</span>
+              <span style="color: var(--accent-purple); font-weight: 700;">Target: JPMC, Citizens, Fifth Third, TD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION C: THE ARCHITECTURAL TRIAD & FRONTIER COMPETENCES -->
+      <div class="card" style="margin-bottom: 24px; border-top: 3px solid var(--accent-purple);">
+        <div class="card-header" style="flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h3>The NVIDIA FSI Foundation Model Triad &amp; What We Must Build Next</h3>
+            <div style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">
+              How Tabular FM, Transaction FM, and Relational Graph FM intersect—and the 4 missing frontier engineering capabilities
+            </div>
+          </div>
+          <span class="tech-pill purple">Triad &amp; Engineering Roadmap</span>
+        </div>
+
+        <!-- Foundation Model Triad Comparison Table -->
+        <div class="table-responsive" style="margin-bottom: 24px;">
+          <table class="fsi-table">
+            <thead>
+              <tr>
+                <th style="width: 18%;">Dimension</th>
+                <th style="width: 27%; color: var(--accent-amber);">Tabular FM (Kumo TabFM)</th>
+                <th style="width: 27%; color: var(--nv-green);">Transaction FM (Revolut PRAGMA)</th>
+                <th style="width: 28%; color: var(--accent-purple);">Relational Graph FM (Kumo 3)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Mathematical Scope</strong></td>
+                <td><strong style="color: var(--text-primary);">Intra-Table Attributes</strong><br><span style="font-size: 11px; color: var(--text-secondary);">Isolated row-level columns &amp; categorical metadata</span></td>
+                <td><strong style="color: var(--text-primary);">Inter-Event Sequence</strong><br><span style="font-size: 11px; color: var(--text-secondary);">Chronological customer transaction &amp; journey logs</span></td>
+                <td><strong style="color: var(--text-primary);">Inter-Table Multi-Relational</strong><br><span style="font-size: 11px; color: var(--text-secondary);">Multi-table PK/FK edges, graphs, &amp; entity links</span></td>
+              </tr>
+              <tr>
+                <td><strong>Core Mechanism</strong></td>
+                <td>Schema-agnostic column embedding; frozen LLM metadata caching (&lt;$0.01 per 10M rows); soft-binning continuous values onto L1 unit sphere.</td>
+                <td>NeMo AutoModel / Llama encoder backbone; temporal log-decay inter-event time encoding; merchant text embeddings.</td>
+                <td>Hierarchical cell+graph attention; message-passing over dynamic schema graphs; declarative Predictive Query Language (PQL).</td>
+              </tr>
+              <tr>
+                <td><strong>Data Engineering</strong></td>
+                <td>Zero schema mapping required; handles missing/renamed columns zero-shot.</td>
+                <td>Chronological event stream logging (Kafka / Delta Lake); tokenized event windows.</td>
+                <td>Zero table flattening or denormalization; runs natively in-place over Snowflake SPCS or Databricks Unity Catalog.</td>
+              </tr>
+              <tr>
+                <td><strong>Query Interface</strong></td>
+                <td>Zero-shot column completion &amp; tabular anomaly scoring.</td>
+                <td>Next-event likelihood estimation; masked token sequence reconstruction.</td>
+                <td>Declarative PQL: <code>PREDICT fraud_flag FOR Customer</code> evaluated at query runtime without feature store pipelines.</td>
+              </tr>
+              <tr>
+                <td><strong>Primary FSI Domain</strong></td>
+                <td>Cold-start credit underwriting, instant KYC, account profiling, static compliance data.</td>
+                <td>Card authorization (CNP/POS), sub-30ms payment auth, immediate behavioral deviation.</td>
+                <td>Synthetic ID rings, 50/50 mule rings, APP scams, cross-border AML smurfing networks, FRAML.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- The 4 Frontier Gaps: What NVIDIA + Kumo Must Build Next -->
+        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--nv-green); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; margin-bottom: 12px;">
+          // THE 4 FRONTIER COMPETENCES: CLOSING THE GAP FOR GLOBAL SOVEREIGN BANKS
+        </div>
+
+        <div class="grid-2">
+          <!-- Gap 1 -->
+          <div class="card" style="border-top: 2px solid var(--nv-green); background: var(--bg-card-alt); padding: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <h4 style="margin: 0; font-size: 14px; color: var(--text-primary);">1. Sub-15ms Streaming Inductive NIM</h4>
+              <span class="tech-pill" style="color: var(--nv-green); border-color: rgba(118,185,0,0.4); font-size: 10px;">Inline Payment SLA</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 8px;">
+              <strong>The Gap:</strong> Kumo 3 currently operates inside enterprise warehouses (nearline/batch). Real-time payment rails (FedNow, RTP, card authorization) demand sub-15ms deterministic P99 latency before funds settle.
+            </p>
+            <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+              <strong style="color: var(--nv-green);">Engineering Solution:</strong> Build dynamic In-Memory Subgraph Framing on <strong>Triton Inference Server</strong> using NVIDIA cuGraph and WholeGraph. Extract the 2-hop beneficiary ego-graph in GPU memory to score streaming transactions inline before ledger write.
+            </div>
+          </div>
+
+          <!-- Gap 2 -->
+          <div class="card" style="border-top: 2px solid var(--accent-cyan); background: var(--bg-card-alt); padding: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <h4 style="margin: 0; font-size: 14px; color: var(--text-primary);">2. Unified Open Schema-Agnostic Tokenizer</h4>
+              <span class="tech-pill cyan" style="font-size: 10px;">Zero-ETL Ingestion</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 8px;">
+              <strong>The Gap:</strong> Banks maintain hundreds of incompatible table schemas, transaction protocols (ISO 20022 vs. Fedwire), and event payloads, forcing 12–16 weeks of manual Spark ETL per model.
+            </p>
+            <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+              <strong style="color: var(--accent-cyan);">Engineering Solution:</strong> Unify Kumo TabFM's cached LLM metadata tokenization and soft-binning with PRAGMA's temporal log-decay tokenization. Create a unified open-source tokenizer that processes banking logs and relational tables without manual schema mapping.
+            </div>
+          </div>
+
+          <!-- Gap 3 -->
+          <div class="card" style="border-top: 2px solid var(--accent-purple); background: var(--bg-card-alt); padding: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <h4 style="margin: 0; font-size: 14px; color: var(--text-primary);">3. WholeGraph Distributed Memory Tiering</h4>
+              <span class="tech-pill purple" style="font-size: 10px;">NPCI / UPI Scale</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 8px;">
+              <strong>The Gap:</strong> Operating at NPCI / UPI scale (15B+ monthly transactions, 100B+ dynamic edges) immediately exhausts GPU VRAM, causing out-of-memory crashes on monolithic GNN pipelines.
+            </p>
+            <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+              <strong style="color: var(--accent-purple);">Engineering Solution:</strong> Implement NVIDIA WholeGraph tiered memory architecture. Stream temporal k-hop subgraphs across NVLink-C2C, host DRAM, and high-speed NVMe storage to enable seamless 100B+ edge relational graph reasoning on GH200 clusters.
+            </div>
+          </div>
+
+          <!-- Gap 4 -->
+          <div class="card" style="border-top: 2px solid var(--accent-amber); background: var(--bg-card-alt); padding: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <h4 style="margin: 0; font-size: 14px; color: var(--text-primary);">4. Autonomous Agent Caseflow Layer</h4>
+              <span class="tech-pill amber" style="font-size: 10px;">kumo-rfm-mcp</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 8px;">
+              <strong>The Gap:</strong> Bank risk analysts spend 45+ minutes per flagged case manually pulling core records, navigating siloed databases, and drafting regulatory SAR narratives for FinCEN.
+            </p>
+            <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+              <strong style="color: var(--accent-amber);">Engineering Solution:</strong> Build an open-source <strong>Model Context Protocol (MCP) server (kumo-rfm-mcp)</strong>. Enable autonomous agent swarms to generate PQL queries, analyze entity ego-graphs, compute Shapley heatmaps, and draft SAR filings directly into ServiceNow IRM &amp; Pega.
+            </div>
+          </div>
+
+          <!-- Gap 5 -->
+          <div class="card" style="border-top: 2px solid var(--nv-green); background: var(--bg-card-alt); padding: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <h4 style="margin: 0; font-size: 14px; color: var(--text-primary);">5. Cross-Platform Identity Persistence &amp; Entropy</h4>
+              <span class="tech-pill" style="font-size: 10px; color: var(--nv-green); border-color: rgba(77,124,15,0.4);">Continuous Trust</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 8px;">
+              <strong>The Gap:</strong> Users face repetitive, disruptive authentication friction whenever hopping between mobile banking apps, debit rails, and partner embedded finance portals.
+            </p>
+            <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+              <strong style="color: var(--nv-green);">Engineering Solution:</strong> Maintain persistent decentralized identity trust tokens. Calculate real-time behavioral entropy from sensor micro-dynamics (touch duration, pressure variance, gyro stability) to verify legitimate users continuously without re-authentication step-ups.
+            </div>
+          </div>
+
+          <!-- Gap 6 -->
+          <div class="card" style="border-top: 2px solid var(--accent-cyan); background: var(--bg-card-alt); padding: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <h4 style="margin: 0; font-size: 14px; color: var(--text-primary);">6. Privacy-Preserving Federated Intelligence</h4>
+              <span class="tech-pill cyan" style="font-size: 10px;">Zero-Knowledge Graph</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 8px;">
+              <strong>The Gap:</strong> Privacy regulations (GDPR, GLBA, Bank Secrecy Act) prevent competing banks from sharing raw transaction records, allowing cross-bank mule syndicates to smurf undetected.
+            </p>
+            <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+              <strong style="color: var(--accent-cyan);">Engineering Solution:</strong> Deploy <strong>NVIDIA Confidential Computing (CC on H100)</strong> with Zero-Knowledge multi-party graph embeddings. Banks collaboratively train Kumo 3 and cuGraph models over blinded cross-border beneficiary graphs with zero raw customer PII leakage.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION D: LIGHTHOUSE ENGAGEMENT & EXECUTION PLAYBOOK -->
+      <div class="card" style="border-top: 3px solid var(--nv-green); background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-alt) 100%);">
+        <div class="card-header" style="flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h3>Lighthouse Engagement &amp; Global Execution Roadmap (Replicating Revolut)</h3>
+            <div style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">
+              How we take the Revolut PRAGMA blueprint to Intesa Sanpaolo, Santander, NPCI, and US Tier-1 G-SIBs
+            </div>
+          </div>
+          <span class="tech-pill" style="color: var(--nv-green); border-color: rgba(118,185,0,0.5); background: rgba(118,185,0,0.1);">60-Day Sprint Playbook</span>
+        </div>
+
+        <!-- 60-Day Execution Engine Timeline -->
+        <div class="grid-3" style="margin-bottom: 24px;">
+          <div class="timeline-card" style="border-top-color: var(--accent-cyan); background: var(--bg-card-alt);">
+            <div class="timeline-horizon" style="color: var(--accent-cyan);">SPRINT 1 // DAYS 1–14</div>
+            <div class="timeline-title">Autonomous Schema Mapping &amp; Zero-Shot Benchmark</div>
+            <div class="timeline-desc">
+              Deploy Autonomous Schema Mapper Agents to ingest bank relational schemas (Snowflake / Databricks / Delta Lake) with zero manual ETL. Deliver zero-shot PQL fraud detection benchmark on historical shadow data within 14 days, proving &gt;25% PR-AUC lift over legacy GBDTs.
+            </div>
+          </div>
+          <div class="timeline-card" style="border-top-color: var(--nv-green); background: var(--bg-card-alt);">
+            <div class="timeline-horizon" style="color: var(--nv-green);">SPRINT 2 // DAYS 15–30</div>
+            <div class="timeline-title">In-VPC Kumo 3 NIM Deployment (Zero Egress)</div>
+            <div class="timeline-desc">
+              Deploy containerized Kumo 3 Relational Foundation Model NIM inside the customer's secure VPC, Snowflake Native App (SPCS), or Databricks Unity Catalog. Complete Fed SR 11-7 validation packs, attention attribution heatmaps, and zero-egress compliance audit with bank Model Risk teams.
+            </div>
+          </div>
+          <div class="timeline-card" style="border-top-color: var(--accent-purple); background: var(--bg-card-alt);">
+            <div class="timeline-horizon" style="color: var(--accent-purple);">SPRINT 3 // DAYS 31–60</div>
+            <div class="timeline-title">Inline Triton Serving &amp; Co-Branded Case Study</div>
+            <div class="timeline-desc">
+              Integrate hybrid TFM + Streaming GFM on NVIDIA Triton Inference Server for sub-15ms deterministic inline scoring on live rails. Co-author executive whitepaper and secure joint keynote presentation at RSAC eFraud Global Forum / GTC with bank leadership.
+            </div>
+          </div>
+        </div>
+
+        <!-- Global Sovereign Lighthouse Targets Matrix -->
+        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--nv-green); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; margin-bottom: 12px;">
+          // TARGET GLOBAL LIGHTHOUSE INSTITUTIONS &amp; SOVEREIGN WIN CRITERIA
+        </div>
+
+        <div class="table-responsive">
+          <table class="fsi-table">
+            <thead>
+              <tr>
+                <th style="width: 22%;">Target Bank / Entity</th>
+                <th style="width: 20%;">Current State &amp; Legacy Tax</th>
+                <th style="width: 28%;">NVIDIA + Kumo Blueprint &amp; Primitives</th>
+                <th style="width: 30%;">Strategic Win Criteria &amp; Scale</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong style="color: var(--text-primary); font-size: 13px;">Revolut (Lighthouse Gold Standard)</strong><br>
+                  <span class="tech-pill" style="font-size: 9px; padding: 1px 6px;">Global FinTech // 45M+ Users</span>
+                </td>
+                <td>Trained PRAGMA Transaction FM across 24B events on H100s, replacing dozens of XGBoost models. Seeking multi-hop relational graph extension.</td>
+                <td>Expand PRAGMA from sequential TFM to <strong>Kumo 3 Relational Graph FM</strong>; incorporate multi-hop mule ring detection across European payment rails.</td>
+                <td><strong style="color: var(--nv-green);">Gold Standard Reference:</strong> +130% PR-AUC credit risk, +65% fraud recall. Co-presented at NVIDIA GTC.</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong style="color: var(--text-primary); font-size: 13px;">Intesa Sanpaolo</strong><br>
+                  <span class="tech-pill cyan" style="font-size: 9px; padding: 1px 6px;">Italy #1 Retail Bank // &euro;970B Assets</span>
+                </td>
+                <td>Fragmented legacy risk systems with 28+ disconnected XGBoost models; high maintenance cost and severe feature engineering backlogs.</td>
+                <td>Replicate Revolut PRAGMA blueprint using <strong>NVIDIA NeMo AutoModel + Kumo TabFM</strong>; deploy on sovereign Italian cloud infrastructure.</td>
+                <td><strong style="color: var(--accent-cyan);">European Sovereign Anchor:</strong> Unified behavioral backbone for 13M customers; 6-day model refresh vs. 14 weeks.</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong style="color: var(--text-primary); font-size: 13px;">Santander</strong><br>
+                  <span class="tech-pill amber" style="font-size: 9px; padding: 1px 6px;">Global Commercial Bank // 165M Customers</span>
+                </td>
+                <td>Hand-crafted feature engineering pipelines; experimented with task-specific GNNs but struggled to scale beyond single payment corridors.</td>
+                <td>Upgrade task-specific GNN research to <strong>Kumo 3 Relational Foundation Model</strong>; unified graph pretraining across European and LatAm subsidiaries.</td>
+                <td><strong style="color: var(--accent-amber);">Cross-Border Graph Scale:</strong> Unified cross-subsidiary mule detection; zero manual graph feature engineering.</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong style="color: var(--text-primary); font-size: 13px;">NPCI (National Payments Corp of India)</strong><br>
+                  <span class="tech-pill purple" style="font-size: 9px; padding: 1px 6px;">India Sovereign Rail // 15B+ Monthly UPI Txs</span>
+                </td>
+                <td>Massive transaction volume causing GPU VRAM memory exhaustion; burst smurfing rings disperse funds across mule accounts within milliseconds.</td>
+                <td><strong>NVIDIA WholeGraph Tiered Memory + cuGraph Streaming Transformer</strong>; in-memory 2-hop subgraph framing on GH200 Grace Hopper nodes.</td>
+                <td><strong style="color: var(--accent-purple);">Extreme Scale Proof:</strong> Real-time graph scoring at 15B+ monthly txs; deterministic sub-50ms graph inference inline.</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong style="color: var(--text-primary); font-size: 13px;">US Tier-1 Banking Cohort (JPMC, Citizens, Fifth Third, TD)</strong><br>
+                  <span class="tech-pill" style="font-size: 9px; padding: 1px 6px;">US G-SIBs &amp; Regionals // $5T+ Assets</span>
+                </td>
+                <td>Trapped in the "Execution-Value Gap" with monolithic legacy ledgers blocking real-time agility; isolated AML, fraud, and cyber security silos.</td>
+                <td><strong>Parallel Core Strategy + Data-First Middleware:</strong> Autonomous Schema Mapper Agents + in-VPC Kumo 3 over Snowflake SPCS and Databricks.</td>
+                <td><strong style="color: var(--nv-green);">Tier-1 Core Modernization:</strong> $353M annualized loss avoidance across cohort; +300% feature velocity agility lift.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
     <!-- ================== TAB: JPMC ================== -->
     <section id="tab-jpmc" class="tab-pane">
       <div class="section-title"><span>JPMorgan Chase (JPMC) — Deep Tech Stack Breakdown</span></div>
@@ -1780,7 +2816,7 @@
       
       <div style="display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; align-items: center;">
         <span class="tech-pill purple">Frontier #2: Synthetic Identity</span>
-        <span class="tech-pill" style="border-color: var(--text-primary); color: var(--text-primary); background: rgba(255,255,255,0.05);">Frontier #9: Parallel Core Migration</span>
+        <span class="tech-pill" style="border-color: var(--border-light); color: var(--text-primary); background: var(--badge-bg);">Frontier #9: Parallel Core Migration</span>
         <span class="tech-pill">Frontier #6: SR 11-7 Deep Model Governance</span>
         <a href="https://build.nvidia.com/nvidia/financial-fraud-detection" target="_blank" rel="noopener" class="tech-pill" style="text-decoration: none; border-color: rgba(118,185,0,0.5);">Blueprint: Financial Fraud Detection ↗</a>
         <a href="https://build.nvidia.com/nvidia/kumo-relational" target="_blank" rel="noopener" class="tech-pill purple" style="text-decoration: none; border-color: rgba(139,92,246,0.5);">Blueprint: Kumo Relational Model NIM ↗</a>
@@ -1881,7 +2917,7 @@
 
       <div style="display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; align-items: center;">
         <span class="tech-pill purple">Frontier #4: Mule Rings</span>
-        <span class="tech-pill" style="border-color: var(--text-primary); color: var(--text-primary); background: rgba(255,255,255,0.05);">Frontier #9: Data-First Middleware</span>
+        <span class="tech-pill" style="border-color: var(--border-light); color: var(--text-primary); background: var(--badge-bg);">Frontier #9: Data-First Middleware</span>
         <span class="tech-pill amber">Frontier #5: FRAML Convergence (Newline API)</span>
         <a href="https://build.nvidia.com/nvidia/kumo-relational" target="_blank" rel="noopener" class="tech-pill purple" style="text-decoration: none; border-color: rgba(139,92,246,0.5);">Blueprint: Kumo Relational Model NIM ↗</a>
         <a href="https://build.nvidia.com/blueprints?q=fraud" target="_blank" rel="noopener" class="tech-pill amber" style="text-decoration: none; border-color: rgba(245,158,11,0.5);">Blueprint: Fraud &amp; Financial Crime Catalog ↗</a>
@@ -2577,7 +3613,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">NVIDIA</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Technology</span></td>
   <td><span class="tech-pill cyan">MAIN STAGE SPEAKER / KEYNOTE HOST</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-cyan); color: var(--accent-cyan); background: rgba(255,255,255,0.04);">Host</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-cyan); color: var(--accent-cyan); background: var(--badge-bg);">Host</span></td>
 </tr>
 <tr class="leader-row" data-name="andrew cromwel" data-org="bank of america" data-cat="us mega-banks (g-sib)" data-tier="tier 1">
   <td><strong>Andrew Cromwel</strong></td>
@@ -2585,7 +3621,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Bank of America</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">US Mega-Banks (G-SIB)</span></td>
   <td><span class="tech-pill cyan">MAIN STAGE TARGET (G-SIB AI)</span></td>
-  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: rgba(255,255,255,0.04);">Tier 1</span></td>
+  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: var(--badge-bg);">Tier 1</span></td>
 </tr>
 <tr class="leader-row" data-name="meaghan welch" data-org="bank of america" data-cat="us mega-banks (g-sib)" data-tier="tier 1">
   <td><strong>Meaghan Welch</strong></td>
@@ -2593,7 +3629,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Bank of America</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">US Mega-Banks (G-SIB)</span></td>
   <td><span class="tech-pill ">Cyber-Fraud Fusion Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: rgba(255,255,255,0.04);">Tier 1</span></td>
+  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: var(--badge-bg);">Tier 1</span></td>
 </tr>
 <tr class="leader-row" data-name="james haviland" data-org="capital one" data-cat="major us digital banks" data-tier="tier 1">
   <td><strong>James Haviland</strong></td>
@@ -2601,7 +3637,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Capital One</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Major US Digital Banks</span></td>
   <td><span class="tech-pill ">Real-Time SecOps Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: rgba(255,255,255,0.04);">Tier 1</span></td>
+  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: var(--badge-bg);">Tier 1</span></td>
 </tr>
 <tr class="leader-row" data-name="james simmons" data-org="capital one" data-cat="major us digital banks" data-tier="tier 1">
   <td><strong>James Simmons</strong></td>
@@ -2609,7 +3645,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Capital One</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Major US Digital Banks</span></td>
   <td><span class="tech-pill cyan">CO-PRESENTER TARGET (Capital One Agentic Defense)</span></td>
-  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: rgba(255,255,255,0.04);">Tier 1</span></td>
+  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: var(--badge-bg);">Tier 1</span></td>
 </tr>
 <tr class="leader-row" data-name="kyle flaherty" data-org="capital one" data-cat="major us digital banks" data-tier="tier 1">
   <td><strong>Kyle Flaherty</strong></td>
@@ -2617,7 +3653,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Capital One</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Major US Digital Banks</span></td>
   <td><span class="tech-pill ">Cloud AI Co-Presenter</span></td>
-  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: rgba(255,255,255,0.04);">Tier 1</span></td>
+  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: var(--badge-bg);">Tier 1</span></td>
 </tr>
 <tr class="leader-row" data-name="sara soubliere" data-org="capital one" data-cat="major us digital banks" data-tier="tier 1">
   <td><strong>Sara Soubliere</strong></td>
@@ -2625,7 +3661,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Capital One</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Major US Digital Banks</span></td>
   <td><span class="tech-pill ">Executive Banking Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: rgba(255,255,255,0.04);">Tier 1</span></td>
+  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: var(--badge-bg);">Tier 1</span></td>
 </tr>
 <tr class="leader-row" data-name="ziggy hu" data-org="capital one canada" data-cat="major us digital banks" data-tier="tier 1">
   <td><strong>Ziggy Hu</strong></td>
@@ -2633,7 +3669,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Capital One Canada</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Major US Digital Banks</span></td>
   <td><span class="tech-pill ">Card Strategy Co-Presenter</span></td>
-  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: rgba(255,255,255,0.04);">Tier 1</span></td>
+  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: var(--badge-bg);">Tier 1</span></td>
 </tr>
 <tr class="leader-row" data-name="mason posilkin" data-org="capital one n.a." data-cat="major us digital banks" data-tier="tier 1">
   <td><strong>Mason Posilkin</strong></td>
@@ -2641,7 +3677,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Capital One N.A.</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Major US Digital Banks</span></td>
   <td><span class="tech-pill ">Cyber-Fraud Fusion Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: rgba(255,255,255,0.04);">Tier 1</span></td>
+  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: var(--badge-bg);">Tier 1</span></td>
 </tr>
 <tr class="leader-row" data-name="bassel korkor" data-org="charles schwab" data-cat="wealth & brokerage" data-tier="tier 1">
   <td><strong>Bassel Korkor</strong></td>
@@ -2649,7 +3685,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Charles Schwab</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Wealth & Brokerage</span></td>
   <td><span class="tech-pill ">Wealth Defense Co-Presenter</span></td>
-  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: rgba(255,255,255,0.04);">Tier 1</span></td>
+  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: var(--badge-bg);">Tier 1</span></td>
 </tr>
 <tr class="leader-row" data-name="jen martin" data-org="citizens bank" data-cat="super-regional banks" data-tier="tier 1">
   <td><strong>Jen Martin</strong></td>
@@ -2657,7 +3693,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Citizens Bank</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Super-Regional Banks</span></td>
   <td><span class="tech-pill cyan">PRIMARY CO-PRESENTER (Citizens Snowpark Zero-Copy)</span></td>
-  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: rgba(255,255,255,0.04);">Tier 1</span></td>
+  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: var(--badge-bg);">Tier 1</span></td>
 </tr>
 <tr class="leader-row" data-name="brandon weeks" data-org="early warning services (ews / zelle)" data-cat="payment networks & rails" data-tier="tier 1">
   <td><strong>Brandon Weeks</strong></td>
@@ -2665,7 +3701,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Early Warning Services (EWS / Zelle)</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Payment Networks & Rails</span></td>
   <td><span class="tech-pill cyan">PRIMARY CO-PRESENTER (Zelle Network APP Scams)</span></td>
-  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: rgba(255,255,255,0.04);">Tier 1</span></td>
+  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: var(--badge-bg);">Tier 1</span></td>
 </tr>
 <tr class="leader-row" data-name="geoffrey morton" data-org="royal bank of canada (rbc)" data-cat="international & canadian banks" data-tier="tier 1">
   <td><strong>Geoffrey Morton</strong></td>
@@ -2673,7 +3709,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Royal Bank of Canada (RBC)</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">International & Canadian Banks</span></td>
   <td><span class="tech-pill ">RBC Strategy Co-Presenter</span></td>
-  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: rgba(255,255,255,0.04);">Tier 1</span></td>
+  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: var(--badge-bg);">Tier 1</span></td>
 </tr>
 <tr class="leader-row" data-name="daniel cuthbert" data-org="santander group" data-cat="global mega-banks" data-tier="tier 1">
   <td><strong>Daniel Cuthbert</strong></td>
@@ -2681,7 +3717,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Santander Group</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Global Mega-Banks</span></td>
   <td><span class="tech-pill ">Research & GFM Co-Presenter</span></td>
-  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: rgba(255,255,255,0.04);">Tier 1</span></td>
+  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: var(--badge-bg);">Tier 1</span></td>
 </tr>
 <tr class="leader-row" data-name="david penedo" data-org="santander group" data-cat="global mega-banks" data-tier="tier 1">
   <td><strong>David Penedo</strong></td>
@@ -2689,7 +3725,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Santander Group</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Global Mega-Banks</span></td>
   <td><span class="tech-pill ">Global Anti-Scam Co-Presenter</span></td>
-  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: rgba(255,255,255,0.04);">Tier 1</span></td>
+  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: var(--badge-bg);">Tier 1</span></td>
 </tr>
 <tr class="leader-row" data-name="eric huber" data-org="td bank" data-cat="major us & canadian banks" data-tier="tier 1">
   <td><strong>Eric Huber</strong></td>
@@ -2697,7 +3733,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">TD Bank</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Major US & Canadian Banks</span></td>
   <td><span class="tech-pill cyan">CO-PRESENTER TARGET (TD AML Remediation)</span></td>
-  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: rgba(255,255,255,0.04);">Tier 1</span></td>
+  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: var(--badge-bg);">Tier 1</span></td>
 </tr>
 <tr class="leader-row" data-name="kevin thomsen" data-org="td bank group" data-cat="major us & canadian banks" data-tier="tier 1">
   <td><strong>Kevin Thomsen</strong></td>
@@ -2705,7 +3741,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">TD Bank Group</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Major US & Canadian Banks</span></td>
   <td><span class="tech-pill cyan">PRIMARY CO-PRESENTER (TD Bank Graph AML)</span></td>
-  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: rgba(255,255,255,0.04);">Tier 1</span></td>
+  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: var(--badge-bg);">Tier 1</span></td>
 </tr>
 <tr class="leader-row" data-name="beverly schneider" data-org="us bank" data-cat="top us banks" data-tier="tier 1">
   <td><strong>Beverly Schneider</strong></td>
@@ -2713,7 +3749,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">US Bank</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Top US Banks</span></td>
   <td><span class="tech-pill cyan">CO-PRESENTER TARGET (US Bank Fraud Fusion)</span></td>
-  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: rgba(255,255,255,0.04);">Tier 1</span></td>
+  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: var(--badge-bg);">Tier 1</span></td>
 </tr>
 <tr class="leader-row" data-name="swarup pogalur" data-org="wells fargo" data-cat="us mega-banks (g-sib)" data-tier="tier 1">
   <td><strong>Swarup Pogalur</strong></td>
@@ -2721,7 +3757,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Wells Fargo</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">US Mega-Banks (G-SIB)</span></td>
   <td><span class="tech-pill cyan">PRIMARY CO-PRESENTER (Wells Fargo AI Architecture)</span></td>
-  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: rgba(255,255,255,0.04);">Tier 1</span></td>
+  <td><span class="badge-status current" style="border-color: var(--nv-green); color: var(--nv-green); background: var(--badge-bg);">Tier 1</span></td>
 </tr>
 <tr class="leader-row" data-name="ayleen charlotte" data-org="s.a.f.e. by ayleen charlotte" data-cat="victim advocacy & media" data-tier="vip">
   <td><strong>Ayleen Charlotte</strong></td>
@@ -2729,7 +3765,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">S.A.F.E. by Ayleen Charlotte</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Victim Advocacy & Media</span></td>
   <td><span class="tech-pill ">Keynote Guest / Voice of Victim</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-cyan); color: var(--accent-cyan); background: rgba(255,255,255,0.04);">VIP</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-cyan); color: var(--accent-cyan); background: var(--badge-bg);">VIP</span></td>
 </tr>
 <tr class="leader-row" data-name="brian siegel" data-org="adp" data-cat="payroll & treasury" data-tier="tier 2">
   <td><strong>Brian Siegel</strong></td>
@@ -2737,7 +3773,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">ADP</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Payroll & Treasury</span></td>
   <td><span class="tech-pill ">Corporate Treasury & BEC Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="victor feno" data-org="affirm" data-cat="bnpl & challenger credit" data-tier="tier 2">
   <td><strong>Victor Feno</strong></td>
@@ -2745,7 +3781,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Affirm</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">BNPL & Challenger Credit</span></td>
   <td><span class="tech-pill ">BNPL Tech Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="theresa squitieri" data-org="ally bank" data-cat="digital auto & direct bank" data-tier="tier 2">
   <td><strong>Theresa Squitieri</strong></td>
@@ -2753,7 +3789,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Ally Bank</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Digital Auto & Direct Bank</span></td>
   <td><span class="tech-pill ">Digital Bank Fraud Lead</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="patrick russ" data-org="bmo" data-cat="major north american bank" data-tier="tier 2">
   <td><strong>Patrick Russ</strong></td>
@@ -2761,7 +3797,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">BMO</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Major North American Bank</span></td>
   <td><span class="tech-pill ">North American Risk Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="gabriel borges" data-org="btg pactual" data-cat="investment banking (latam)" data-tier="tier 2">
   <td><strong>Gabriel Borges</strong></td>
@@ -2769,7 +3805,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">BTG Pactual</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Investment Banking (LATAM)</span></td>
   <td><span class="tech-pill ">Global Banking Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="alejandro gerbaud" data-org="banco general" data-cat="latin american banking" data-tier="tier 2">
   <td><strong>Alejandro Gerbaud</strong></td>
@@ -2777,7 +3813,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Banco General</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Latin American Banking</span></td>
   <td><span class="tech-pill ">Regional Architecture Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="erika mata sanchez" data-org="bancoppel" data-cat="latam retail & banking" data-tier="tier 2">
   <td><strong>Erika Mata Sanchez</strong></td>
@@ -2785,7 +3821,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Bancoppel</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">LATAM Retail & Banking</span></td>
   <td><span class="tech-pill ">LATAM Banking Keynote</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="erik de monte" data-org="bill" data-cat="b2b fintech & payments" data-tier="tier 2">
   <td><strong>Erik De Monte</strong></td>
@@ -2793,7 +3829,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Bill</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">B2B FinTech & Payments</span></td>
   <td><span class="tech-pill ">Data Science Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="ryan powell" data-org="cibc" data-cat="international & canadian banks" data-tier="tier 2">
   <td><strong>Ryan Powell</strong></td>
@@ -2801,7 +3837,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">CIBC</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">International & Canadian Banks</span></td>
   <td><span class="tech-pill ">Canadian Fraud Strategy Lead</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="robert jumonville" data-org="charles schwab" data-cat="wealth & brokerage" data-tier="tier 2">
   <td><strong>Robert Jumonville</strong></td>
@@ -2809,7 +3845,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Charles Schwab</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Wealth & Brokerage</span></td>
   <td><span class="tech-pill ">Brokerage Risk Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="zack rosebrock" data-org="charles schwab" data-cat="wealth & brokerage" data-tier="tier 2">
   <td><strong>Zack Rosebrock</strong></td>
@@ -2817,7 +3853,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Charles Schwab</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Wealth & Brokerage</span></td>
   <td><span class="tech-pill ">eCrimes Tactical Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="felipe garcia vivanco" data-org="coppel" data-cat="latam retail & banking" data-tier="tier 2">
   <td><strong>Felipe Garcia Vivanco</strong></td>
@@ -2825,7 +3861,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Coppel</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">LATAM Retail & Banking</span></td>
   <td><span class="tech-pill ">LATAM Keynote</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="athena bellodo" data-org="corebridge financial" data-cat="insurance & retirement" data-tier="tier 2">
   <td><strong>Athena Bellodo</strong></td>
@@ -2833,7 +3869,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Corebridge Financial</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Insurance & Retirement</span></td>
   <td><span class="tech-pill ">Roundtable Participant</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="ronald adams" data-org="fidelity investments" data-cat="wealth & asset management" data-tier="tier 2">
   <td><strong>Ronald Adams</strong></td>
@@ -2841,7 +3877,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Fidelity Investments</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Wealth & Asset Management</span></td>
   <td><span class="tech-pill ">Advisory Attendee</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="emy dunfee" data-org="firstbank" data-cat="super-regional banks" data-tier="tier 2">
   <td><strong>Emy Dunfee</strong></td>
@@ -2849,7 +3885,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">FirstBank</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Super-Regional Banks</span></td>
   <td><span class="tech-pill ">Regional Banking Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="gordon sheppard" data-org="h&r block" data-cat="tax & financial services" data-tier="tier 2">
   <td><strong>Gordon Sheppard</strong></td>
@@ -2857,7 +3893,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">H&R Block</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Tax & Financial Services</span></td>
   <td><span class="tech-pill ">Tax Identity Theft Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="rob rendell" data-org="incomm payments" data-cat="prepaid & fintech rails" data-tier="tier 2">
   <td><strong>Rob Rendell</strong></td>
@@ -2865,7 +3901,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">InComm Payments</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Prepaid & FinTech Rails</span></td>
   <td><span class="tech-pill ">Prepaid Velocity Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="yusuke lagihara" data-org="mufg bank, ltd" data-cat="global mega-banks" data-tier="tier 2">
   <td><strong>Yusuke Lagihara</strong></td>
@@ -2873,7 +3909,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">MUFG Bank, Ltd</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Global Mega-Banks</span></td>
   <td><span class="tech-pill ">APAC / Mega-Bank Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="gilbert young" data-org="ornl federal credit union" data-cat="credit unions" data-tier="tier 2">
   <td><strong>Gilbert Young</strong></td>
@@ -2881,7 +3917,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">ORNL Federal Credit Union</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Credit Unions</span></td>
   <td><span class="tech-pill ">Credit Union Defense Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="portia arar" data-org="onemain financials" data-cat="consumer lending" data-tier="tier 2">
   <td><strong>Portia Arar</strong></td>
@@ -2889,7 +3925,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">OneMain Financials</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Consumer Lending</span></td>
   <td><span class="tech-pill ">Roundtable Participant</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="andrew nikolishyn" data-org="rogers communications & rogers bank" data-cat="telecom & banking" data-tier="tier 2">
   <td><strong>Andrew Nikolishyn</strong></td>
@@ -2897,7 +3933,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Rogers Communications & Rogers Bank</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Telecom & Banking</span></td>
   <td><span class="tech-pill ">Telco-Bank Fusion Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="aaron mcallister" data-org="scotiabank" data-cat="international & canadian banks" data-tier="tier 2">
   <td><strong>Aaron McAllister</strong></td>
@@ -2905,7 +3941,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Scotiabank</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">International & Canadian Banks</span></td>
   <td><span class="tech-pill ">Threat Management Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="carmen araiza" data-org="scotiabank" data-cat="international & canadian banks" data-tier="tier 2">
   <td><strong>Carmen Araiza</strong></td>
@@ -2913,7 +3949,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Scotiabank</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">International & Canadian Banks</span></td>
   <td><span class="tech-pill ">Roundtable Participant</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="fabian goncalves" data-org="scotiabank" data-cat="international & canadian banks" data-tier="tier 2">
   <td><strong>Fabian Goncalves</strong></td>
@@ -2921,7 +3957,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Scotiabank</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">International & Canadian Banks</span></td>
   <td><span class="tech-pill ">International Fraud Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="rick swenson" data-org="tiaa" data-cat="institutional retirement" data-tier="tier 2">
   <td><strong>Rick Swenson</strong></td>
@@ -2929,7 +3965,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">TIAA</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Institutional Retirement</span></td>
   <td><span class="tech-pill ">Institutional Pension Defense</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="victor cortes" data-org="transnetwork llc" data-cat="cross-border remittances" data-tier="tier 2">
   <td><strong>Victor Cortes</strong></td>
@@ -2937,7 +3973,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Transnetwork LLC</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Cross-Border Remittances</span></td>
   <td><span class="tech-pill ">Payment Rails Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="ramesh sivalogam" data-org="ubs" data-cat="global wealth management" data-tier="tier 2">
   <td><strong>Ramesh Sivalogam</strong></td>
@@ -2945,7 +3981,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">UBS</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Global Wealth Management</span></td>
   <td><span class="tech-pill ">Private Wealth & AML Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="erin ramstad" data-org="usaa" data-cat="military banking & insurance" data-tier="tier 2">
   <td><strong>Erin Ramstad</strong></td>
@@ -2953,7 +3989,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">USAA</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Military Banking & Insurance</span></td>
   <td><span class="tech-pill ">Member Defense Co-Presenter</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="tiffany twilley" data-org="usaa" data-cat="military banking & insurance" data-tier="tier 2">
   <td><strong>Tiffany Twilley</strong></td>
@@ -2961,7 +3997,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">USAA</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Military Banking & Insurance</span></td>
   <td><span class="tech-pill ">Real-Time Application Defense</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="eric dickey" data-org="vanguard" data-cat="wealth & asset management" data-tier="tier 2">
   <td><strong>Eric Dickey</strong></td>
@@ -2969,7 +4005,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Vanguard</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Wealth & Asset Management</span></td>
   <td><span class="tech-pill ">Asset Defense Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="melinda szabo" data-org="water and power community credit union" data-cat="credit unions" data-tier="tier 2">
   <td><strong>Melinda Szabo</strong></td>
@@ -2977,7 +4013,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Water and Power Community Credit Union</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Credit Unions</span></td>
   <td><span class="tech-pill ">Credit Union Innovation Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="steve lenderman" data-org="isolved" data-cat="payroll & hr tech" data-tier="tier 2">
   <td><strong>Steve Lenderman</strong></td>
@@ -2985,7 +4021,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">iSolved</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Payroll & HR Tech</span></td>
   <td><span class="tech-pill ">Payroll Diversion Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(255,255,255,0.04);">Tier 2</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-purple); color: var(--accent-purple); background: var(--badge-bg);">Tier 2</span></td>
 </tr>
 <tr class="leader-row" data-name="jamie wendell" data-org="amazon" data-cat="big tech & platforms" data-tier="tier 3">
   <td><strong>Jamie Wendell</strong></td>
@@ -2993,7 +4029,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Amazon</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Big Tech & Platforms</span></td>
   <td><span class="tech-pill ">Account Takeover Defense Panel</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="kevin gosschalk" data-org="arkose labs" data-cat="bot & captcha defense" data-tier="tier 3">
   <td><strong>Kevin Gosschalk</strong></td>
@@ -3001,7 +4037,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Arkose Labs</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Bot & Captcha Defense</span></td>
   <td><span class="tech-pill ">Agentic Bot Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="albert arboleda" data-org="calpers" data-cat="public sector & pension" data-tier="tier 3">
   <td><strong>Albert Arboleda</strong></td>
@@ -3009,7 +4045,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">CalPERS</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Public Sector & Pension</span></td>
   <td><span class="tech-pill ">Government Liaison</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="senan moloney" data-org="callsign" data-cat="behavioral biometrics" data-tier="tier 3">
   <td><strong>Senan Moloney</strong></td>
@@ -3017,7 +4053,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Callsign</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Behavioral Biometrics</span></td>
   <td><span class="tech-pill ">Sensor Attestation Partner</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="avichai ben" data-org="charm security" data-cat="cyber defense vendors" data-tier="tier 3">
   <td><strong>Avichai Ben</strong></td>
@@ -3025,7 +4061,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Charm Security</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Cyber Defense Vendors</span></td>
   <td><span class="tech-pill ">Tech Partner</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="roy zur" data-org="charm security" data-cat="cyber defense vendors" data-tier="tier 3">
   <td><strong>Roy Zur</strong></td>
@@ -3033,7 +4069,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Charm Security</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Cyber Defense Vendors</span></td>
   <td><span class="tech-pill ">Tech Partner</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="yoav koren" data-org="charm security" data-cat="cyber defense vendors" data-tier="tier 3">
   <td><strong>Yoav Koren</strong></td>
@@ -3041,7 +4077,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Charm Security</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Cyber Defense Vendors</span></td>
   <td><span class="tech-pill ">Tech Partner</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="alexandre silva" data-org="claro" data-cat="telecom & international" data-tier="tier 3">
   <td><strong>Alexandre Silva</strong></td>
@@ -3049,7 +4085,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Claro</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Telecom & International</span></td>
   <td><span class="tech-pill ">Telecom Threat Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="mauricio vilela" data-org="claro" data-cat="telecom & international" data-tier="tier 3">
   <td><strong>Mauricio Vilela</strong></td>
@@ -3057,7 +4093,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Claro</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Telecom & International</span></td>
   <td><span class="tech-pill ">Telecom Fraud Operations Lead</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="denis nesi" data-org="claro brasil" data-cat="telecom & international" data-tier="tier 3">
   <td><strong>Denis Nesi</strong></td>
@@ -3065,7 +4101,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Claro Brasil</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Telecom & International</span></td>
   <td><span class="tech-pill ">Telecom Fraud Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="amit ghosh" data-org="expedia group" data-cat="travel & merchant platforms" data-tier="tier 3">
   <td><strong>Amit Ghosh</strong></td>
@@ -3073,7 +4109,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Expedia Group</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Travel & Merchant Platforms</span></td>
   <td><span class="tech-pill ">E-Commerce Fraud Panel</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="christiaan brand" data-org="google" data-cat="big tech & platforms" data-tier="tier 3">
   <td><strong>Christiaan Brand</strong></td>
@@ -3081,7 +4117,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Google</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Big Tech & Platforms</span></td>
   <td><span class="tech-pill ">Passkey/FIDO Collaborator</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="per bjorke" data-org="google" data-cat="big tech & platforms" data-tier="tier 3">
   <td><strong>Per Bjorke</strong></td>
@@ -3089,7 +4125,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Google</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Big Tech & Platforms</span></td>
   <td><span class="tech-pill ">Identity Collaborator</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="aaron kirby" data-org="mastercard" data-cat="payment networks & rails" data-tier="tier 3">
   <td><strong>Aaron Kirby</strong></td>
@@ -3097,7 +4133,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Mastercard</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Payment Networks & Rails</span></td>
   <td><span class="tech-pill ">Global Payment Rails Keynote</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="kelly white" data-org="mastercard recorded future" data-cat="threat intelligence vendors" data-tier="tier 3">
   <td><strong>Kelly White</strong></td>
@@ -3105,7 +4141,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Mastercard Recorded Future</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Threat Intelligence Vendors</span></td>
   <td><span class="tech-pill ">Threat Intelligence Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="olanrewaju oluleye" data-org="mckesson corporation" data-cat="healthcare & supply chain" data-tier="tier 3">
   <td><strong>Olanrewaju Oluleye</strong></td>
@@ -3113,7 +4149,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">McKesson Corporation</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Healthcare & Supply Chain</span></td>
   <td><span class="tech-pill ">Supply Chain Fraud Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="david agranovich" data-org="meta" data-cat="big tech & platforms" data-tier="tier 3">
   <td><strong>David Agranovich</strong></td>
@@ -3121,7 +4157,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Meta</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Big Tech & Platforms</span></td>
   <td><span class="tech-pill ">Platform Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="alexandra gerst" data-org="microsoft" data-cat="big tech & platforms" data-tier="tier 3">
   <td><strong>Alexandra Gerst</strong></td>
@@ -3129,7 +4165,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Microsoft</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Big Tech & Platforms</span></td>
   <td><span class="tech-pill ">Legal & Bot Disruption Keynote</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="robert duncan" data-org="netcraft" data-cat="cybercrime disruption" data-tier="tier 3">
   <td><strong>Robert Duncan</strong></td>
@@ -3137,7 +4173,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Netcraft</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Cybercrime Disruption</span></td>
   <td><span class="tech-pill ">Disruption Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="ryan woodley" data-org="netcraft ltd" data-cat="cybercrime disruption" data-tier="tier 3">
   <td><strong>Ryan Woodley</strong></td>
@@ -3145,7 +4181,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Netcraft Ltd</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Cybercrime Disruption</span></td>
   <td><span class="tech-pill ">Phishing Takedown Keynote</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="tselmeg shponko" data-org="paypal" data-cat="digital wallets & global rails" data-tier="tier 3">
   <td><strong>Tselmeg Shponko</strong></td>
@@ -3153,7 +4189,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">PayPal</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Digital Wallets & Global Rails</span></td>
   <td><span class="tech-pill ">Wallet Defense Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="jason bartolacci" data-org="prosight" data-cat="fraud technology" data-tier="tier 3">
   <td><strong>Jason Bartolacci</strong></td>
@@ -3161,7 +4197,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">ProSight</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Fraud Technology</span></td>
   <td><span class="tech-pill ">Industry Contributor</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="mason allen" data-org="reality defender" data-cat="deepfake & biometric tech" data-tier="tier 3">
   <td><strong>Mason Allen</strong></td>
@@ -3169,7 +4205,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Reality Defender</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Deepfake & Biometric Tech</span></td>
   <td><span class="tech-pill ">Tech Partner</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="david maimon" data-org="sentilink" data-cat="criminology & dark web" data-tier="tier 3">
   <td><strong>David Maimon</strong></td>
@@ -3177,7 +4213,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">SentiLink</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Criminology & Dark Web</span></td>
   <td><span class="tech-pill ">Dark Web Threat Intelligence Lead</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="naftali harris" data-org="sentilink" data-cat="synthetic identity tech" data-tier="tier 3">
   <td><strong>Naftali Harris</strong></td>
@@ -3185,7 +4221,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">SentiLink</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Synthetic Identity Tech</span></td>
   <td><span class="tech-pill ">Synthetic Identity Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="william goh" data-org="sentilink" data-cat="identity verification" data-tier="tier 3">
   <td><strong>William Goh</strong></td>
@@ -3193,7 +4229,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">SentiLink</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Identity Verification</span></td>
   <td><span class="tech-pill ">Vendor Showcase</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="clint hammond" data-org="t-mobile" data-cat="telecom & carrier identity" data-tier="tier 3">
   <td><strong>Clint Hammond</strong></td>
@@ -3201,7 +4237,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">T-Mobile</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Telecom & Carrier Identity</span></td>
   <td><span class="tech-pill ">Carrier Signals Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="dan garland" data-org="t-mobile" data-cat="telecom & carrier identity" data-tier="tier 3">
   <td><strong>Dan Garland</strong></td>
@@ -3209,7 +4245,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">T-Mobile</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Telecom & Carrier Identity</span></td>
   <td><span class="tech-pill ">SIM Swapping / Telco Panel</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="evan gaustad" data-org="target corporation" data-cat="retail & merchant fintech" data-tier="tier 3">
   <td><strong>Evan Gaustad</strong></td>
@@ -3217,7 +4253,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Target Corporation</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Retail & Merchant FinTech</span></td>
   <td><span class="tech-pill ">Retail Shield Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="ryan miller" data-org="target corporation" data-cat="retail & merchant fintech" data-tier="tier 3">
   <td><strong>Ryan Miller</strong></td>
@@ -3225,7 +4261,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Target Corporation</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Retail & Merchant FinTech</span></td>
   <td><span class="tech-pill ">Enterprise Architecture Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="eward driehuis" data-org="threatfabric / fraud kill chain" data-cat="mobile threat intelligence" data-tier="tier 3">
   <td><strong>Eward Driehuis</strong></td>
@@ -3233,7 +4269,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">ThreatFabric / Fraud Kill Chain</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Mobile Threat Intelligence</span></td>
   <td><span class="tech-pill ">Threat Research Co-Presenter</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="hayley mccormick" data-org="united airlines" data-cat="travel & merchant platforms" data-tier="tier 3">
   <td><strong>Hayley McCormick</strong></td>
@@ -3241,7 +4277,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">United Airlines</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Travel & Merchant Platforms</span></td>
   <td><span class="tech-pill ">Loyalty & Account Takeover Panel</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="david lowe" data-org="verizon" data-cat="telecom & enterprise" data-tier="tier 3">
   <td><strong>David Lowe</strong></td>
@@ -3249,7 +4285,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Verizon</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Telecom & Enterprise</span></td>
   <td><span class="tech-pill ">Enterprise Network Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="daniel schott" data-org="visa" data-cat="payment networks & rails" data-tier="tier 3">
   <td><strong>Daniel Schott</strong></td>
@@ -3257,7 +4293,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Visa</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Payment Networks & Rails</span></td>
   <td><span class="tech-pill ">Global Payment Security Keynote</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="piyush pallav das" data-org="walmart" data-cat="retail & merchant fintech" data-tier="tier 3">
   <td><strong>Piyush Pallav Das</strong></td>
@@ -3265,7 +4301,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Walmart</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Retail & Merchant FinTech</span></td>
   <td><span class="tech-pill ">Merchant Advisory</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="shea jones" data-org="walmart" data-cat="retail & merchant fintech" data-tier="tier 3">
   <td><strong>Shea Jones</strong></td>
@@ -3273,7 +4309,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Walmart</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Retail & Merchant FinTech</span></td>
   <td><span class="tech-pill ">Retail Identity Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: rgba(255,255,255,0.04);">Tier 3</span></td>
+  <td><span class="badge-status current" style="border-color: var(--accent-amber); color: var(--accent-amber); background: var(--badge-bg);">Tier 3</span></td>
 </tr>
 <tr class="leader-row" data-name="michelle hilscher" data-org="deloitte" data-cat="global system integrators" data-tier="gsi partner">
   <td><strong>Michelle Hilscher</strong></td>
@@ -3281,7 +4317,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Deloitte</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Global System Integrators</span></td>
   <td><span class="tech-pill ">Human Factors & Agent Co-Host</span></td>
-  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: rgba(255,255,255,0.04);">GSI Partner</span></td>
+  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: var(--badge-bg);">GSI Partner</span></td>
 </tr>
 <tr class="leader-row" data-name="robert gordon" data-org="canadian cyber threat exchange" data-cat="threat exchanges" data-tier="tier 4">
   <td><strong>Robert Gordon</strong></td>
@@ -3289,7 +4325,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Canadian Cyber Threat Exchange</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Threat Exchanges</span></td>
   <td><span class="tech-pill ">Canadian Intelligence Lead</span></td>
-  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: rgba(255,255,255,0.04);">Tier 4</span></td>
+  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: var(--badge-bg);">Tier 4</span></td>
 </tr>
 <tr class="leader-row" data-name="jethro cornelissen" data-org="cybercrime atlas" data-cat="threat intelligence & wef" data-tier="tier 4">
   <td><strong>Jethro Cornelissen</strong></td>
@@ -3297,7 +4333,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Cybercrime Atlas</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Threat Intelligence & WEF</span></td>
   <td><span class="tech-pill ">Global Intelligence Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: rgba(255,255,255,0.04);">Tier 4</span></td>
+  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: var(--badge-bg);">Tier 4</span></td>
 </tr>
 <tr class="leader-row" data-name="ronald plesco" data-org="dla piper" data-cat="cyber law & regulatory" data-tier="tier 4">
   <td><strong>Ronald Plesco</strong></td>
@@ -3305,7 +4341,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">DLA Piper</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Cyber Law & Regulatory</span></td>
   <td><span class="tech-pill ">Regulatory Liability Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: rgba(255,255,255,0.04);">Tier 4</span></td>
+  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: var(--badge-bg);">Tier 4</span></td>
 </tr>
 <tr class="leader-row" data-name="marco doeland" data-org="dutch banking association" data-cat="banking associations" data-tier="tier 4">
   <td><strong>Marco Doeland</strong></td>
@@ -3313,7 +4349,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Dutch Banking Association</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Banking Associations</span></td>
   <td><span class="tech-pill ">European Policy Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: rgba(255,255,255,0.04);">Tier 4</span></td>
+  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: var(--badge-bg);">Tier 4</span></td>
 </tr>
 <tr class="leader-row" data-name="megan shamas" data-org="fido alliance" data-cat="authentication standards" data-tier="tier 4">
   <td><strong>Megan Shamas</strong></td>
@@ -3321,7 +4357,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">FIDO Alliance</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Authentication Standards</span></td>
   <td><span class="tech-pill ">FIDO / Passwordless Keynote</span></td>
-  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: rgba(255,255,255,0.04);">Tier 4</span></td>
+  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: var(--badge-bg);">Tier 4</span></td>
 </tr>
 <tr class="leader-row" data-name="kevin gallagher" data-org="federal bureau of investigation (fbi)" data-cat="law enforcement & gov" data-tier="tier 4">
   <td><strong>Kevin Gallagher</strong></td>
@@ -3329,7 +4365,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Federal Bureau of Investigation (FBI)</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Law Enforcement & Gov</span></td>
   <td><span class="tech-pill ">Federal Interdiction Keynote</span></td>
-  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: rgba(255,255,255,0.04);">Tier 4</span></td>
+  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: var(--badge-bg);">Tier 4</span></td>
 </tr>
 <tr class="leader-row" data-name="takayuki ohinata" data-org="financial isac japan" data-cat="international isacs" data-tier="tier 4">
   <td><strong>Takayuki Ohinata</strong></td>
@@ -3337,7 +4373,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Financial ISAC Japan</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">International ISACs</span></td>
   <td><span class="tech-pill ">Asian Market Defense Lead</span></td>
-  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: rgba(255,255,255,0.04);">Tier 4</span></td>
+  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: var(--badge-bg);">Tier 4</span></td>
 </tr>
 <tr class="leader-row" data-name="andrew chandler" data-org="fraud kill chain leadership" data-cat="industry working group" data-tier="tier 4">
   <td><strong>Andrew Chandler</strong></td>
@@ -3345,7 +4381,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Fraud Kill Chain Leadership</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Industry Working Group</span></td>
   <td><span class="tech-pill ">Kill Chain Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: rgba(255,255,255,0.04);">Tier 4</span></td>
+  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: var(--badge-bg);">Tier 4</span></td>
 </tr>
 <tr class="leader-row" data-name="matt lavigna" data-org="ncfta" data-cat="law enforcement & non-profit" data-tier="tier 4">
   <td><strong>Matt LaVigna</strong></td>
@@ -3353,7 +4389,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">NCFTA</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Law Enforcement & Non-Profit</span></td>
   <td><span class="tech-pill ">Cross-Border Cybercrime Keynote</span></td>
-  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: rgba(255,255,255,0.04);">Tier 4</span></td>
+  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: var(--badge-bg);">Tier 4</span></td>
 </tr>
 <tr class="leader-row" data-name="dave cooper" data-org="national crime agency (nca)" data-cat="law enforcement & gov" data-tier="tier 4">
   <td><strong>Dave Cooper</strong></td>
@@ -3361,7 +4397,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">National Crime Agency (NCA)</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Law Enforcement & Gov</span></td>
   <td><span class="tech-pill ">Law Enforcement Panelist</span></td>
-  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: rgba(255,255,255,0.04);">Tier 4</span></td>
+  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: var(--badge-bg);">Tier 4</span></td>
 </tr>
 <tr class="leader-row" data-name="ken palla" data-org="palla consulting" data-cat="banking advisors" data-tier="tier 4">
   <td><strong>Ken Palla</strong></td>
@@ -3369,7 +4405,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Palla Consulting</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Banking Advisors</span></td>
   <td><span class="tech-pill ">Legacy Banking Modernization Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: rgba(255,255,255,0.04);">Tier 4</span></td>
+  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: var(--badge-bg);">Tier 4</span></td>
 </tr>
 <tr class="leader-row" data-name="jackie deloplaine" data-org="retail & hospitality isac" data-cat="industry isacs" data-tier="tier 4">
   <td><strong>Jackie Deloplaine</strong></td>
@@ -3377,7 +4413,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Retail & Hospitality ISAC</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Industry ISACs</span></td>
   <td><span class="tech-pill ">ISAC Alliance Partner</span></td>
-  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: rgba(255,255,255,0.04);">Tier 4</span></td>
+  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: var(--badge-bg);">Tier 4</span></td>
 </tr>
 <tr class="leader-row" data-name="lien graffigna" data-org="sf acfe" data-cat="fraud professional bodies" data-tier="tier 4">
   <td><strong>Lien Graffigna</strong></td>
@@ -3385,7 +4421,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">SF ACFE</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Fraud Professional Bodies</span></td>
   <td><span class="tech-pill ">ACFE Governance Speaker</span></td>
-  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: rgba(255,255,255,0.04);">Tier 4</span></td>
+  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: var(--badge-bg);">Tier 4</span></td>
 </tr>
 <tr class="leader-row" data-name="albert reinhardt" data-org="the industry traceback group" data-cat="telecom anti-robocall" data-tier="tier 4">
   <td><strong>Albert Reinhardt</strong></td>
@@ -3393,7 +4429,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">The Industry Traceback Group</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Telecom Anti-Robocall</span></td>
   <td><span class="tech-pill ">Call Spoofing Mitigation Lead</span></td>
-  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: rgba(255,255,255,0.04);">Tier 4</span></td>
+  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: var(--badge-bg);">Tier 4</span></td>
 </tr>
 <tr class="leader-row" data-name="eric shen" data-org="u.s. postal inspection service" data-cat="law enforcement & gov" data-tier="tier 4">
   <td><strong>Eric Shen</strong></td>
@@ -3401,7 +4437,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">U.S. Postal Inspection Service</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Law Enforcement & Gov</span></td>
   <td><span class="tech-pill ">Mail & Check Fraud Interdiction Keynote</span></td>
-  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: rgba(255,255,255,0.04);">Tier 4</span></td>
+  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: var(--badge-bg);">Tier 4</span></td>
 </tr>
 <tr class="leader-row" data-name="jeremy grant" data-org="venable llp" data-cat="legal & public policy" data-tier="tier 4">
   <td><strong>Jeremy Grant</strong></td>
@@ -3409,7 +4445,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Venable LLP</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Legal & Public Policy</span></td>
   <td><span class="tech-pill ">Federal Identity Policy Moderator</span></td>
-  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: rgba(255,255,255,0.04);">Tier 4</span></td>
+  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: var(--badge-bg);">Tier 4</span></td>
 </tr>
 <tr class="leader-row" data-name="chris novak" data-org="verizon business" data-cat="cybersecurity veterans" data-tier="tier 4">
   <td><strong>Chris Novak</strong></td>
@@ -3417,7 +4453,7 @@
   <td><span style="font-weight: 600; color: var(--text-primary);">Verizon Business</span></td>
   <td><span style="font-size: 11px; color: var(--text-secondary);">Cybersecurity Veterans</span></td>
   <td><span class="tech-pill ">Advisory Moderator</span></td>
-  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: rgba(255,255,255,0.04);">Tier 4</span></td>
+  <td><span class="badge-status current" style="border-color: var(--text-muted); color: var(--text-muted); background: var(--badge-bg);">Tier 4</span></td>
 </tr>
             </tbody>
           </table>
@@ -3480,10 +4516,11 @@
 
   <script>
     function switchTab(tabId) {
+      if (tabId === 'jure-strategy' || tabId === 'jure-slide') tabId = 'core-primitives';
       document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
       document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
       
-      const activeBtn = Array.from(document.querySelectorAll('.tab-button')).find(b => b.getAttribute('onclick').includes(tabId));
+      const activeBtn = Array.from(document.querySelectorAll('.tab-button')).find(b => b.getAttribute('onclick') && b.getAttribute('onclick').includes(tabId));
       if (activeBtn) activeBtn.classList.add('active');
       
       const targetPane = document.getElementById('tab-' + tabId);
@@ -3545,6 +4582,38 @@
         }
       });
     }
+
+
+    // Fullscreen Slide Presentation Toggle
+    function toggleSlideFullscreen() {
+      const slideElem = document.getElementById('jure-single-slide-card') || document.getElementById('tab-jure-slide');
+      if (!slideElem) return;
+
+      if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        if (slideElem.requestFullscreen) {
+          slideElem.requestFullscreen();
+        } else if (slideElem.webkitRequestFullscreen) {
+          slideElem.webkitRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        }
+      }
+    }
+
+    // Keyboard shortcut 'F' to toggle fullscreen when on slide tab
+    document.addEventListener('keydown', function(e) {
+      if ((e.key === 'f' || e.key === 'F') && !e.target.matches('input, textarea, select')) {
+        const slideTab = document.getElementById('tab-core-primitives');
+        if (slideTab && slideTab.classList.contains('active')) {
+          e.preventDefault();
+          toggleSlideFullscreen();
+        }
+      }
+    });
 
   </script>
 </body>
