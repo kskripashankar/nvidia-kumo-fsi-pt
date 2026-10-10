@@ -1,0 +1,260 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080C14"/>
+      <stop offset="50%" stop-color="#0D121F"/>
+      <stop offset="100%" stop-color="#121829"/>
+    </linearGradient>
+
+    <!-- Card Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141B2A"/>
+      <stop offset="100%" stop-color="#182236"/>
+    </linearGradient>
+
+    <style>
+      .brand { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-weight: 800; font-size: 15px; fill: #76B900; letter-spacing: 1.5px; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 800; font-size: 33px; fill: #FFFFFF; letter-spacing: -0.5px; }
+      .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 17px; fill: #94A3B8; }
+      
+      .kpi-title { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13.5px; font-weight: 700; fill: #94A3B8; text-transform: uppercase; }
+      .kpi-value { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 25px; font-weight: 800; }
+      .kpi-sub { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; fill: #CBD5E1; }
+
+      .section-hdr { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 17.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+      .pill-badge { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; font-weight: 700; }
+
+      .tile-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-weight: 800; font-size: 18.5px; fill: #F8FAFC; }
+      .tile-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 15px; fill: #E2E8F0; line-height: 1.45; }
+      .tile-tag { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; font-weight: 700; }
+
+      .triad-name { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 17px; font-weight: 800; }
+      .triad-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13.5px; fill: #CBD5E1; }
+
+      .layer-txt { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13.5px; font-weight: 600; }
+      .takeaway { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 15px; fill: #F1F5F9; line-height: 1.45; }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1920" height="1080" fill="url(#bgGrad)"/>
+  <rect x="20" y="20" width="1880" height="1040" rx="16" fill="none" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- TOP HEADER -->
+  <g transform="translate(60, 50)">
+    <text x="0" y="20" class="brand">NVIDIA ACCELERATED COMPUTING // KUMO.AI FOUNDATION MODEL STRATEGY</text>
+    <text x="0" y="58" class="title">🚀 Frontier FSI AI Portfolio: Replicating the Revolut Win Across Global Banking</text>
+    <text x="0" y="86" class="subtitle">⚡ Unifying Transaction Foundation Models, Relational Graphs and Sub-10ms Serving | Intesa Sanpaolo • Santander • NPCI • US Tier-1s</text>
+
+    <!-- Top Right Badges -->
+    <rect x="1360" y="8" width="190" height="36" rx="6" fill="#132310" stroke="#76B900" stroke-width="1.5"/>
+    <text x="1455" y="32" text-anchor="middle" class="pill-badge" fill="#76B900">⚡ Open-Source TFM</text>
+
+    <rect x="1566" y="8" width="190" height="36" rx="6" fill="#0C2538" stroke="#38BDF8" stroke-width="1.5"/>
+    <text x="1661" y="32" text-anchor="middle" class="pill-badge" fill="#38BDF8">🧠 NeMo + Kumo 3</text>
+  </g>
+
+  <!-- KPI TICKER BAR (4 High-Impact Cards) -->
+  <g transform="translate(60, 160)">
+    <!-- KPI 1 -->
+    <rect x="0" y="0" width="430" height="88" rx="8" fill="url(#cardGrad)" stroke="#1E293B" stroke-width="1.5"/>
+    <rect x="0" y="0" width="5" height="88" rx="2" fill="#76B900"/>
+    <text x="20" y="24" class="kpi-title">Revolut PRAGMA Baseline ⚡</text>
+    <text x="20" y="52" class="kpi-value" fill="#76B900">+130% / +64.7% Lift</text>
+    <text x="20" y="74" class="kpi-sub">+130% Credit PR-AUC • +64.7% Recall (24B Events on H100s)</text>
+
+    <!-- KPI 2 -->
+    <rect x="456" y="0" width="430" height="88" rx="8" fill="url(#cardGrad)" stroke="#1E293B" stroke-width="1.5"/>
+    <rect x="456" y="0" width="5" height="88" rx="2" fill="#38BDF8"/>
+    <text x="476" y="24" class="kpi-title">Identity-Transaction Loop 🛡️</text>
+    <text x="476" y="52" class="kpi-value" fill="#38BDF8">FPFI &lt;1.8:1 • 98% Auto</text>
+    <text x="476" y="74" class="kpi-sub">-90% False Decline Friction • TCR &gt;94% on Step-Ups</text>
+
+    <!-- KPI 3 -->
+    <rect x="912" y="0" width="430" height="88" rx="8" fill="url(#cardGrad)" stroke="#1E293B" stroke-width="1.5"/>
+    <rect x="912" y="0" width="5" height="88" rx="2" fill="#C084FC"/>
+    <text x="932" y="24" class="kpi-title">Foundation Model Triad 🧠</text>
+    <text x="932" y="52" class="kpi-value" fill="#C084FC">TabFM + TFM + RFM</text>
+    <text x="932" y="74" class="kpi-sub">Intra-Table + Event Sequence + Multi-Table Graph Core</text>
+
+    <!-- KPI 4 -->
+    <rect x="1368" y="0" width="432" height="88" rx="8" fill="url(#cardGrad)" stroke="#1E293B" stroke-width="1.5"/>
+    <rect x="1368" y="0" width="5" height="88" rx="2" fill="#F59E0B"/>
+    <text x="1388" y="24" class="kpi-title">Global Sovereign Wins 🏛️</text>
+    <text x="1388" y="52" class="kpi-value" fill="#F59E0B">4 Lighthouse Anchors</text>
+    <text x="1388" y="74" class="kpi-sub">Intesa Sanpaolo • Santander • NPCI (15B+ UPI) • US G-SIBs</text>
+  </g>
+
+  <!-- MAIN BODY SPLIT: Left (5 Core Primitives) + Right (Triad and Upstream Paradigm) -->
+  <g transform="translate(60, 270)">
+    
+    <!-- LEFT DOMAIN: 5 CORE PRIMITIVES (Width: 1050) -->
+    <rect x="0" y="0" width="1050" height="540" rx="10" fill="url(#cardGrad)" stroke="#1E293B" stroke-width="1.5"/>
+    <rect x="0" y="0" width="1050" height="4" rx="2" fill="#76B900"/>
+
+    <g transform="translate(24, 20)">
+      <text x="0" y="16" class="section-hdr" fill="#76B900">🛠️ THE 5 CORE PRIMITIVES TO BUILD NEXT (ENGINEERING ROADMAP)</text>
+      
+      <!-- Primitive 1 -->
+      <g transform="translate(0, 32)">
+        <rect x="0" y="0" width="1002" height="82" rx="6" fill="#121824" stroke="#1E293B" stroke-width="1"/>
+        <rect x="0" y="0" width="4" height="82" rx="1" fill="#76B900"/>
+        <text x="18" y="26" class="tile-title">⚡ 1. Sub-15ms Dynamic Subgraph Framer</text>
+        <rect x="790" y="10" width="196" height="24" rx="4" fill="#152B12" stroke="#76B900" stroke-width="1"/>
+        <text x="888" y="26" text-anchor="middle" class="tile-tag" fill="#76B900">Triton C++ Inductive</text>
+        <text x="18" y="52" class="tile-desc">Extracts local temporal neighborhoods in GPU VRAM and scores streaming payment transactions inline before</text>
+        <text x="18" y="72" class="tile-desc">ledger settlement locks on FedNow, RTP, and UPI switch payment corridors (≤8ms P99 latency budget).</text>
+      </g>
+
+      <!-- Primitive 2 -->
+      <g transform="translate(0, 126)">
+        <rect x="0" y="0" width="1002" height="82" rx="6" fill="#121824" stroke="#1E293B" stroke-width="1"/>
+        <rect x="0" y="0" width="4" height="82" rx="1" fill="#38BDF8"/>
+        <text x="18" y="26" class="tile-title">🧠 2. Universal Risk Tokenizer</text>
+        <rect x="790" y="10" width="196" height="24" rx="4" fill="#0C2538" stroke="#38BDF8" stroke-width="1"/>
+        <text x="888" y="26" text-anchor="middle" class="tile-tag" fill="#38BDF8">Composable Tensor</text>
+        <text x="18" y="52" class="tile-desc">Unifies tabular customer profiles, sequential transaction logs, and relational graph topology into a single composable</text>
+        <text x="18" y="72" class="tile-desc">tensor using Fourier feature embeddings and logarithmic temporal elapsed scaling: Δt = 8 × ln(1 + t/8).</text>
+      </g>
+
+      <!-- Primitive 3 -->
+      <g transform="translate(0, 220)">
+        <rect x="0" y="0" width="1002" height="82" rx="6" fill="#121824" stroke="#1E293B" stroke-width="1"/>
+        <rect x="0" y="0" width="4" height="82" rx="1" fill="#C084FC"/>
+        <text x="18" y="26" class="tile-title">🚀 3. Streaming-to-Tensor Zero-Copy Ingestor</text>
+        <rect x="790" y="10" width="196" height="24" rx="4" fill="#28153A" stroke="#C084FC" stroke-width="1"/>
+        <text x="888" y="26" text-anchor="middle" class="tile-tag" fill="#C084FC">Kafka/Flink → GPU HBM</text>
+        <text x="18" y="52" class="tile-desc">Mutates GPU-resident dynamic adjacency graphs directly from Kafka/Flink binary streams via Apache Arrow IPC,</text>
+        <text x="18" y="72" class="tile-desc">completely eliminating PCIe host-to-device memory copy serialization stalls during real-time transaction bursts.</text>
+      </g>
+
+      <!-- Primitive 4 -->
+      <g transform="translate(0, 314)">
+        <rect x="0" y="0" width="1002" height="82" rx="6" fill="#121824" stroke="#1E293B" stroke-width="1"/>
+        <rect x="0" y="0" width="4" height="82" rx="1" fill="#F59E0B"/>
+        <text x="18" y="26" class="tile-title">⏱️ 4. Asymmetric Delayed-Feedback Loss Engine</text>
+        <rect x="790" y="10" width="196" height="24" rx="4" fill="#33220A" stroke="#F59E0B" stroke-width="1"/>
+        <text x="888" y="26" text-anchor="middle" class="tile-tag" fill="#F59E0B">Chargeback Delay Loss</text>
+        <text x="18" y="52" class="tile-desc">Corrects for 90-day chargeback reporting delays and unobservable counterfactual declines through propensity-weighted</text>
+        <text x="18" y="72" class="tile-desc">unbiased surrogate losses, preventing model drift without waiting for full fraud reporting maturity.</text>
+      </g>
+
+      <!-- Primitive 5 -->
+      <g transform="translate(0, 408)">
+        <rect x="0" y="0" width="1002" height="82" rx="6" fill="#121824" stroke="#1E293B" stroke-width="1"/>
+        <rect x="0" y="0" width="4" height="82" rx="1" fill="#F43F5E"/>
+        <text x="18" y="26" class="tile-title">🛡️ 5. Differentiable Neuro-Symbolic Policy Compiler</text>
+        <rect x="790" y="10" width="196" height="24" rx="4" fill="#33101C" stroke="#F43F5E" stroke-width="1"/>
+        <text x="888" y="26" text-anchor="middle" class="tile-tag" fill="#F43F5E">SR 11-7 &amp; EU AI Act</text>
+        <text x="18" y="52" class="tile-desc">Embeds mandatory banking compliance rules, regulatory constraints, and human-auditable XAI attribution rationales</text>
+        <text x="18" y="72" class="tile-desc">directly into foundation model attention masks, ensuring zero-hallucination compliance enforcement.</text>
+      </g>
+    </g>
+
+    <!-- RIGHT DOMAIN: TRIAD AND PARADIGM (Width: 726) -->
+    <g transform="translate(1074, 0)">
+      <rect x="0" y="0" width="726" height="540" rx="10" fill="url(#cardGrad)" stroke="#1E293B" stroke-width="1.5"/>
+      <rect x="0" y="0" width="726" height="4" rx="2" fill="#38BDF8"/>
+
+      <g transform="translate(24, 20)">
+        <text x="0" y="16" class="section-hdr" fill="#38BDF8">🏗️ FOUNDATION MODEL TRIAD &amp; UPSTREAM PARADIGM</text>
+
+        <!-- Upstream Callout Box -->
+        <g transform="translate(0, 32)">
+          <rect x="0" y="0" width="678" height="80" rx="6" fill="#132310" stroke="#76B900" stroke-width="1"/>
+          <text x="16" y="24" class="tile-title" fill="#76B900">💡 Upstream "Trust-First" Paradigm</text>
+          <text x="16" y="48" class="tile-desc" fill="#E2E8F0"><tspan font-weight="700">"Fraud is an Identity Problem Upstream, Not a Payment Problem Downstream."</tspan></text>
+          <text x="16" y="68" class="tile-desc">Shifting from reactive checkout blocking to continuous Identity-Transaction Loop trust.</text>
+        </g>
+
+        <!-- The Triad 3 Cards -->
+        <g transform="translate(0, 126)">
+          <!-- Triad 1 -->
+          <rect x="0" y="0" width="216" height="114" rx="6" fill="#15212E" stroke="#F59E0B" stroke-width="1"/>
+          <text x="14" y="24" class="triad-name" fill="#F59E0B">📊 Kumo TabFM</text>
+          <text x="14" y="46" class="triad-desc">• Intra-table features</text>
+          <text x="14" y="66" class="triad-desc">• Frozen LLM metadata</text>
+          <text x="14" y="86" class="triad-desc">• &lt;$0.01 per 10M rows</text>
+          <text x="14" y="104" class="triad-desc">• In-context inference</text>
+
+          <!-- Triad 2 -->
+          <rect x="231" y="0" width="216" height="114" rx="6" fill="#132310" stroke="#76B900" stroke-width="1"/>
+          <text x="245" y="24" class="triad-name" fill="#76B900">⚡ Revolut PRAGMA</text>
+          <text x="245" y="46" class="triad-desc">• Event sequence TFM</text>
+          <text x="245" y="66" class="triad-desc">• Causal NeMo encoder</text>
+          <text x="245" y="86" class="triad-desc">• Log-time delta decay</text>
+          <text x="245" y="104" class="triad-desc">• +130% Credit PR-AUC</text>
+
+          <!-- Triad 3 -->
+          <rect x="462" y="0" width="216" height="114" rx="6" fill="#241530" stroke="#C084FC" stroke-width="1"/>
+          <text x="476" y="24" class="triad-name" fill="#C084FC">🕸️ Kumo 3 RFM</text>
+          <text x="476" y="46" class="triad-desc">• Multi-table PK/FK</text>
+          <text x="476" y="66" class="triad-desc">• GraphMixer GNN core</text>
+          <text x="476" y="86" class="triad-desc">• Declarative PQL engine</text>
+          <text x="476" y="104" class="triad-desc">• Zero data egress in-VPC</text>
+        </g>
+
+        <!-- Sovereign Bank Targets Box -->
+        <g transform="translate(0, 254)">
+          <rect x="0" y="0" width="678" height="236" rx="6" fill="#121824" stroke="#1E293B" stroke-width="1"/>
+          <rect x="0" y="0" width="4" height="236" rx="1" fill="#38BDF8"/>
+          <text x="18" y="24" class="section-hdr" fill="#38BDF8">🏛️ TARGET SOVEREIGN BANKING DEPLOYMENTS</text>
+
+          <!-- Target 1 -->
+          <text x="18" y="54" class="tile-title" font-size="15px">🇮🇹 Intesa Sanpaolo (Italy #1 Retail Bank)</text>
+          <text x="18" y="74" class="tile-desc">AFC Digital Hub • GRAND-Net/detectGNN • EU AI Act Art. 14 auditable XAI for carousel tax fraud.</text>
+
+          <!-- Target 2 -->
+          <text x="18" y="106" class="tile-title" font-size="15px">🇪🇸 Banco Santander (Global Commercial)</text>
+          <text x="18" y="126" class="tile-desc">Unified FRAML data plane • Lynx DAM (&lt;50ms @ 2,400 TPS) • HTGNN automated mitigation in 187ms.</text>
+
+          <!-- Target 3 -->
+          <text x="18" y="158" class="tile-title" font-size="15px">🇮🇳 NPCI (India UPI Switch Infrastructure)</text>
+          <text x="18" y="178" class="tile-desc">24B monthly txns • 240k peak TPS • P99 &lt;100ms • Decentralized federated learning across member banks.</text>
+
+          <!-- Target 4 -->
+          <text x="18" y="210" class="tile-title" font-size="15px">🇺🇸 US Tier-1 Money Centers (JPMC, Citizens, TD)</text>
+          <text x="18" y="228" class="tile-desc">Sub-10ms FedNow/RTP inline budget • TR-GAT dynamic graphs targeting synthetic identity bust-out rings.</text>
+        </g>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- LOWER SECTION: 5-LAYER ARCHITECTURAL STACK MATRIX -->
+  <g transform="translate(60, 830)">
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="1800" height="28" rx="4" fill="#28153A" stroke="#A855F7" stroke-width="1"/>
+      <text x="14" y="19" class="layer-txt" fill="#D8B4FE">🟣 <tspan font-weight="800" fill="#E9D5FF">Layer 5: Governance and Autonomous Agents</tspan> — Autonomous AFC Agent Fabric (NeMo Agents) + Topological Subgraph XAI and Federated Privacy Protocol (EU AI Act / SR 11-7).</text>
+    </g>
+    <g transform="translate(0, 32)">
+      <rect x="0" y="0" width="1800" height="28" rx="4" fill="#381024" stroke="#EC4899" stroke-width="1"/>
+      <text x="14" y="19" class="layer-txt" fill="#F472B6">🔴 <tspan font-weight="800" fill="#FBCFE8">Layer 4: Real-Time Serving</tspan> — TensorRT-GNN and TensorRT-LLM Inline Inference Kernel (sub-10ms deterministic execution for FedNow, RTP, and UPI switch payment rails).</text>
+    </g>
+    <g transform="translate(0, 64)">
+      <rect x="0" y="0" width="1800" height="28" rx="4" fill="#33220A" stroke="#F59E0B" stroke-width="1"/>
+      <text x="14" y="19" class="layer-txt" fill="#FCD34D">🟡 <tspan font-weight="800" fill="#FEF08A">Layer 3: Foundational Modeling</tspan> — Relational Transaction Foundation Model (RTFM: Joint sequence attention + multi-hop relational graph transformer eliminating AML deficit).</text>
+    </g>
+    <g transform="translate(0, 96)">
+      <rect x="0" y="0" width="1800" height="28" rx="4" fill="#0C2538" stroke="#38BDF8" stroke-width="1"/>
+      <text x="14" y="19" class="layer-txt" fill="#7DD3FC">🔵 <tspan font-weight="800" fill="#BAE6FD">Layer 2: Relational Data Fabric</tspan> — Point-in-Time Temporal Graph Sampler with Zero-Copy Apache Arrow IPC and Key-Value-Time Ingestion (Zero target leakage).</text>
+    </g>
+    <g transform="translate(0, 128)">
+      <rect x="0" y="0" width="1800" height="28" rx="4" fill="#132310" stroke="#76B900" stroke-width="1"/>
+      <text x="14" y="19" class="layer-txt" fill="#BEF264">🟢 <tspan font-weight="800" fill="#DCFCE7">Layer 1: Accelerated Compute</tspan> — NVLink-Aware Unified Dynamic Subgraph Memory Cache (Multi-GPU HBM memory fabric eliminating host-to-device PCIe bandwidth stalls).</text>
+    </g>
+  </g>
+
+  <!-- BOTTOM STRATEGIC TAKEAWAY BANNER -->
+  <g transform="translate(60, 996)">
+    <rect x="0" y="0" width="1800" height="58" rx="8" fill="#132310" stroke="#76B900" stroke-width="1.5"/>
+    <text x="18" y="24" class="takeaway">
+      <tspan font-weight="800" fill="#76B900">🏆 CORE STRATEGIC TAKEAWAY:</tspan> Revolut proved Transaction Foundation Models replace fragmented GBDT pipelines (+130% credit, +64.7% fraud recall), but PRAGMA's 47% AML deficit
+    </text>
+    <text x="18" y="46" class="takeaway">
+      confirmed sequence models cannot solve network-scale financial crime without graph topology. By fusing Kumo relational architectures with TensorRT-GNN and NeMo agents, NVIDIA delivers the definitive Relational Transaction Foundation Model (RTFM) stack.
+    </text>
+  </g>
+
+</svg>
