@@ -1081,7 +1081,7 @@
     }
 </style>
 </head>
-<body data-theme="dark">
+<body data-theme="light">
 
   <header class="app-header">
     <div class="header-inner">
@@ -1097,7 +1097,7 @@
         <div class="pill green"><div class="pill-dot"></div>Active</div>
         <span class="demo-notice-text"><strong>Demonstration only</strong> · Auto-deletes Nov 1, 2026</span>
         <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" type="button" title="Toggle theme">
-          <span id="themeBtnIcon">☀️</span>
+          <span id="themeBtnIcon">🌙</span>
         </button>
       </div>
     </div>
@@ -2157,614 +2157,365 @@
         Architectural roadmap uniting NVIDIA Accelerated Computing and Kumo.ai to replicate Revolut's landmark Transaction Foundation Model (PRAGMA) win across global Tier-1 institutions (Intesa Sanpaolo, Santander, NPCI, and US Tier-1 money centers). Moving from brittle, hand-crafted feature pipelines to open-source foundation model blueprints.
       </p>
 
-      <!-- 16:9 EXECUTIVE PRESENTATION SLIDE IMAGE CONTAINER -->
-      <div id="slide-img-container" class="slide-img-card">
-        <button onclick="toggleSlideImgFullscreen()" class="slide-fullscreen-exit-btn" type="button" title="Exit Full Screen">
-          ✕ Exit Full Screen (Esc)
-        </button>
-
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <span style="font-size: 20px;">🚀</span>
-            <strong style="color: #F8FAFC; font-size: 14.5px;">Executive 16:9 Presentation Slide &bull; Frontier FSI AI Portfolio &amp; 5 Core Primitives</strong>
+            <!-- EMBEDDED PDF VIEWER: FRONTIER FSI AI PRIMITIVES PORTFOLIO PLAN -->
+      <div class="card" style="margin-bottom: 24px; padding: 14px; background: var(--bg-card); border-top: 4px solid var(--nv-green); border-radius: var(--radius-md);">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid var(--border-color); margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-secondary); font-family: var(--font-mono);">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--nv-green); display: inline-block;"></span>
+            <span>EXECUTIVE SLIDE DECK // FRONTIER FSI AI PRIMITIVES PORTFOLIO PLAN (4 PAGES)</span>
           </div>
-          <div style="display: flex; gap: 8px; align-items: center;">
-            <button onclick="toggleSlideImgFullscreen()" class="slide-fullscreen-btn" type="button" title="View Fullscreen on Laptop Display">
-              <span>⛶ View Slide in Full Screen</span>
-            </button>
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <a href="frontier-FSI-AI-primitives-portfolio-plan.pdf" target="_blank" rel="noopener" class="blueprint-link" style="padding: 5px 12px; font-size: 11px;">
+              <span>Open PDF in Full Window ↗</span>
+            </a>
           </div>
         </div>
-
-        <!-- The 16:9 SVG Slide Image -->
-        <div class="slide-img-wrapper" onclick="toggleSlideImgFullscreen()" title="Click to view slide in full screen">
-          <img src="fsi-core-primitives-slide.svg" alt="NVIDIA + Kumo.ai Core Primitives Executive Slide" />
-        </div>
-      </div>
-
-      <!-- THE 5 CORE PRIMITIVES TO BUILD NEXT (CONSOLIDATED TECHNICAL SPECIFICATION) -->
-      <div class="card" style="margin-bottom: 24px; border-top: 3px solid var(--nv-green);">
-        <div class="card-header" style="flex-wrap: wrap; gap: 8px;">
-          <div>
-            <h3>🛠️ The 5 Core Primitives to Build Next</h3>
-            <div style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">
-              Production-grade foundational machine learning components engineered for Tier-1 banking rails
-            </div>
-          </div>
-          <span class="tech-pill" style="font-size: 10px;">Accelerated Primitives</span>
-        </div>
-
-        <div class="grid-2">
-          <!-- Primitive 1 -->
-          <div class="card" style="border-left: 3px solid var(--nv-green); background: var(--bg-card-alt); padding: 16px; margin-bottom: 0;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-              <h4 style="margin: 0; font-size: 14.5px; color: var(--text-primary);">⚡ 1. Sub-15ms Dynamic Subgraph Framer</h4>
-              <span class="tech-pill" style="font-size: 9.5px; color: var(--nv-green);">Triton C++ Inductive</span>
-            </div>
-            <p style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 8px;">
-              <strong>Mechanism:</strong> Extracts local temporal k-hop ego-graphs directly within GPU VRAM to evaluate dynamic transaction patterns inline before irrevocable settlement locks on FedNow, RTP, and UPI rails.
-            </p>
-            <div style="font-size: 11.5px; font-family: var(--font-mono); color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 6px;">
-              Hardware Target: NVIDIA L40S &amp; GH200 &bull; Latency Budget: &le;8ms P99 inline
-            </div>
-          </div>
-
-          <!-- Primitive 2 -->
-          <div class="card" style="border-left: 3px solid var(--accent-cyan); background: var(--bg-card-alt); padding: 16px; margin-bottom: 0;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-              <h4 style="margin: 0; font-size: 14.5px; color: var(--text-primary);">🧠 2. Universal Risk Tokenizer</h4>
-              <span class="tech-pill cyan" style="font-size: 9.5px;">Composable Tensor</span>
-            </div>
-            <p style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 8px;">
-              <strong>Mechanism:</strong> Unifies tabular customer profiles, sequential transaction event logs, and relational graph topology into a single composable tensor using Fourier embeddings and logarithmic temporal scaling: <code>8 &times; ln(1 + t/8)</code>.
-            </p>
-            <div style="font-size: 11.5px; font-family: var(--font-mono); color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 6px;">
-              Input Scope: Tabular + Causal Sequences + Subgraph Adjacency
-            </div>
-          </div>
-
-          <!-- Primitive 3 -->
-          <div class="card" style="border-left: 3px solid var(--accent-purple); background: var(--bg-card-alt); padding: 16px; margin-bottom: 0;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-              <h4 style="margin: 0; font-size: 14.5px; color: var(--text-primary);">🚀 3. Streaming-to-Tensor Zero-Copy Ingestor</h4>
-              <span class="tech-pill purple" style="font-size: 9.5px;">Kafka/Flink &rarr; GPU HBM</span>
-            </div>
-            <p style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 8px;">
-              <strong>Mechanism:</strong> Mutates GPU-resident dynamic adjacency graphs directly from Apache Kafka and Flink binary event streams via Apache Arrow IPC, eliminating PCIe host-to-device memory transfer stalls.
-            </p>
-            <div style="font-size: 11.5px; font-family: var(--font-mono); color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 6px;">
-              Throughput Scale: &gt;240k TPS on NPCI UPI switch infrastructure
-            </div>
-          </div>
-
-          <!-- Primitive 4 -->
-          <div class="card" style="border-left: 3px solid var(--accent-amber); background: var(--bg-card-alt); padding: 16px; margin-bottom: 0;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-              <h4 style="margin: 0; font-size: 14.5px; color: var(--text-primary);">⏱️ 4. Asymmetric Delayed-Feedback Loss Engine</h4>
-              <span class="tech-pill amber" style="font-size: 9.5px;">Chargeback Delay</span>
-            </div>
-            <p style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 8px;">
-              <strong>Mechanism:</strong> Corrects for 90-day chargeback reporting delays and unobservable counterfactual declines through propensity-weighted unbiased surrogate loss formulations, preventing model drift.
-            </p>
-            <div style="font-size: 11.5px; font-family: var(--font-mono); color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 6px;">
-              Convergence Lift: Eliminates 45-day fraud maturity lag across card rails
-            </div>
-          </div>
-
-          <!-- Primitive 5 -->
-          <div class="card" style="border-left: 3px solid var(--accent-rose); background: var(--bg-card-alt); padding: 16px; margin-bottom: 0; grid-column: span 2;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-              <h4 style="margin: 0; font-size: 14.5px; color: var(--text-primary);">🛡️ 5. Differentiable Neuro-Symbolic Policy Compiler</h4>
-              <span class="tech-pill" style="font-size: 9.5px; color: var(--accent-rose); border-color: rgba(225,29,72,0.4);">SR 11-7 &amp; EU AI Act Art. 14</span>
-            </div>
-            <p style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 8px;">
-              <strong>Mechanism:</strong> Embeds mandatory banking compliance rules, regulatory constraints, and human-auditable XAI attribution rationales directly into foundation model attention masks, ensuring zero-hallucination compliance enforcement.
-            </p>
-            <div style="font-size: 11.5px; font-family: var(--font-mono); color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 6px;">
-              Governance Scope: Automated SAR filing &bull; Exact node/edge attribution heatmaps for Intesa &amp; US regulators
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- THE FOUNDATION MODEL TRIAD & UPSTREAM IDENTITY-TRANSACTION LOOP -->
-      <div class="card" style="margin-bottom: 24px; border-top: 3px solid var(--accent-cyan);">
-        <div class="card-header" style="flex-wrap: wrap; gap: 8px;">
-          <div>
-            <h3>🏗️ The Foundation Model Triad &amp; Upstream Identity-Transaction Loop</h3>
-            <div style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">
-              Replacing reactive checkout blocking with continuous upstream entity trust
-            </div>
-          </div>
-          <span class="tech-pill cyan">Upstream Paradigm</span>
-        </div>
-
-        <!-- Paradigm Banner -->
-        <div style="background: rgba(118, 185, 0, 0.08); border: 1px solid rgba(118, 185, 0, 0.3); border-left: 4px solid var(--nv-green); border-radius: var(--radius-sm); padding: 14px 18px; margin-bottom: 16px;">
-          <div style="font-size: 13.5px; font-weight: 800; color: var(--text-primary); margin-bottom: 4px;">
-            💡 The Upstream Paradigm: <em>"Fraud is an Identity Problem Upstream, Not a Payment Problem Downstream."</em>
-          </div>
-          <div style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.5;">
-            Traditional banking treats fraud as a late-stage filter at checkout, inflicting heavy friction on legitimate users. In our architecture, verified identity trust scores inform real-time transaction underwriting, while streaming payment telemetry continuously refines the entity trust genome across the banking network.
-          </div>
-        </div>
-
-        <!-- 4 Precision Metrics Grid -->
-        <div class="grid-4" style="margin-bottom: 16px;">
-          <div class="kpi-card" style="border-top-color: var(--nv-green); background: var(--bg-card-alt);">
-            <div class="kpi-label">FP Friction Index (FPFI) 🛡️</div>
-            <div class="kpi-value" style="font-size: 19px; color: var(--nv-green);">&lt;1.8:1 Good Users</div>
-            <div class="kpi-meta"><span class="kpi-trend trend-up">-90% drop</span> from 18:1 baseline</div>
-          </div>
-          <div class="kpi-card cyan" style="background: var(--bg-card-alt);">
-            <div class="kpi-label">Trust Conversion Rate 🎯</div>
-            <div class="kpi-value" style="font-size: 19px; color: var(--accent-cyan);">94.2% Completion</div>
-            <div class="kpi-meta">Friction applied to &lt;1% traffic</div>
-          </div>
-          <div class="kpi-card purple" style="background: var(--bg-card-alt);">
-            <div class="kpi-label">Mean Time to Detection ⏱️</div>
-            <div class="kpi-value" style="font-size: 19px; color: var(--accent-purple);">&lt;48 Hours</div>
-            <div class="kpi-meta"><span class="kpi-trend trend-up">Down from 14 wks</span> legacy</div>
-          </div>
-          <div class="kpi-card amber" style="background: var(--bg-card-alt);">
-            <div class="kpi-label">Identity Lifetime Value 💰</div>
-            <div class="kpi-value" style="font-size: 19px; color: var(--accent-amber);">+$84.6M ARR Lift</div>
-            <div class="kpi-meta">Rescued false declines</div>
-          </div>
-        </div>
-
-        <!-- Triad Grid -->
-        <div class="grid-3">
-          <div class="card" style="background: var(--bg-card-alt); border-top: 2px solid var(--accent-amber); padding: 14px; margin-bottom: 0;">
-            <strong style="color: var(--accent-amber); font-size: 13.5px;">📊 Kumo TabFM</strong>
-            <p style="font-size: 12px; color: var(--text-secondary); margin: 6px 0 0 0; line-height: 1.45;">
-              Intra-table features &bull; Open-weight 28M–215M &bull; Frozen LLM metadata tokenization (&lt;$0.01 per 10M rows) &bull; Single-pass in-context tabular learning for cold-start underwriting.
-            </p>
-          </div>
-          <div class="card" style="background: var(--bg-card-alt); border-top: 2px solid var(--nv-green); padding: 14px; margin-bottom: 0;">
-            <strong style="color: var(--nv-green); font-size: 13.5px;">⚡ Revolut PRAGMA (TFM)</strong>
-            <p style="font-size: 12px; color: var(--text-secondary); margin: 6px 0 0 0; line-height: 1.45;">
-              Event sequence foundation model &bull; Causal NeMo AutoModel &bull; Log-time delta decay &bull; Pre-trained on 24B events (+130% credit PR-AUC, +64.7% recall) replacing bespoke GBDTs.
-            </p>
-          </div>
-          <div class="card" style="background: var(--bg-card-alt); border-top: 2px solid var(--accent-purple); padding: 14px; margin-bottom: 0;">
-            <strong style="color: var(--accent-purple); font-size: 13.5px;">🕸️ Kumo 3 Relational Graph FM</strong>
-            <p style="font-size: 12px; color: var(--text-secondary); margin: 6px 0 0 0; line-height: 1.45;">
-              Multi-table PK/FK schema graphs &bull; GraphMixer GNN core &bull; Declarative PQL &bull; Zero target leakage time-travel sampling &bull; Runs in-VPC over Snowflake SPCS and Databricks.
-            </p>
-          </div>
+        <div style="position: relative; width: 100%; height: 860px; background: var(--bg-card-alt); border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+          <object data="frontier-FSI-AI-primitives-portfolio-plan.pdf" type="application/pdf" width="100%" height="100%">
+            <iframe src="frontier-FSI-AI-primitives-portfolio-plan.pdf" width="100%" height="100%" style="border: none; display: block;" title="Frontier FSI AI Primitives Portfolio Plan">
+              <div style="padding: 40px; text-align: center; color: var(--text-secondary);">
+                <p style="margin-bottom: 14px;">Your browser does not support embedded PDF viewing.</p>
+                <a href="frontier-FSI-AI-primitives-portfolio-plan.pdf" target="_blank" class="blueprint-link" style="padding: 8px 16px;">
+                  Download / View PDF Directly ↗
+                </a>
+              </div>
+            </iframe>
+          </object>
         </div>
       </div>
 
       <!-- ==========================================================================
-           NATIVE COLLAPSIBLE TECHNICAL ARCHITECTURE APPENDIX (DASHBOARD-UNIFIED)
+           APPLIED STRATEGY: ESTABLISHING NVIDIA & KUMO AS FOUNDATIONAL FSI INTELLIGENCE
            ========================================================================== -->
-      <details id="appendix-accordion" class="appendix-details" open>
-        <summary class="appendix-summary">
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <span style="font-size: 24px;">📖</span>
-            <div>
-              <h3 style="margin: 0; font-size: 15px; color: var(--text-primary); font-family: var(--font-sans);">
-                Technical Architecture and Strategic Primitives for Relational AI in Financial Fraud Detection
-              </h3>
-              <div style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">
-                Comprehensive Engineering Specification &bull; 6 Research Sections &bull; 4 Comparative Architecture Tables &bull; Primary Citations
-              </div>
+      <div class="card" style="margin-bottom: 24px; border-top: 4px solid var(--nv-green); background: var(--bg-card);">
+        
+        <!-- Header -->
+        <div class="card-header" style="flex-wrap: wrap; gap: 8px;">
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 10.5px; color: var(--nv-green); font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 3px;">
+              APPLIED STRATEGY // NVIDIA ACCELERATED COMPUTING &amp; KUMO.AI
+            </div>
+            <h3 style="font-size: 17px; margin: 0; color: var(--text-primary);">
+              Foundational Intelligence Infrastructure for Global Financial Services
+            </h3>
+            <div style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">
+              Architectural Vision, 6 Core Tenets, 9 Systemic Threat Frontiers &amp; The 5 Hard Primitives
             </div>
           </div>
-          <span class="appendix-toggle-badge">
-            <span class="appendix-icon">&#9660;</span>
-            <span>Click to Collapse / Expand</span>
-          </span>
-        </summary>
-
-        <div id="appendix-technical-architecture" class="appendix-content-inner">
-          
-          <!-- SECTION 1 -->
-          <div class="card" style="margin-bottom: 24px; border-left: 4px solid var(--nv-green);">
-            <div class="card-header">
-              <h3>1. Executive Strategic Synthesis: Jure Leskovec’s Vision and the Revolut PRAGMA Blueprint</h3>
-              <span class="tech-pill">Foundation Benchmark</span>
-            </div>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              The core strategic mandate for NVIDIA and Kumo.ai centers on transforming from isolated point-solution providers into the foundational, open-source infrastructure for financial machine intelligence. Historically, Tier-1 financial institutions have maintained dozens of fragmented, hand-engineered machine learning pipelines—deploying siloed gradient-boosted decision tree (GBDT) and XGBoost models for credit risk, card-not-present fraud, transaction monitoring, customer churn, and cross-sell recommendations. Each bespoke pipeline requires months of custom feature engineering, manual SQL aggregations, and brittle extract-transform-load (ETL) routines that fail to generalize across products or banking jurisdictions.
-            </p>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              The industry benchmark validating a unified foundation model approach is the <strong>Revolut PRAGMA deployment</strong>, co-developed with NVIDIA. Revolut pre-trained a family of encoder-style Transaction Foundation Models (TFMs) spanning tens of millions to one billion parameters on <strong>24 billion banking events across 26 million customer records and 111 countries</strong> using NVIDIA accelerated computing (clusters of 32 NVIDIA H100 Tensor Core GPUs, NVIDIA NeMo, and cuDF/cuML). Downstream task evaluations demonstrated substantial predictive improvements over Revolut's legacy production pipelines:
-            </p>
-            <ul style="margin: 0 0 16px 20px; color: var(--text-secondary); font-size: 13px; line-height: 1.6;">
-              <li><strong>Credit Risk Assessment:</strong> <span style="color: var(--nv-green); font-weight: 700;">+130% Precision-Recall AUC (PR-AUC) uplift</span> and a 2.3x higher accuracy in identifying credit default events.</li>
-              <li><strong>Fraud Detection:</strong> <span style="color: var(--nv-green); font-weight: 700;">+64.7% recall improvement</span> at identical false-positive thresholds for external fraud detection, accompanied by a 17% increase in alert precision.</li>
-              <li><strong>Commercial Growth &amp; Personalization:</strong> <span style="color: var(--accent-cyan); font-weight: 700;">+79.4% relative uplift</span> in communication engagement and a +41% boost in recommendation precision across retail and business accounts.</li>
-            </ul>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              PRAGMA established that a single pre-trained customer behavioral backbone can replace dedicated, hand-crafted ML models. Architecturally, PRAGMA processes customer journeys through three hierarchical encoder stages (User Attribute Encoder, Event Encoder, and Long-Term History Encoder) utilizing a specialized <strong>Key-Value-Time tokenization scheme</strong>. Categorical fields are assigned single tokens, numerical values are dynamically mapped into learned percentile buckets, and unstructured textual strings (such as raw merchant descriptions) are vectorized via <code>NVIDIA Llama-Nemotron-Embed-1B-v2</code>, which delivered an isolated +16.1% improvement in credit risk prediction. To model event timing, PRAGMA integrates cyclical calendar features alongside a soft logarithmic elapsed-time transform:
-            </p>
-            
-            <div style="background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 12px 18px; margin: 16px 0; font-family: var(--font-mono); font-size: 13px; color: var(--text-primary); display: flex; align-items: center; justify-content: center; gap: 12px;">
-              <span>Temporal Delta Encoding:</span>
-              <strong style="color: var(--accent-cyan); font-size: 15px;">&Delta;t = 8 &times; ln(1 + t / 8)</strong>
-              <span style="font-size: 11px; color: var(--text-muted);">(where t = elapsed seconds between successive transactions)</span>
-            </div>
-
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              This preserves fine-grained temporal resolution for immediate fraud bursts while compressing lifelong customer histories without numerical instability.
-            </p>
-
-            <div style="background: rgba(225, 29, 72, 0.08); border: 1px solid rgba(225, 29, 72, 0.3); border-left: 4px solid var(--accent-rose); border-radius: var(--radius-sm); padding: 14px 18px; margin: 16px 0;">
-              <strong style="color: var(--accent-rose); font-size: 13.5px;">The Critical AML Dilemma:</strong><br>
-              <span style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.55;">
-                Crucially, Revolut's research revealed a fundamental structural boundary: while PRAGMA dominated single-customer behavioral tasks, <strong>it performed 47% worse than Revolut's production heuristic baseline on Anti-Money Laundering (AML) transaction monitoring</strong>. The underlying limitation is systemic: sequence-only foundation models process customer timelines in isolation ("ego-histories") and are topologically blind to external counterparty graphs, intermediary mule networks, and layered payment chains.
-              </span>
-            </div>
-
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0;">
-              This limitation defines the frontier mandate for NVIDIA and Kumo.ai led by Jure Leskovec. To replicate and surpass the Revolut win across Intesa Sanpaolo, Banco Santander, NPCI, and US Tier-1 institutions, NVIDIA must not simply provide generic GPU infrastructure. Instead, the frontier ML team must deliver an end-to-end <strong>Relational Transaction Foundation Model (RTFM)</strong> stack that fuses sequence-based transaction foundation models with dynamic relational graph neural networks, solving both isolated behavioral scoring and network-wide money laundering on accelerated silicon.
-            </p>
+          <div style="display: flex; gap: 8px; align-items: center; margin-left: auto;">
+            <a href="nvidia-kumo-fsi-applied-strategy.pdf" target="_blank" rel="noopener" class="blueprint-link" style="padding: 6px 14px; font-size: 11.5px; font-weight: 700;">
+              <span>📥 Open Applied Strategy PDF (5 Pages) ↗</span>
+            </a>
           </div>
-
-          <!-- SECTION 2 -->
-          <div class="card" style="margin-bottom: 24px; border-left: 4px solid var(--accent-cyan);">
-            <div class="card-header">
-              <h3>2. Baseline Capabilities: The NVIDIA and Kumo.ai Strategic Foundation</h3>
-              <span class="tech-pill cyan">Enterprise Stack</span>
-            </div>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              The acquisition of Kumo.ai by NVIDIA unified deep relational graph learning with accelerated compute infrastructure, establishing an enterprise stack designed to bypass manual feature engineering on normalized, multi-table banking databases. Originating from research behind <strong>PyTorch Geometric (PyG)</strong>, Kumo engineered foundation models capable of operating directly on relational schema graphs. Paired with NVIDIA structured data engines, TensorRT, and NVIDIA Inference Microservices (NIM), the consolidated entity provides foundational capabilities spanning relational graph transformers, zero-shot tabular foundation models, and temporal diffusion anomaly systems.
-            </p>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              At the center of Kumo’s platform is the <strong>Relational Foundation Model (RFM)</strong> architecture, supported by temporal graph learners including GraphMixer and Relational Graph Transformers. Traditional anti-fraud machine learning requires data science teams to manually craft hundreds of aggregated features across disparate SQL tables, such as rolling transaction sums, distinct counterparty counts, and device velocity metrics. In contrast, Kumo abstracts relational database management systems directly into dynamic, heterogeneous graphs. Primary and foreign keys are mapped as directed edges, and transaction records or account entities are ingested as attributed nodes.
-            </p>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              Kumo’s platform utilizes <strong>automated time-travel sampling</strong> to ensure strict temporal consistency during graph construction, preventing target leakage by training exclusively on topological states available prior to each prediction event. Data science teams interact with this engine using a declarative <strong>Predictive Query Language (PQL)</strong>, allowing queries like:
-            </p>
-
-            <div style="background: var(--code-bg); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 10px 14px; font-family: var(--font-mono); font-size: 12px; color: var(--nv-green); margin-bottom: 14px;">
-              PREDICT user.is_fraud == 1 FOR EACH transaction.id
-            </div>
-
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              This triggers end-to-end subgraph extraction, representation learning, and scoring in-place within the warehouse.
-            </p>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              Complementing its graph models, NVIDIA released <strong>Kumo-Tabular 1.0</strong>, an open-weight tabular foundation model family spanning Small (28M parameters), Medium (62M parameters), and Large (215M parameters) checkpoints licensed under OpenMDW-1.1 for enterprise deployment. Unlike gradient-boosted decision trees that require localized hyperparameter optimization, Kumo-Tabular predicts classification and regression targets via in-context learning in a single forward pass. Cells are converted into high-dimensional tokens using learned Fourier feature embeddings, bypassing manual numerical scaling and missing-value imputation. The architecture executes a dual table encoder: column-wise attention operates over rows through fixed inducing points to enforce linear scaling with row count, followed by row-wise attention with rotary position encodings to learn feature interactions. A final transformer block attends query records against labeled context rows, generating calibrated class probabilities and 999 prediction quantiles without task-specific gradient updates.
-            </p>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              For continuous operational telemetry, the <strong>Kumo-TS foundation suite</strong> (formerly NV-Tesseract) handles multivariate temporal anomaly detection and forecasting. The <strong>Kumo-Anomaly</strong> package applies diffusion-based generative backbones trained via curriculum learning, evaluating reconstruction error against adaptive thresholding strategies (SCS and MACS) to identify transactional anomalies. Equipped with DPM-Solvers, the diffusion runtime achieves <strong>50x to 100x inference acceleration</strong>, enabling real-time streaming deployments. Concurrently, <strong>Kumo-Forecast</strong> integrates Dynamic Auto-Regressive Reasoning (DARR) with a batched Jacobian interpretability framework, calculating influence attribution across lag-time and prediction horizons to ensure transparency in regulated environments.
-            </p>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
-              These models deploy natively within enterprise cloud data platforms—specifically <strong>Snowflake via Snowpark Container Services (SPCS) and Databricks Unity Catalog</strong>—enforcing data residency by running within customer sovereign virtual private clouds. Inference runtimes interface through the open-source structured-data-models (SDM) library and containerized NIM endpoints, serving batch scoring runs, streaming Arrow IPC payloads, and low-latency graph embeddings directly to downstream feature stores.
-            </p>
-
-            <!-- Table 1: Component Architecture -->
-            <div class="table-responsive">
-              <table class="fsi-table">
-                <thead>
-                  <tr>
-                    <th style="width: 22%;">Component</th>
-                    <th style="width: 26%;">Technical Architecture</th>
-                    <th style="width: 26%;">Operational Paradigm</th>
-                    <th style="width: 26%;">Target Anti-Fraud Use Cases</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong style="color: var(--nv-green);">Kumo RFM Engine</strong></td>
-                    <td>Relational Graph Transformers, GraphMixer</td>
-                    <td>Temporal GNN training over PK/FK schema graphs</td>
-                    <td>Mule syndicates, bust-out rings, AML transaction layering</td>
-                  </tr>
-                  <tr>
-                    <td><strong style="color: var(--accent-cyan);">Kumo-Tabular 1.0</strong></td>
-                    <td>Induced Column/Row Attention Transformer</td>
-                    <td>Zero-training, single-pass in-context tabular learning</td>
-                    <td>Cold-start entity scoring, new account onboarding risk</td>
-                  </tr>
-                  <tr>
-                    <td><strong style="color: var(--accent-purple);">Kumo-Anomaly (Kumo-TS)</strong></td>
-                    <td>Diffusion Model with DPM-Solver &amp; SCS/MACS</td>
-                    <td>Unsupervised reconstruction error &amp; adaptive thresholds</td>
-                    <td>Sudden transaction velocity spikes, network abuse</td>
-                  </tr>
-                  <tr>
-                    <td><strong style="color: var(--accent-amber);">Kumo-Forecast (Kumo-TS)</strong></td>
-                    <td>Temporal Transformer with DARR Mode</td>
-                    <td>Context-enhanced multivariate time-series forecasting</td>
-                    <td>Liquidity strain estimation, chargeback dispute surges</td>
-                  </tr>
-                  <tr>
-                    <td><strong style="color: var(--text-primary);">SDM &amp; NIM Serving</strong></td>
-                    <td>CUDA-optimized C++/PyTorch execution, Arrow IPC</td>
-                    <td>Microservice containers hosted on Tensor Core GPUs</td>
-                    <td>Low-latency REST scoring, real-time embedding exports</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- SECTION 3 -->
-          <div class="card" style="margin-bottom: 24px; border-left: 4px solid var(--accent-purple);">
-            <div class="card-header">
-              <h3>3. Global Banking Fraud Landscapes and Strategic Priorities</h3>
-              <span class="tech-pill purple">Global Roadmaps</span>
-            </div>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              Financial crime has shifted away from isolated card-present fraud toward organized, network-scale vectors. Financial institutions must combat synthetic identity fraud, AI-driven authorized push payment (APP) scams, multi-hop money mule laundering, and generative deepfake executive impersonations. Replicating the Revolut foundation model breakthrough across institutional banking environments requires addressing distinct operational constraints across key global organizations.
-            </p>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              <strong>Intesa Sanpaolo</strong> operates within European supervisory regimes and has anchored its predictive intelligence within the <em>Anti-Financial Crime (AFC) Digital Hub</em> alongside CENTAI and Politecnico di Torino. Its operational priority centers on shifting from scheduled SAS batch extracts to low-latency stream processing, linking enterprise transaction subgraphs with account-level lines in near-real-time. The bank has deployed advanced GNNs—including GRAND-Net, detectGNN, and the TRACED interactive topological system—to uncover carousel tax evasion and complex money laundering subgraphs. Given <strong>Article 14 of the EU AI Act</strong>, Intesa Sanpaolo requires graph explainability (XAI) frameworks that provide human-readable, auditable node- and edge-level attribution rationales for every Suspicious Activity Report (SAR) submitted to regulatory agencies. Additionally, the institution is hardening its behavioral authentication topologies following high-profile executive impersonation and messaging fraud attacks targeting European banking subsidiaries.
-            </p>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              <strong>Banco Santander</strong> manages high-volume global retail operations, consumer auto finance, and corporate payment corridors. Relying on Lynx Tech's Daily Adaptive Models (DAM), Santander maintains an inference profile with response latencies under 50 milliseconds across 99.99% of transactions while processing peak loads exceeding 2,400 transactions per second. The bank’s primary roadmap focus is unifying Fraud and Anti-Money Laundering into a consolidated <strong>"FRAML"</strong> intelligence layer, dismantling the data silos that historically separated transactional authorization teams from compliance investigators. To combat AI-driven impersonation and APP scams, Santander is evaluating Hybrid Temporal Graph Neural Network (HTGNN) frameworks capable of executing automated mitigation within 187 milliseconds. Santander seeks to evolve from localized Daily Adaptive Models toward an enterprise-scale Transaction Foundation Model capable of continuous online fine-tuning without catastrophic forgetting.
-            </p>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              The <strong>National Payments Corporation of India (NPCI)</strong> operates the Unified Payments Interface (UPI), presenting an extreme engineering profile with monthly transaction volumes exceeding <strong>24 billion</strong>, peak traffic surpassing <strong>240,000 transactions per second</strong>, and a strict active-active P99 latency SLA capped at 100 milliseconds. Because banking regulations prevent the aggregation of sovereign customer records from member banks into a central data repository, NPCI is operationalizing a <strong>decentralized Federated Learning architecture</strong>. Under this model, localized risk models execute at member bank nodes, transmitting only privacy-preserving gradient deltas to the central switch. NPCI’s technical priorities center on expanding graph anomaly detection across emerging transaction vectors—including offline digital wallets (UPI Lite) and high-speed tolling rails (Multi-Lane Free Flow / FASTag)—while integrating on-device biometric verification (facial and fingerprint recognition) to replace legacy PIN mechanisms.
-            </p>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
-              <strong>Tier-1 money-center banks in the United States</strong> manage multi-rail payment ecosystems encompassing debit and credit cards, Automated Clearing House (ACH) networks, domestic wire transfers, and instant rails including The Clearing House RTP and FedNow. The primary engineering bottleneck for these institutions is the millisecond authorization budget imposed by instant payment rails, which allocate <strong>less than 10 to 20 milliseconds</strong> to the primary machine learning scoring engine. This constraint historically restricted instant rails to simple decision trees and heuristic rules, preventing the inline use of relational graph traversals. Tier-1 US banks are prioritizing Temporal-Relational Graph Attention Networks (TR-GAT) to uncover synthetic identity rings that nurture credit profiles over multi-month gestation periods before executing bust-out fraud. Their architectural objective is unifying batch graph analytics constructed on analytical lakehouses with low-latency in-memory operational feature stores, bridging the gap between deep topological modeling and real-time transaction clearing.
-            </p>
-
-            <!-- Table 2: Global Banking Operational Dimensions -->
-            <div class="table-responsive">
-              <table class="fsi-table">
-                <thead>
-                  <tr>
-                    <th style="width: 16%;">Operational Dimension</th>
-                    <th style="width: 21%;">Intesa Sanpaolo</th>
-                    <th style="width: 21%;">Banco Santander</th>
-                    <th style="width: 21%;">NPCI (UPI Switch)</th>
-                    <th style="width: 21%;">US Tier-1 Institutions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>Payment Corridors</strong></td>
-                    <td>SEPA, Pan-European wires, corporate ledgers</td>
-                    <td>Global retail cards, auto loans, cross-border payments</td>
-                    <td>UPI instant push rails, IMPS, NETC FASTag tolling</td>
-                    <td>FedNow, RTP, ACH, wire clearing, credit/debit</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Latency &amp; Scale</strong></td>
-                    <td>Batch-to-streaming; sub-second monitoring</td>
-                    <td>&gt;2,400 TPS; P99 &lt; 50ms; mitigation &lt; 187ms</td>
-                    <td>240,000 peak TPS; P99 &lt; 100ms end-to-end SLA</td>
-                    <td>5,000–15,000 TPS; &lt; 10–20ms ML scoring budget</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Primary Threat Vectors</strong></td>
-                    <td>Carousel tax fraud, corporate money laundering, VIP spoofing</td>
-                    <td>Card fraud, cross-channel APP scams, deepfake impersonations</td>
-                    <td>SIM-swap abuse, multi-account layering, app phishing</td>
-                    <td>Synthetic identity rings, bust-out syndicates, mule layering</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Active ML Topologies</strong></td>
-                    <td>GNNs (TRACED, GRAND-Net, detectGNN), tabular baselines</td>
-                    <td>Daily Adaptive Models (DAM), HTGNN, autoencoder ensembles</td>
-                    <td>Federated learning, streaming trees, time-series anomaly</td>
-                    <td>TR-GAT, multi-relational dynamic graphs, in-context tabular</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Strategic Priority</strong></td>
-                    <td><strong style="color: var(--nv-green);">EU AI Act XAI compliance;</strong> unified AFC graph UI</td>
-                    <td><strong style="color: var(--accent-cyan);">Unified FRAML intelligence;</strong> continuous online retraining</td>
-                    <td><strong style="color: var(--accent-purple);">Federated edge learning;</strong> biometric conversational risk</td>
-                    <td><strong style="color: var(--accent-amber);">Sub-10ms inline GNN scoring;</strong> zero-leakage RFMs</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- SECTION 4 -->
-          <div class="card" style="margin-bottom: 24px; border-left: 4px solid var(--accent-amber);">
-            <div class="card-header">
-              <h3>4. Production Pipeline Topologies Across Institutional Archetypes</h3>
-              <span class="tech-pill amber">Pipeline Architectures</span>
-            </div>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              The architectures deployed across global payment systems diverge into two structural archetypes: the <strong>High-Throughput Clearing Switch Pipeline</strong>, exemplified by NPCI's UPI infrastructure, and the <strong>Enterprise Multi-Rail Banking Pipeline</strong>, utilized by institutions such as Santander, Intesa Sanpaolo, and US Tier-1 banks.
-            </p>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              <strong>The High-Throughput Clearing Switch Pipeline (NPCI Pattern):</strong><br>
-              The clearing switch topology optimizes for maximum concurrency, stateless operational resilience, and bounded compute budgets across distributed network switches. The pipeline ingests high-velocity transaction payloads from payment service provider applications and remitter core banking interfaces through API gateways. The ingestion layer uses optimized binary serialization formats (Protobuf and Apache Avro) to reduce network payload sizes and parsing overhead. These streams enter distributed message brokers (Apache Kafka) partitioned by virtual payment addresses and account identifier hashes. Stream processing engines—predominantly Apache Flink—consume the partitioned streams to perform parallel stateful transformations in memory, evaluating velocity counters across 60-second and 1-hour windows, verifying daily transaction caps, and reconciling incoming device signatures against registered state records. Rather than routing full transaction context into an intensive central machine learning model, inference executes via a decentralized topology: localized risk scores generated by member bank nodes are aggregated through federated edge endpoints, returning risk indicators to the core routing switch within 20 to 30 milliseconds. The active-active routing switch evaluates the risk output alongside business logic rules, initiating two-phase transaction execution across remitter and beneficiary banks to ensure transactional atomicity. Completed transaction events are written synchronously to distributed NoSQL key-value stores (such as Apache Cassandra and HBase) for millisecond ledger lookups, while event streams are archived asynchronously into object storage for model training and historical audits.
-            </p>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              <strong>The Enterprise Multi-Rail Banking Pipeline (Santander and US Tier-1 Pattern):</strong><br>
-              The enterprise banking pipeline evaluates diverse transaction types, orchestrating real-time authorization checks with asynchronous, multi-hop relationship graphs. The ingestion layer aggregates events across payment corridors, including credit card clearing feeds, instant rails (FedNow, RTP), domestic ACH batches, corporate wire transfers, and digital session telemetry (keystroke dynamics, IP proxies, device fingerprints). The pipeline routes these events through a dual-speed feature engineering plane:
-            </p>
-            <ul style="margin: 0 0 16px 20px; color: var(--text-secondary); font-size: 13px; line-height: 1.6;">
-              <li><strong>Synchronous Path (Under 15 Milliseconds):</strong> The transaction payload queries an in-memory feature cache (such as Redis or Aerospike) to retrieve historical entity profiles, localized rolling aggregates, and precomputed GNN node embeddings generated during prior offline runs.</li>
-              <li><strong>Asynchronous Streaming Path (Near-Real-Time Subgraph Updates):</strong> The transaction stream enters distributed stream-graph platforms (such as NVIDIA cuGraph or Apache Spark) to dynamically update typed edges connecting cards, accounts, devices, phone numbers, and IP addresses, maintaining a live view of relational topologies.</li>
-            </ul>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
-              Scoring occurs across a multi-tiered modeling plane: an <em>Inline Authorization Stage</em> uses tabular models (optimized GBDTs or zero-shot foundation models like Kumo-Tabular) inside low-latency microservices (such as NVIDIA NIM) to score attributes and precomputed embeddings within 5 to 10 milliseconds. Concurrently, a <em>Near-Real-Time Deep Subgraph Stage</em> evaluates borderline or high-value transactions using Dynamic Graph Neural Networks (such as TR-GAT or Kumo Relational Transformers) traversing multi-hop neighborhoods to identify mule syndicates. Scores feed into a unified FRAML orchestration engine to decide authorization, step-up biometric validation, holds, or automated draft SAR filings. Confirmed fraud labels and investigative findings feed into lakehouses (Snowflake and Databricks), triggering daily model updates (Lynx DAM) and weekly GNN schema retraining.
-            </p>
-
-            <!-- Table 3: Production Pipeline Topologies -->
-            <div class="table-responsive">
-              <table class="fsi-table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Architectural Phase</th>
-                    <th style="width: 40%;">Switch Clearing Pipeline (NPCI Pattern)</th>
-                    <th style="width: 40%;">Enterprise Multi-Rail Pipeline (Tier-1 Bank Pattern)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>Ingestion Protocol</strong></td>
-                    <td>Protobuf / Avro over HTTP/2, partitioned via Kafka</td>
-                    <td>Multi-rail event brokers (Kafka, Pulsar), REST APIs, batch files</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Streaming State Engine</strong></td>
-                    <td>Apache Flink maintaining sliding velocity state</td>
-                    <td>Dual-speed plane: In-memory feature stores + streaming cuGraph</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Inference Mechanism</strong></td>
-                    <td>Decentralized Federated Learning node scoring (&lt;30ms)</td>
-                    <td>Inline Tabular/GBDT (&lt;15ms) paired with near-RT Subgraph GNNs</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Operational State Store</strong></td>
-                    <td>Apache Cassandra / Apache HBase for millisecond lookups</td>
-                    <td>Redis / Aerospike caching precalculated GNN embeddings</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Orchestration &amp; Decision</strong></td>
-                    <td>Central Switch business rules &amp; two-phase commit</td>
-                    <td>Unified FRAML policy engine (Step-up auth, freeze, SAR filing)</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Model Retraining Loop</strong></td>
-                    <td>Asynchronous central aggregation of federated weight deltas</td>
-                    <td>Daily Adaptive Models (DAM) and scheduled warehouse GNN runs</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- SECTION 5 -->
-          <div class="card" style="margin-bottom: 24px; border-left: 4px solid var(--nv-green);">
-            <div class="card-header">
-              <h3>5. Tiered Architectural Decomposition and Priority Hard Primitives</h3>
-              <span class="tech-pill">L1–L5 Primitives</span>
-            </div>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
-              To replicate Revolut's enterprise wins and scale across Intesa Sanpaolo, Santander, NPCI, and US Tier-1 institutions, the NVIDIA and Kumo frontier ML team must build five hard technical primitives across the architecture stack:
-            </p>
-
-            <!-- Layer 1 -->
-            <div style="background: var(--bg-card-alt); border-left: 3px solid var(--nv-green); border-radius: 4px; padding: 12px 16px; margin-bottom: 12px;">
-              <strong style="color: var(--nv-green); font-size: 13.5px;">Layer 1: Accelerated Compute &amp; Distributed In-Memory Fabric</strong>
-              <div style="font-size: 12.5px; color: var(--text-secondary); margin-top: 4px; line-height: 1.5;">
-                <strong>Operational Reality:</strong> Production implementations rely on GPU-accelerated libraries like cuGraph and PyTorch Geometric operating on discrete GPUs in static memory configurations with host-to-device PCIe transfers.<br>
-                <strong>Technical Bottleneck:</strong> Relational transaction graphs scale into billions of nodes and tens of billions of dynamic edges, exceeding single-GPU HBM capacity. PCIe transfer stalls compute during multi-hop neighborhood extraction.<br>
-                <strong>Priority Hard Primitive:</strong> <strong style="color: var(--nv-green);">Unified GPU Dynamic Subgraph Cache (NVLink-Aware Dynamic Memory Fabric).</strong> An asynchronous, in-GPU-memory caching framework that maintains active transaction subgraphs across NVLink-interconnected H100 and B200 GPU clusters with parallel, lock-free edge mutations directly in HBM.
-              </div>
-            </div>
-
-            <!-- Layer 2 -->
-            <div style="background: var(--bg-card-alt); border-left: 3px solid var(--accent-cyan); border-radius: 4px; padding: 12px 16px; margin-bottom: 12px;">
-              <strong style="color: var(--accent-cyan); font-size: 13.5px;">Layer 2: Relational Schema &amp; Dynamic Graph Fabric</strong>
-              <div style="font-size: 12.5px; color: var(--text-secondary); margin-top: 4px; line-height: 1.5;">
-                <strong>Operational Reality:</strong> Ingestion pipelines rely on SQL queries within cloud data warehouses (Snowflake, Databricks) and naive event parsing.<br>
-                <strong>Technical Bottleneck:</strong> Converting tabular relational events into tensor-ready representations incurs massive serialization latency, while static joins cause temporal target leakage. Heterogeneous types degrade under text-only tokenizers.<br>
-                <strong>Priority Hard Primitive:</strong> <strong style="color: var(--accent-cyan);">Point-in-Time Temporal Graph Sampler with Zero-Copy Arrow &amp; Key-Value-Time Ingestion.</strong> A GPU-accelerated sampling engine enforcing causal point-in-time state reconstruction over Apache Arrow IPC in-memory buffers, incorporating Revolut’s Key-Value-Time decomposition and logarithmic temporal scaling: <code>8 &times; ln(1 + t/8)</code>.
-              </div>
-            </div>
-
-            <!-- Layer 3 -->
-            <div style="background: var(--bg-card-alt); border-left: 3px solid var(--accent-purple); border-radius: 4px; padding: 12px 16px; margin-bottom: 12px;">
-              <strong style="color: var(--accent-purple); font-size: 13.5px;">Layer 3: Foundational &amp; Frontier Modeling Engine</strong>
-              <div style="font-size: 12.5px; color: var(--text-secondary); margin-top: 4px; line-height: 1.5;">
-                <strong>Operational Reality:</strong> Institutions deploy disjoint models: sequence-only foundation models (PRAGMA) for user histories, Kumo-Tabular for single tables, and bespoke GNNs for topologies.<br>
-                <strong>Technical Bottleneck:</strong> Sequence-only models fail at network-level AML (-47% deficit in PRAGMA), while transductive GNNs cannot score unseen cold-start entities in real time without graph re-indexing.<br>
-                <strong>Priority Hard Primitive:</strong> <strong style="color: var(--accent-purple);">Relational Transaction Foundation Model (RTFM) &mdash; Inductive Hybrid Sequence-Graph Backbone.</strong> A unified foundation model architecture combining PRAGMA’s multi-stage temporal sequence encoders with Kumo’s Relational Graph Transformers, processing an individual's event sequence while attending over dynamic 2-hop counterparty transaction subgraphs in a single inductive forward pass.
-              </div>
-            </div>
-
-            <!-- Layer 4 -->
-            <div style="background: var(--bg-card-alt); border-left: 3px solid #EC4899; border-radius: 4px; padding: 12px 16px; margin-bottom: 12px;">
-              <strong style="color: #EC4899; font-size: 13.5px;">Layer 4: Real-Time Serving &amp; Low-Latency Runtime</strong>
-              <div style="font-size: 12.5px; color: var(--text-secondary); margin-top: 4px; line-height: 1.5;">
-                <strong>Operational Reality:</strong> Models are served via general-purpose Triton containers or REST endpoints, resulting in 50ms to 150ms latencies for multi-hop neighborhood extraction and message passing.<br>
-                <strong>Technical Bottleneck:</strong> Instant clearing rails (FedNow, RTP, UPI) enforce strict P99 latency budgets of less than 10ms to 20ms for the primary ML inference step, excluding heavy relational models from inline clearing.<br>
-                <strong>Priority Hard Primitive:</strong> <strong style="color: #EC4899;">TensorRT-GNN / TensorRT-LLM Sub-10ms Inline Inference Kernel.</strong> A specialized compilation engine that fuses sparse dynamic graph message passing with dense transformer attention kernels on NVIDIA Tensor Cores, executing end-to-end multi-hop relational inference in under 8 milliseconds.
-              </div>
-            </div>
-
-            <!-- Layer 5 -->
-            <div style="background: var(--bg-card-alt); border-left: 3px solid #C084FC; border-radius: 4px; padding: 12px 16px; margin-bottom: 16px;">
-              <strong style="color: #C084FC; font-size: 13.5px;">Layer 5: Governance, Autonomous Agents &amp; Orchestration</strong>
-              <div style="font-size: 12.5px; color: var(--text-secondary); margin-top: 4px; line-height: 1.5;">
-                <strong>Operational Reality:</strong> Compliance teams manually examine transaction logs and use post-hoc explainers (GNNExplainer) to draft Suspicious Activity Reports (SARs).<br>
-                <strong>Technical Bottleneck:</strong> European (Article 14 EU AI Act) and US (SR 11-7) regulatory frameworks prohibit opaque black-box automated account closures, while data residency laws prohibit pooling raw records across borders or member banks.<br>
-                <strong>Priority Hard Primitive:</strong> <strong style="color: #C084FC;">Autonomous Anti-Financial Crime (AFC) Agent Fabric &amp; Federated Subgraph XAI Engine.</strong> An agentic orchestration system powered by the NVIDIA NeMo Agent Framework and Kumo decision tools that extracts minimal causal topological subgraphs and autonomously drafts human-auditable SAR filings alongside a privacy-preserving federated aggregation coordinator.
-              </div>
-            </div>
-
-            <!-- Table 4: Architectural Layer Decomposition -->
-            <div class="table-responsive">
-              <table class="fsi-table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Architecture Layer</th>
-                    <th style="width: 25%;">Current Operational Status</th>
-                    <th style="width: 25%;">Critical Engineering Bottleneck</th>
-                    <th style="width: 30%;">Frontier Hard Primitive Priority</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>Layer 5: Governance &amp; Agents</strong></td>
-                    <td>Post-hoc XAI, PQL queries, batch manual SAR drafting</td>
-                    <td>Opaque topological embeddings; regulatory firewalls against cross-bank pooling</td>
-                    <td><strong style="color: #C084FC;">Autonomous AFC Agent Fabric &amp; Federated Subgraph XAI Engine</strong></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Layer 4: Real-Time Serving</strong></td>
-                    <td>REST APIs, Triton/NIM containers, batch exports</td>
-                    <td>50–150ms multi-hop neighborhood extraction and message-passing latency</td>
-                    <td><strong style="color: #EC4899;">TensorRT-GNN Sub-10ms Inline Inference Kernel</strong></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Layer 3: Foundational Modeling</strong></td>
-                    <td>Siloed models: PRAGMA (sequence), Kumo RFM (GNN), Kumo-Tabular</td>
-                    <td>PRAGMA AML deficit (-47%); transductive GNN cold-start failure</td>
-                    <td><strong style="color: var(--accent-purple);">Relational Transaction Foundation Model (RTFM) Inductive Backbone</strong></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Layer 2: Relational Data Fabric</strong></td>
-                    <td>SQL primary-foreign key parsing in cloud data warehouses</td>
-                    <td>Temporal target leakage; high serialization overhead converting tables to tensors</td>
-                    <td><strong style="color: var(--accent-cyan);">Point-in-Time Temporal Sampler with Zero-Copy Arrow &amp; Key-Value-Time Engine</strong></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Layer 1: Accelerated Compute</strong></td>
-                    <td>Discrete cuGraph and PyG runtimes on CUDA GPUs</td>
-                    <td>Billion-edge graphs exceed single-GPU HBM; PCIe transfer stalls compute</td>
-                    <td><strong style="color: var(--nv-green);">Unified GPU Dynamic Subgraph Cache (NVLink-Aware HBM Memory Fabric)</strong></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- SECTION 6: CITATIONS & SOURCES -->
-          <div class="card" style="margin-bottom: 0; border-left: 4px solid var(--accent-purple);">
-            <div class="card-header">
-              <h3>6. Primary Research Citations &amp; Academic Bibliography</h3>
-              <span class="tech-pill purple">Citations</span>
-            </div>
-            <div class="grid-2" style="margin-top: 10px;">
-              <a href="https://resources.nvidia.com/en-us-financial-services-industry/revolut-builds-a-transaction-foundation-model-1185435" target="_blank" rel="noopener" class="blueprint-link" style="width: 100%; box-sizing: border-box; text-decoration: none;">
-                <span>📄</span> <span>Transaction Foundation Model Case Study | NVIDIA &bull; Revolut</span>
-              </a>
-              <a href="https://arxiv.org/abs/2604.08649" target="_blank" rel="noopener" class="blueprint-link" style="width: 100%; box-sizing: border-box; text-decoration: none; color: var(--accent-cyan); border-color: rgba(6,182,212,0.4); background: rgba(6,182,212,0.1);">
-                <span>📄</span> <span>PRAGMA: Revolut Foundation Model | arXiv:2604.08649</span>
-              </a>
-              <a href="https://alphaxiv.org/abs/2604.08649" target="_blank" rel="noopener" class="blueprint-link" style="width: 100%; box-sizing: border-box; text-decoration: none; color: var(--accent-purple); border-color: rgba(139,92,246,0.4); background: rgba(139,92,246,0.1);">
-                <span>📄</span> <span>PRAGMA: Revolut Foundation Model | alphaXiv Technical Review</span>
-              </a>
-              <a href="https://build.nvidia.com/nvidia/build-your-own-transaction-foundation-model" target="_blank" rel="noopener" class="blueprint-link" style="width: 100%; box-sizing: border-box; text-decoration: none; color: var(--accent-amber); border-color: rgba(245,158,11,0.4); background: rgba(245,158,11,0.1);">
-                <span>📄</span> <span>Build Your Own Transaction Foundation Model | NVIDIA Build</span>
-              </a>
-              <a href="https://build.nvidia.com/nvidia/financial-fraud-detection" target="_blank" rel="noopener" class="blueprint-link" style="width: 100%; box-sizing: border-box; text-decoration: none;">
-                <span>📄</span> <span>Financial Fraud Detection NIM Blueprint | NVIDIA Build</span>
-              </a>
-              <a href="https://build.nvidia.com/nvidia/kumo-relational" target="_blank" rel="noopener" class="blueprint-link" style="width: 100%; box-sizing: border-box; text-decoration: none; color: var(--accent-purple); border-color: rgba(139,92,246,0.4); background: rgba(139,92,246,0.1);">
-                <span>📄</span> <span>Kumo Relational Model NIM Reference | NVIDIA Build</span>
-              </a>
-            </div>
-          </div>
-
         </div>
-      </details>
+
+        <!-- Section 1: Executive Vision & Revolut Benchmark -->
+        <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
+          <h4 style="font-size: 14.5px; color: var(--text-primary); margin: 0 0 10px 0;">
+            1. Executive Applied Strategy &amp; Lighthouse Operating Model
+          </h4>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px;">
+            Our applied strategy anchors directly on a clear vision: <strong>establishing NVIDIA and Kumo as the open-source foundational intelligence infrastructure for global financial services</strong>. We are not positioning ourselves as a bespoke professional services group or a vendor selling brittle point solutions. Our operating model is <strong>open-source blueprints co-developed alongside engineering lighthouses</strong>. We build once with an advanced pioneer, open-source the core architectural primitives, and replicate that blueprint across global Tier-1 banks.
+          </p>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px;">
+            Today, traditional commercial banks maintain dozens of siloed, fragile XGBoost models fed by hundreds of brittle SQL pipelines. We are here to replace that fragmented complexity with unified foundation backbones.
+          </p>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px;">
+            The top empirical benchmark validating this paradigm is <strong>Revolut PRAGMA</strong>. By training an autoregressive Transaction Foundation Model across <strong>24 billion banking events in 111 countries</strong> using NVIDIA NeMo, H100 Tensor Core GPUs, and RAPIDS cuDF, Revolut didn't just iterate—they transformed their P&amp;L:
+          </p>
+          
+          <div class="grid-3" style="gap: 12px; margin-bottom: 14px;">
+            <div style="background: var(--bg-card-alt); border-left: 3px solid var(--nv-green); border-radius: 4px; padding: 10px 14px;">
+              <strong style="color: var(--nv-green); font-size: 15px; display: block;">+130% PR-AUC Uplift</strong>
+              <span style="font-size: 12px; color: var(--text-secondary);">In credit risk underwriting; 2.3x higher accuracy on default events.</span>
+            </div>
+            <div style="background: var(--bg-card-alt); border-left: 3px solid var(--accent-cyan); border-radius: 4px; padding: 10px 14px;">
+              <strong style="color: var(--accent-cyan); font-size: 15px; display: block;">+65% Fraud Recall</strong>
+              <span style="font-size: 12px; color: var(--text-secondary);">Increase at identical false-positive thresholds; +17% alert precision.</span>
+            </div>
+            <div style="background: var(--bg-card-alt); border-left: 3px solid var(--accent-purple); border-radius: 4px; padding: 10px 14px;">
+              <strong style="color: var(--accent-purple); font-size: 15px; display: block;">+41% Recommendation Lift</strong>
+              <span style="font-size: 12px; color: var(--text-secondary);">Gain in recommendation precision; +79.4% in engagement.</span>
+            </div>
+          </div>
+
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
+            Crucially, Revolut proved that a single pre-trained behavioral representation backbone beats dozens of hand-crafted feature stores, eliminating the 80% feature engineering tax that paralyzes bank data science teams.
+          </p>
+
+          <!-- Critical AML Vulnerability Callout -->
+          <div style="background: rgba(225, 29, 72, 0.08); border: 1px solid rgba(225, 29, 72, 0.3); border-left: 4px solid var(--accent-rose); border-radius: var(--radius-sm); padding: 14px 18px; margin-bottom: 14px;">
+            <strong style="color: var(--accent-rose); font-size: 13.5px; display: block; margin-bottom: 4px;">
+              The Critical AML Vulnerability: The 47% Collapse
+            </strong>
+            <p style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.55; margin: 0 0 8px 0;">
+              Here is the critical vulnerability that the industry is just beginning to realize: when Revolut evaluated one-dimensional sequence foundation models on Anti-Money Laundering benchmarks, <strong>performance collapsed by 47%</strong>.
+            </p>
+            <p style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.55; margin: 0;">
+              <em>Why did it collapse?</em> Because money laundering, mule rings, and authorized push payment scams are not sequence problems—they are <strong>topological problems</strong>. A 1D transformer models an individual account's personal transaction history over time. But when an organized syndicate moves stolen funds, they deliberately structure transactions below reporting thresholds. Every individual transaction looks statistically benign. The criminal signal exists entirely in the counterparty graph: the rapid fan-out to five mule accounts, the cyclic looping across shell companies, and the rapid fund dissipation. A sequence model is blind to network topology, while a traditional graph neural network is blind to temporal customer journeys. Our core modeling breakthrough must be the <strong>Relational Transaction Foundation Model (RTFM)</strong>—fusing sequence encoders with relational graph attention into a single inductive backbone.
+            </p>
+          </div>
+
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px;">
+            That is how we replicate Revolut's win across the global banking tier:
+          </p>
+          <ul style="margin: 0 0 12px 20px; font-size: 12.5px; color: var(--text-secondary); line-height: 1.6;">
+            <li><strong>Revolut:</strong> Expand from 1D transaction sequences to multi-hop Graph Foundation Models to dismantle complex mule networks.</li>
+            <li><strong>Intesa Sanpaolo:</strong> Bring onto this blueprint to stop real-time authorized push payment and synthetic voice scams.</li>
+            <li><strong>Banco Santander:</strong> Transition off bespoke, hand-crafted GNNs onto unified Kumo Relational Foundation Models.</li>
+            <li><strong>NPCI (India):</strong> Deliver the sub-50ms streaming engine needed to score 15 billion monthly UPI transactions.</li>
+          </ul>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+            As Chief Scientist Jure Leskovec framed: <em>"The less is there, the better."</em> We do not need a sprawling software catalog. We need a minimal, composable set of foundation primitives that any institution can deploy inside their private Snowflake or Databricks lakehouse with zero data egress.
+          </p>
+        </div>
+
+        <!-- Section 2: The 6 Foundational Tenets -->
+        <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
+          <h4 style="font-size: 14.5px; color: var(--text-primary); margin: 0 0 12px 0;">
+            2. The 6 Foundational Tenets Guiding Platform Development
+          </h4>
+          
+          <div class="grid-2" style="gap: 12px; margin-bottom: 14px;">
+            <div style="background: var(--bg-card-alt); border-left: 3px solid var(--nv-green); border-radius: 4px; padding: 12px 14px;">
+              <strong style="color: var(--text-primary); font-size: 13px; display: block; margin-bottom: 4px;">Tenet 1: Upstream Identity vs. Downstream Payment</strong>
+              <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+                Fraud is an identity problem upstream, not a payment problem downstream. In APP scams, pig-butchering, and synthetic ATO, the payment authorization is just the crime scene. The legitimate account holder authenticates willingly. Looking strictly at the payment transaction produces zero anomalies. The attack originated days or weeks earlier in credential compromises, social engineering, and sleeper accounts. If our models only evaluate the payment edge, we are scoring the symptom rather than intercepting the syndicate.
+              </div>
+            </div>
+
+            <div style="background: var(--bg-card-alt); border-left: 3px solid var(--accent-cyan); border-radius: 4px; padding: 12px 14px;">
+              <strong style="color: var(--text-primary); font-size: 13px; display: block; margin-bottom: 4px;">Tenet 2: Focus Relentlessly on Hard Foundational Primitives</strong>
+              <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+                Build what only NVIDIA and Kumo can solve, and ruthlessly reject self-fulfilling prophecies. This aligns with Jensen Huang’s core mission for NVIDIA: <em>"pioneering accelerated computing to tackle impactful challenges no one else can solve."</em> We are not here to build commodity feature stores, lightweight dashboards, or thin wrappers around generic LLMs. Our mission is solving mathematically and computationally intractable problems: scaling dynamic graph memory across 100 billion edges, zero-shot relational transfer learning, and sub-30ms inductive serving on GPUs and Tensor Cores.
+              </div>
+            </div>
+
+            <div style="background: var(--bg-card-alt); border-left: 3px solid var(--accent-purple); border-radius: 4px; padding: 12px 14px;">
+              <strong style="color: var(--text-primary); font-size: 13px; display: block; margin-bottom: 4px;">Tenet 3: Zero Critical Gaps in Our Primitive Layer</strong>
+              <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+                If our platform cannot handle sub-30ms card switches or chokes on massive multi-hop graph traversals, banks will be forced to buy point solutions. Our primitives must natively cover the entire surface area without functional voids.
+              </div>
+            </div>
+
+            <div style="background: var(--bg-card-alt); border-left: 3px solid var(--accent-amber); border-radius: 4px; padding: 12px 14px;">
+              <strong style="color: var(--text-primary); font-size: 13px; display: block; margin-bottom: 4px;">Tenet 4: Meet Banks Where They Are — With Autonomous Agents</strong>
+              <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+                Tier-1 banks are deeply entrenched in Apache Flink, Apache Kafka, Snowflake, Databricks, and complex relational schemas. We cannot operate three years orthogonally and ask them to rewrite their data infrastructure. Our autonomous coding agents are the pragmatic bridge: they ingest customer schemas directly, map them into PQL, and deploy containerized, zero-data-egress NIMs inside their VPCs to deliver quantifiable P&amp;L impact within a 14-day shadow POC.
+              </div>
+            </div>
+
+            <div style="background: var(--bg-card-alt); border-left: 3px solid var(--text-muted); border-radius: 4px; padding: 12px 14px;">
+              <strong style="color: var(--text-primary); font-size: 13px; display: block; margin-bottom: 4px;">Tenet 5: "The Less Is There, The Better"</strong>
+              <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+                We reject bloated, monolithic enterprise suites in favor of lean, composable building blocks that drop directly into existing bank data pipelines.
+              </div>
+            </div>
+
+            <div style="background: var(--bg-card-alt); border-left: 3px solid var(--accent-rose); border-radius: 4px; padding: 12px 14px;">
+              <strong style="color: var(--text-primary); font-size: 13px; display: block; margin-bottom: 4px;">Tenet 6: Closed-Loop Symbiosis (HITL &amp; AITL)</strong>
+              <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+                Banks face an operational paradox: manual human review creates an unbearable bottleneck on instant rails, while unconstrained automated ML triggers severe regulatory pushback under Federal Reserve SR 11-7. We enforce a closed-loop symbiosis: wherever there is Human-In-The-Loop, deploy AI-In-The-Loop agents to automate close to 100% of repetitive investigation volume; wherever there is automated ML, maintain continuous Human-In-The-Loop validation to achieve 100% quality coverage.
+              </div>
+            </div>
+          </div>
+
+          <div style="background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 12px 16px;">
+            <strong style="color: var(--text-primary); font-size: 12.5px; display: block; margin-bottom: 4px;">
+              Upstream Fleet of Agents:
+            </strong>
+            <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.55;">
+              Autonomous agents must not be passive downstream consumers of final model risk scores. In our architecture, an Enterprise Fleet of Agents bats UPSTREAM ahead of foundation models:<br/>
+              1. <strong>Coding Agents:</strong> Automate schema onboarding and compile natural language into PQL queries.<br/>
+              2. <strong>Customer Experience Agents:</strong> Fuse multi-modal inputs (video IDV liveness, document OCR, card images) with graph topology to eliminate friction for 98% of legitimate customers.<br/>
+              3. <strong>Risk Ops Agents:</strong> Investigate multi-hop subgraphs, generate attribution paths, and file automated SARs.
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: The 9 Existential Threat Frontiers -->
+        <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
+          <h4 style="font-size: 14.5px; color: var(--text-primary); margin: 0 0 10px 0;">
+            3. The 9 Existential Threat Frontiers (2026–2028 Total Space of Fraud)
+          </h4>
+          <p style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.55; margin-bottom: 12px;">
+            Mapped across a unified 6-dimension taxonomy: SLA, Anomaly Type, Model Engine, Technology Backbone, Lighthouse Target, and Business Impact. There is zero overlap and zero blind spots. Every problem maps cleanly to a sequence anomaly, an entity baseline collapse, or a multi-table relational graph.
+          </p>
+
+          <div class="table-responsive">
+            <table class="fsi-table">
+              <thead>
+                <tr>
+                  <th style="width: 20%;">Threat Frontier</th>
+                  <th style="width: 18%;">SLA &amp; Anomaly Type</th>
+                  <th style="width: 28%;">Model Engine &amp; Backbone</th>
+                  <th style="width: 34%;">Lighthouse Target &amp; P&amp;L Impact</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1. Card &amp; Payment Auth</strong><br/><span style="font-size: 11px; color: var(--text-muted);">CNP / POS Terminals</span></td>
+                  <td>&lt;30ms Inline<br/><span style="font-size: 11px; color: var(--accent-cyan);">Sequence Deviation</span></td>
+                  <td>Transaction FM (PRAGMA)<br/><span style="font-size: 11px; color: var(--text-muted);">NeMo, RAPIDS cuDF, H100</span></td>
+                  <td><strong>JPMC / Santander</strong><br/>+65% Fraud Recall; -$42M gross annual losses</td>
+                </tr>
+                <tr>
+                  <td><strong>2. Instant Rails &amp; Mules</strong><br/><span style="font-size: 11px; color: var(--text-muted);">FedNow, RTP, UPI</span></td>
+                  <td>&lt;50ms Inline<br/><span style="font-size: 11px; color: var(--accent-cyan);">Streaming Graph Flow</span></td>
+                  <td>Sub-15ms Subgraph Framer<br/><span style="font-size: 11px; color: var(--text-muted);">cuGraph-Stream, Triton C++</span></td>
+                  <td><strong>NPCI (UPI) / Chime</strong><br/>Dismantles mule networks across 240k peak TPS</td>
+                </tr>
+                <tr>
+                  <td><strong>3. Account Takeover (ATO)</strong><br/><span style="font-size: 11px; color: var(--text-muted);">Credential stuffing, SIM swap</span></td>
+                  <td>&lt;100ms Session<br/><span style="font-size: 11px; color: var(--accent-cyan);">Baseline Collapse</span></td>
+                  <td>KumoTabular + Diffusion<br/><span style="font-size: 11px; color: var(--text-muted);">Kumo-TS (Tesseract), DPM-Solver</span></td>
+                  <td><strong>Citizens Bank</strong><br/>-88% ATO claims; saves $18M customer churn</td>
+                </tr>
+                <tr>
+                  <td><strong>4. APP Scams &amp; Romance</strong><br/><span style="font-size: 11px; color: var(--text-muted);">Authorized Push Payment</span></td>
+                  <td>&lt;200ms Step-Up<br/><span style="font-size: 11px; color: var(--accent-purple);">Relational Deception</span></td>
+                  <td>Kumo Relational FM (RFM)<br/><span style="font-size: 11px; color: var(--text-muted);">Multi-table PK/FK, Snowflake SPCS</span></td>
+                  <td><strong>Intesa Sanpaolo</strong><br/>Catches overseas mule clusters willingly paid</td>
+                </tr>
+                <tr>
+                  <td><strong>5. Synthetic Identity Fraud</strong><br/><span style="font-size: 11px; color: var(--text-muted);">Deepfakes, fabricated SSNs</span></td>
+                  <td>Batch / Onboarding<br/><span style="font-size: 11px; color: var(--accent-purple);">Multi-Modal Collapse</span></td>
+                  <td>Multi-Modal Tokenizer<br/><span style="font-size: 11px; color: var(--text-muted);">PyTorch Frame + Vision Foundation</span></td>
+                  <td><strong>Fifth Third / TD Bank</strong><br/>-92% credit bust-out losses across sleeper rings</td>
+                </tr>
+                <tr>
+                  <td><strong>6. Cross-Border AML</strong><br/><span style="font-size: 11px; color: var(--text-muted);">Layering, shell companies</span></td>
+                  <td>T+1 Daily Ingestion<br/><span style="font-size: 11px; color: var(--accent-purple);">Cyclic Multi-Hop Topology</span></td>
+                  <td>Relational Trans FM (RTFM)<br/><span style="font-size: 11px; color: var(--text-muted);">Path-Centric Flow Kernel</span></td>
+                  <td><strong>Global Tier-1 G-SIBs</strong><br/>Overcomes PRAGMA's 47% AML performance deficit</td>
+                </tr>
+                <tr>
+                  <td><strong>7. Merchant Bust-Out Rings</strong><br/><span style="font-size: 11px; color: var(--text-muted);">Credit stacking, fake volume</span></td>
+                  <td>Near-Real-Time<br/><span style="font-size: 11px; color: var(--accent-amber);">Bipartite Collusion</span></td>
+                  <td>Kumo 3 Dynamic GNN<br/><span style="font-size: 11px; color: var(--text-muted);">WholeGraph + NVLink HBM</span></td>
+                  <td><strong>Merchant Acquirers</strong><br/>Identifies coordinated merchant default syndicates</td>
+                </tr>
+                <tr>
+                  <td><strong>8. Model Governance &amp; Bias</strong><br/><span style="font-size: 11px; color: var(--text-muted);">SR 11-7, EU AI Act Art. 14</span></td>
+                  <td>Audit &amp; Compliance<br/><span style="font-size: 11px; color: var(--accent-amber);">Future-Data Leakage</span></td>
+                  <td>Deterministic ANCHOR_TIME<br/><span style="font-size: 11px; color: var(--text-muted);">Cryptographic Audit Fabric</span></td>
+                  <td><strong>Federal Reserve / ECB</strong><br/>100% auditable attribution; zero data leakage</td>
+                </tr>
+                <tr>
+                  <td><strong>9. Multi-Agent Attack Swarms</strong><br/><span style="font-size: 11px; color: var(--text-muted);">Autonomous fraud botnets</span></td>
+                  <td>Dynamic Real-Time<br/><span style="font-size: 11px; color: var(--accent-amber);">Adversarial Blitz</span></td>
+                  <td>Autonomous Defense Fleet<br/><span style="font-size: 11px; color: var(--text-muted);">NeMo Agents + MCP Interface</span></td>
+                  <td><strong>Sovereign Financial Rails</strong><br/>Automated adversarial red-teaming &amp; defense</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Section 4: Production Stack Today & The 5-Layer Stack -->
+        <div style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
+          <h4 style="font-size: 14.5px; color: var(--text-primary); margin: 0 0 10px 0;">
+            4. Production Stack Today &amp; The 5-Layer RTFM Stack
+          </h4>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px;">
+            Our production foundation today is strong. We already have Kumo 3 containerized NIMs on NGC, Kumo RFM zero-shot relational transformers, KumoTabular integrated with PyTorch Frame, the NVIDIA Financial Fraud Blueprint on Dynamo-Triton, cuGraph-PyG, WholeGraph, DiskGraph, and Confidential Computing enclaves on Hopper and Blackwell. We are not starting from scratch; we are industrializing proven, accelerated technology.
+          </p>
+
+          <div class="table-responsive" style="margin-bottom: 16px;">
+            <table class="fsi-table">
+              <thead>
+                <tr>
+                  <th style="width: 15%;">Layer</th>
+                  <th style="width: 25%;">Stack Component</th>
+                  <th style="width: 60%;">Technical Execution &amp; Hardware Binding</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong style="color: var(--accent-purple);">Layer 5</strong></td>
+                  <td><strong>Governance &amp; Autonomous Agents</strong></td>
+                  <td>Autonomous Agent Fleets + SR 11-7 Cryptographic Audit Fabric &amp; Topological Subgraph XAI.</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: #EC4899;">Layer 4</strong></td>
+                  <td><strong>Real-Time Serving</strong></td>
+                  <td>TensorRT-GNN (&lt;10ms) + Temporal Positive-Unlabeled (PU) Label-Delay Calibration Engine.</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: var(--accent-amber);">Layer 3</strong></td>
+                  <td><strong>Frontier Models</strong></td>
+                  <td>Relational Transaction Foundation Model (RTFM) + Path-Centric Flow Kernel + Generative Simulator.</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: var(--accent-cyan);">Layer 2</strong></td>
+                  <td><strong>Relational Data Fabric</strong></td>
+                  <td>Point-in-Time Arrow IPC Sampler + Streaming cuGraph-ER + Multimodal ISO 20022 Tokenizer.</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: var(--nv-green);">Layer 1</strong></td>
+                  <td><strong>Accelerated Compute</strong></td>
+                  <td>NVLink Subgraph Memory Cache + Confidential GPU TEE Enclaves (Hopper/Blackwell).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Section 5: The 5 Hard Frontier Primitives We Must Build -->
+        <div>
+          <h4 style="font-size: 14.5px; color: var(--text-primary); margin: 0 0 12px 0;">
+            5. The 5 Hard Frontier Primitives We Must Build
+          </h4>
+
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="background: var(--bg-card-alt); border-left: 3px solid var(--nv-green); border-radius: 4px; padding: 12px 14px;">
+              <strong style="color: var(--nv-green); font-size: 13px; display: block; margin-bottom: 4px;">
+                Primitive 1: Sub-15ms Dynamic Subgraph Framing Kernel (cuGraph-Stream)
+              </strong>
+              <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+                Today, cuGraph-PyG does offline batch sampling, but instant payment rails like FedNow and UPI clear in under 30 milliseconds. We cannot let our customers run multi-second database/graph queries. cuGraph-Stream ingests streaming payment events directly from Kafka into GPU memory via GPUDirect RDMA, extracting the local 2-hop temporal neighborhood in under 8 milliseconds.
+              </div>
+            </div>
+
+            <div style="background: var(--bg-card-alt); border-left: 3px solid var(--accent-cyan); border-radius: 4px; padding: 12px 14px;">
+              <strong style="color: var(--accent-cyan); font-size: 13px; display: block; margin-bottom: 4px;">
+                Primitive 2: WholeGraph Distributed Tiered Memory (100B+ Dynamic Edges)
+              </strong>
+              <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+                While NVIDIA open-sourced WholeGraph and Kumo built DiskGraph for NVMe scratch, WholeGraph is not yet wired into KumoRFM. When scaling to NPCI’s 15 billion monthly UPI transactions across 100 billion edges, single-GPU memory fails. We must pool memory over NVLink: caching hot nodes in HBM, mapping neighborhoods in host RAM, and paging historical edges from NVMe without CPU stalls.
+              </div>
+            </div>
+
+            <div style="background: var(--bg-card-alt); border-left: 3px solid var(--accent-purple); border-radius: 4px; padding: 12px 14px;">
+              <strong style="color: var(--accent-purple); font-size: 13px; display: block; margin-bottom: 4px;">
+                Primitive 3: Multimodal Schema-Agnostic Tokenizer (ISO 20022 Enriched Payloads)
+              </strong>
+              <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+                PyTorch Frame, KumoTabular, and NeMo operate as fragmented tools. Furthermore, with the global rollout of ISO 20022, financial transactions are no longer flat numerical rows; they carry rich XML payloads, invoice memos, customer call audio transcripts and now even IDV data as videos and images. We need a unified foundation tokenizer that encodes structured tabular cells, Fourier-projected continuous amounts, XML tags, audio transcripts and video into a shared latent space.
+              </div>
+            </div>
+
+            <div style="background: var(--bg-card-alt); border-left: 3px solid var(--accent-amber); border-radius: 4px; padding: 12px 14px;">
+              <strong style="color: var(--accent-amber); font-size: 13px; display: block; margin-bottom: 4px;">
+                Primitive 4: Inductive Subgraph Inference Kernel (TensorRT-GNN on Triton)
+              </strong>
+              <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+                KumoRFM is mathematically inductive, but today serving is warehouse-bound at ~second latencies. We must compile KumoRFM into a standalone TensorRT-GNN inference engine deployed inside Triton to serve inductive predictions on Tensor Cores in under 100 milliseconds.
+              </div>
+            </div>
+
+            <div style="background: var(--bg-card-alt); border-left: 3px solid var(--accent-rose); border-radius: 4px; padding: 12px 14px;">
+              <strong style="color: var(--accent-rose); font-size: 13px; display: block; margin-bottom: 4px;">
+                Primitive 5: Temporal Edge Pruning Operator and Label-Delay Engine
+              </strong>
+              <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+                Kumo solved temporal cutoffs in software with declarative ANCHOR_TIMESTAMP, but software filtering causes GPU sync stalls during live streaming. We need a low-level CUDA operator that masks future edges at warp speed for 100% SR 11-7 compliance. Furthermore, real banking operations suffer 30-to-90 day chargeback confirmation lags. Our Positive-Unlabeled (PU) learning engine models this delay, preventing unflagged recent transactions from corrupting model weights during online adaptation.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
     <!-- ================== TAB: JPMC ================== -->
@@ -4504,7 +4255,7 @@
     }
 
     (function initTheme() {
-      const savedTheme = localStorage.getItem('fsi_dashboard_theme') || 'dark';
+      const savedTheme = localStorage.getItem('fsi_dashboard_theme') || 'light';
       updateThemeUI(savedTheme);
     })();
 
